@@ -103,7 +103,6 @@
 				1FF108E23FC207D4C65E517D /* Pods-CountriesTests.debug.xcconfig */,
 				2DE6A54747BA7A39A8EB302C /* Pods-CountriesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -179,6 +178,9 @@
 			buildConfigurationList = 89E726AC274CE542002C063B /* Build configuration list for PBXNativeTarget "Countries" */;
 			buildPhases = (
 				F8AD4D384AEC78769D17ECCA /* [CP] Check Pods Manifest.lock */,
+				89B372E1274E57CE004AF1BE /* Generate Apollo GraphQL API */,
+				89B372DF274E5777004AF1BE /* RSwift */,
+				89B372E0274E57AC004AF1BE /* SwiftLint */,
 				89E7267B274CE540002C063B /* Sources */,
 				89E7267C274CE540002C063B /* Frameworks */,
 				89E7267D274CE540002C063B /* Resources */,
@@ -319,6 +321,62 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		89B372DF274E5777004AF1BE /* RSwift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = RSwift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		89B372E0274E57AC004AF1BE /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		89B372E1274E57CE004AF1BE /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 		A4A95D5615E12E2342B69A34 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
