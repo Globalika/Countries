@@ -8,7 +8,7 @@
 import UIKit
 
 class CountriesController: UITableViewController {
-    let cellId = "CountriesCell"
+    let cellId = "CountriesCell"    
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -21,6 +21,7 @@ class CountriesController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         loadData()
     }
+
 }
 
 extension CountriesController {
@@ -53,4 +54,7 @@ extension CountriesController {
         return "Countries"
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(CountryDetailsController(country: countries[indexPath.row]), animated: true)
+    }
 }
