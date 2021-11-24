@@ -9,10 +9,16 @@ import UIKit
 
 class CountriesController: UITableViewController {
     let cellId = "cellId"
-    var countries: [CountriesQuery.Data.Country] = []
+    var countries = [CountriesQuery.Data.Country]() {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         loadData()
     }
 }
@@ -39,4 +45,12 @@ extension CountriesController {
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return countries.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Countries"
+    }
+    
 }
