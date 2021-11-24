@@ -13,6 +13,7 @@
 		89B28F6C274E9E34000C4C91 /* CountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F6B274E9E34000C4C91 /* CountriesController.swift */; };
 		89B28F6F274EAA33000C4C91 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F6E274EAA33000C4C91 /* API.swift */; };
 		89B28F71274EB442000C4C91 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F70274EB442000C4C91 /* Apollo.swift */; };
+		89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F72274EC812000C4C91 /* CountryDetailsController.swift */; };
 		89E72683274CE540002C063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72682274CE540002C063B /* AppDelegate.swift */; };
 		89E72685274CE540002C063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72684274CE540002C063B /* SceneDelegate.swift */; };
 		89E7268D274CE540002C063B /* Countries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89E7268B274CE540002C063B /* Countries.xcdatamodeld */; };
@@ -53,6 +54,7 @@
 		89B28F6B274E9E34000C4C91 /* CountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesController.swift; sourceTree = "<group>"; };
 		89B28F6E274EAA33000C4C91 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		89B28F70274EB442000C4C91 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
+		89B28F72274EC812000C4C91 /* CountryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsController.swift; sourceTree = "<group>"; };
 		89E7267F274CE540002C063B /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E72682274CE540002C063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E72684274CE540002C063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				89B28F6B274E9E34000C4C91 /* CountriesController.swift */,
+				89B28F72274EC812000C4C91 /* CountryDetailsController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				89E7268D274CE540002C063B /* Countries.xcdatamodeld in Sources */,
 				89B28F6F274EAA33000C4C91 /* API.swift in Sources */,
 				89E72685274CE540002C063B /* SceneDelegate.swift in Sources */,
+				89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

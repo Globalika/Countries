@@ -8,7 +8,7 @@
 import UIKit
 
 class CountriesController: UITableViewController {
-    let cellId = "cellId"
+    let cellId = "CountriesCell"
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
