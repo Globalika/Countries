@@ -8,7 +8,6 @@
 import UIKit
 
 class CountriesController: UITableViewController {
-    let cellId = "CountriesCell"
     var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
@@ -19,7 +18,7 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
         loadData()
         title = "Countries"
     }
@@ -43,7 +42,8 @@ extension CountriesController {
 extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
+                                                 for: indexPath)
         let country = self.countries[indexPath.row]
         cell.textLabel?.text = country.name
 
