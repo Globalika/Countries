@@ -21,6 +21,7 @@ class CountriesController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         loadData()
+        title = "Countries"
     }
 }
 
@@ -28,7 +29,7 @@ extension CountriesController {
     func loadData() {
         let query = CountriesQuery()
 
-        Apollo.shared.client.fetch(query: query) { result in
+        Apollo.shared.client?.fetch(query: query) { result in
             guard let countries = try? result.get().data?.countries else { return }
             self.countries = countries
         }

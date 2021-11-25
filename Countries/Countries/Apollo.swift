@@ -5,16 +5,21 @@
 //  Created by Volodymyr Seredovych on 24.11.2021.
 //
 
-import Foundation
 import Apollo
+import Foundation
 
 class Apollo {
 
     static let shared = Apollo()
 
-    let client: ApolloClient
+    let client: ApolloClient?
 
     private init() {
-      client = ApolloClient(url: URL(string: "https://countries.trevorblades.com")!)
+        guard let url = URL(string: "https://countries.trevorblades.com") else {
+            print("error: invalid url")
+            client = nil
+            return
+        }
+        client = ApolloClient(url: url)
     }
 }
