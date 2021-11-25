@@ -33,3 +33,5 @@ excluded:
  - Products
  - CountriesTests
  - CountriesUITests
+ - Countries/API.swift
+ - R.generated.swift

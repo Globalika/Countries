@@ -5,8 +5,5 @@
 - install cocoapods
 - clone repository
 - navigate to folder with podfile
-- paste in console following line
-```sh
-pod install
-```
+- run from console `pod install`
 - open Countries.xcworkspace to launch application
