@@ -9,11 +9,11 @@ import Foundation
 import Apollo
 
 class Apollo {
-    
+
     static let shared = Apollo()
-    
+
     let client: ApolloClient
-    
+
     private init() {
       client = ApolloClient(url: URL(string: "https://countries.trevorblades.com")!)
     }

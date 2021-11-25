@@ -1,33 +1,6 @@
 disabled_rules:
- - line_length
- - trailing_whitespace
- - opening_brace
- - colon
- - generic_type_name
- - trailing_newline
- - vertical_whitespace
- - unused_optional_binding
- - comment_spacing
- - unused_closure_parameter
- - type_name
- - nesting
- - identifier_name
- - force_cast
- - control_statement
- - private_over_fileprivate
- - operator_whitespace
- - mark
- - large_tuple
- - vertical_parameter_alignment
- - redundant_optional_initialization
- - trailing_comma
- - syntactic_sugar
- - trailing_semicolon
- - cyclomatic_complexity
- - function_body_length
- - comma
  - todo
-
+ 
 excluded:
  - Pods
  - Frameworks

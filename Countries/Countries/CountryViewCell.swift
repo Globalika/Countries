@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-class CountryViewCell : UITableViewCell {
-    //TODO create custom table cell
+class CountryViewCell: UITableViewCell {
+    // TODO create custom table cell
 }
