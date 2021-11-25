@@ -124,7 +124,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		89B28F68274E5B11000C4C91 /* Resources */ = {
+		899EFC9D274F97C0006254C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				89B28F69274E5B1F000C4C91 /* R.generated.swift */,
@@ -854,19 +854,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		89E7268B274CE540002C063B /* Countries.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				89E7268C274CE540002C063B /* Countries.xcdatamodel */,
-			);
-			currentVersion = 89E7268C274CE540002C063B /* Countries.xcdatamodel */;
-			path = Countries.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 89E72677274CE540002C063B /* Project object */;
 }
