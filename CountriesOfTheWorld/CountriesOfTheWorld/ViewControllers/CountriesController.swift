@@ -7,8 +7,14 @@
 
 import UIKit
 
+struct CountryCellData {
+    let image: UIImage?
+    let message: String?
+}
+
 class CountriesController: UITableViewController {
     var images: [UIImage] = []
+    var arr: [CountryCellData] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
             loadImages()
@@ -43,10 +49,16 @@ extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
-                                                 for: indexPath)
+                                                 for: indexPath) as! CountryViewCell
         let country = self.countries[indexPath.row]
-        cell.textLabel?.text = country.name
-
+        cell.flagImage = UIImage(named: "\(country.code.lowercased())")!
+        cell.message = country.name
+        
+//        let country = self.countries[indexPath.row]
+//        cell.textLabel?.text = country.name
+        
+        
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,5 +73,8 @@ extension CountriesController {
                             didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(CountryDetailsController(country: countries[indexPath.row]),
                                                  animated: true)
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

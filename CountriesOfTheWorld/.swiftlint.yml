@@ -1,6 +1,8 @@
 disabled_rules:
  - todo
- 
+ - force_cast
+ - trailing_whitespace
+ - vertical_whitespace
 excluded:
  - Pods
  - Frameworks

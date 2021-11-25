@@ -17,7 +17,6 @@ class CountryDetailsController: UITableViewController {
         super.init(style: .plain)
     }
 
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
