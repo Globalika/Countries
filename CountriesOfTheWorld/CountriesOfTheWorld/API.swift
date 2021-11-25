@@ -13,11 +13,13 @@ public final class CountriesQuery: GraphQLQuery {
         __typename
         code
         name
+        phone
         continent {
           __typename
           name
         }
         capital
+        currency
         languages {
           __typename
           name
@@ -67,8 +69,10 @@ public final class CountriesQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("code", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("phone", type: .nonNull(.scalar(String.self))),
           GraphQLField("continent", type: .nonNull(.object(Continent.selections))),
           GraphQLField("capital", type: .scalar(String.self)),
+          GraphQLField("currency", type: .scalar(String.self)),
           GraphQLField("languages", type: .nonNull(.list(.nonNull(.object(Language.selections))))),
         ]
       }
@@ -79,8 +83,8 @@ public final class CountriesQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(code: GraphQLID, name: String, continent: Continent, capital: String? = nil, languages: [Language]) {
-        self.init(unsafeResultMap: ["__typename": "Country", "code": code, "name": name, "continent": continent.resultMap, "capital": capital, "languages": languages.map { (value: Language) -> ResultMap in value.resultMap }])
+      public init(code: GraphQLID, name: String, phone: String, continent: Continent, capital: String? = nil, currency: String? = nil, languages: [Language]) {
+        self.init(unsafeResultMap: ["__typename": "Country", "code": code, "name": name, "phone": phone, "continent": continent.resultMap, "capital": capital, "currency": currency, "languages": languages.map { (value: Language) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -110,6 +114,15 @@ public final class CountriesQuery: GraphQLQuery {
         }
       }
 
+      public var phone: String {
+        get {
+          return resultMap["phone"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "phone")
+        }
+      }
+
       public var continent: Continent {
         get {
           return Continent(unsafeResultMap: resultMap["continent"]! as! ResultMap)
@@ -125,6 +138,15 @@ public final class CountriesQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "capital")
+        }
+      }
+
+      public var currency: String? {
+        get {
+          return resultMap["currency"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "currency")
         }
       }
 

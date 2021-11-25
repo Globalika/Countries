@@ -2,10 +2,12 @@ query Countries {
   countries {
     code
     name
+    phone
     continent {
       name
     }
     capital
+    currency
     languages {
       name
     }
