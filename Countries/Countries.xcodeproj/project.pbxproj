@@ -172,11 +172,11 @@
 				89B28F6E274EAA33000C4C91 /* API.swift */,
 				89E72682274CE540002C063B /* AppDelegate.swift */,
 				89E72684274CE540002C063B /* SceneDelegate.swift */,
+				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
 				89E72693274CE542002C063B /* Info.plist */,
 				89E7268B274CE540002C063B /* Countries.xcdatamodeld */,
 				89B28F68274E5B11000C4C91 /* Resources */,
 				89B28F6D274EA9F4000C4C91 /* ViewControllers */,
-				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
