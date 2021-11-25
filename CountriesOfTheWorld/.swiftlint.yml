@@ -1,0 +1,11 @@
+disabled_rules:
+ - todo
+ 
+excluded:
+ - Pods
+ - Frameworks
+ - Products
+ - CountriesOfTheWorldTests
+ - CountriesOfTheWorldUITests
+ - CountriesOfTheWorld/API.swift
+ - R.generated.swift

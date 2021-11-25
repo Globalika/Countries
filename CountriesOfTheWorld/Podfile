@@ -1,0 +1,17 @@
+target 'Countries' do
+  use_frameworks!
+
+  pod 'Apollo'
+  pod 'SwiftLint'
+  pod 'R.swift'
+
+  target 'CountriesTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'CountriesUITests' do
+    # Pods for testing
+  end
+
+end
