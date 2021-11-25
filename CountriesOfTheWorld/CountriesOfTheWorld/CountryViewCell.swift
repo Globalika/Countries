@@ -10,62 +10,45 @@ import UIKit
 
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
-    var message: String?
     var flagImage: UIImage?
-    
-    var messageView: UITextView = {
-        var textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
-    
-    var mainImageView: UIImageView = {
+    var countryName: String?
+    var countryCapital: String?
+    var countryContinent: String?
+
+    var flagImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-//    private let myImageView: UIImageView = {
-//        let myImageView = UIImageView()
-//        myImageView.image = UIImage(named: "fff")
-//        myImageView.contentMode = .scaleAspectFill
-//        myImageView.clipsToBounds = true
-//        return myImageView
-//    }()
-//
-//    private let label: UILabel = {
-//        let label = UILabel()
-//        label.textColor = .white
-//        label.font = .systemFont(ofSize: 17, weight: .bold)
-//        label.text = "Hello"
-//        return label
-//    }()
-//
-//    private let switcher: UISwitch = {
-//        let switcher = UISwitch()
-//        switcher.onTintColor = .blue
-//        switcher.isOn = true
-//        return switcher
-//    }()
+
+    var countryNameView: UILabel = {
+        var labelView = UILabel()
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        return labelView
+    }()
+
+    var countryCapitalView: UILabel = {
+        var labelView = UILabel()
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        return labelView
+    }()
+
+    var countryContinentView: UILabel = {
+        var labelView = UILabel()
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+        return labelView
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .orange
-        self.addSubview(mainImageView)
-        self.addSubview(messageView)
-        
-        mainImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        mainImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        mainImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        mainImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        
-        
-        messageView.leftAnchor.constraint(equalTo: self.mainImageView.rightAnchor).isActive = true
-        messageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        messageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        messageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        contentView.addSubview(switcher)
-//        contentView.addSubview(label)
-//        contentView.addSubview(myImageView)
+
+        contentView.backgroundColor = .lightGray
+        self.addSubview(flagImageView)
+        self.addSubview(countryNameView)
+        self.addSubview(countryCapitalView)
+        self.addSubview(countryContinentView)
+
+        setConstrains()
     }
 
     required init?(coder: NSCoder) {
@@ -74,29 +57,43 @@ class CountryViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        if let message = message {
-            messageView.text = message
-        }
-        if let image = flagImage {
-            mainImageView.image = image
-        }
-//
-//        let imageSize = contentView.frame.size.height-6
 
-//        switcher.frame = CGRect(x: 5,
-//                                y: 5,
-//                                width: 100,
-//                                height: contentView.frame.size.height-10)
-//
-//        label.frame = CGRect(x: 10 + switcher.frame.size.width,
-//                             y: 0,
-//                             width: contentView.frame.size.width - 10 - switcher.frame.size.width - imageSize,
-//                             height: contentView.frame.size.height)
-//
-//        myImageView.frame = CGRect(x: contentView.frame.size.width-imageSize,
-//                                 y: 3,
-//                                 width: imageSize,
-//                                 height: imageSize)
+        if let image = flagImage {
+            flagImageView.image = image
+        }
+
+        if let countryName = countryName {
+            countryNameView.text = countryName
+        }
+
+        if let countryCapital = countryCapital {
+            countryCapitalView.text = countryCapital
+        }
+
+        if let countryContinent = countryContinent {
+            countryContinentView.text = countryContinent
+        }
+    }
+    
+    func setConstrains() {
+        flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        flagImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+        countryNameView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        countryNameView.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
+        countryNameView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        countryNameView.heightAnchor.constraint(equalToConstant: 33).isActive = true
+
+        countryCapitalView.topAnchor.constraint(equalTo: self.countryNameView.bottomAnchor).isActive = true
+        countryCapitalView.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
+        countryCapitalView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        countryCapitalView.heightAnchor.constraint(equalToConstant: 33).isActive = true
+
+        countryContinentView.topAnchor.constraint(equalTo: self.countryCapitalView.bottomAnchor).isActive = true
+        countryContinentView.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
+        countryContinentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        countryContinentView.heightAnchor.constraint(equalToConstant: 33).isActive = true
     }
 }

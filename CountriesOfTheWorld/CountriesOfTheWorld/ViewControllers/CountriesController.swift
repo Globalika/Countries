@@ -7,21 +7,14 @@
 
 import UIKit
 
-struct CountryCellData {
-    let image: UIImage?
-    let message: String?
-}
-
 class CountriesController: UITableViewController {
-    var images: [UIImage] = []
-    var arr: [CountryCellData] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
             loadImages()
             tableView.reloadData()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
@@ -40,8 +33,8 @@ extension CountriesController {
         }
     }
     func loadImages() {
-        let _: [String] = countries.map({ $0.code.uppercased() })
-
+        let _: [String] = countries.map({ $0.code.lowercased() })
+        // TODO load images
     }
 }
 
@@ -50,17 +43,22 @@ extension CountriesController {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
                                                  for: indexPath) as! CountryViewCell
+
         let country = self.countries[indexPath.row]
-        cell.flagImage = UIImage(named: "\(country.code.lowercased())")!
-        cell.message = country.name
-        
-//        let country = self.countries[indexPath.row]
-//        cell.textLabel?.text = country.name
-        
-        
-        
+        if let image = UIImage(named: "\(country.code.lowercased())") {
+            cell.flagImage = image
+        }
+        cell.countryNameView.text = country.name
+        if let capital = country.capital {
+            cell.countryCapitalView.text = capital
+        } else {
+            cell.countryCapitalView.text = "N-A"
+        }
+        cell.countryContinentView.text = country.continent.name
+
         return cell
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
@@ -71,10 +69,13 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(CountryDetailsController(country: countries[indexPath.row]),
+        navigationController?.pushViewController(CountryDetailsController2(country: countries[indexPath.row]),
                                                  animated: true)
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return Constants.rowHeight
+    }
+    private struct Constants {
+        static let rowHeight: CGFloat = 100
     }
 }
