@@ -8,20 +8,22 @@
 import UIKit
 
 class CountriesController: UITableViewController {
-    let cellId = "CountriesCell"    
+    let cellId = "CountriesCell"
+    var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
+            loadImages()
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         loadData()
     }
-
 }
 
 extension CountriesController {
@@ -32,6 +34,10 @@ extension CountriesController {
             guard let countries = try? result.get().data?.countries else { return }
             self.countries = countries
         }
+    }
+    func loadImages() {
+        let _: [String] = countries.map({ $0.code.uppercased() })
+        
     }
 }
 
