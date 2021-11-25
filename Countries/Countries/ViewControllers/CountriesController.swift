@@ -13,9 +13,7 @@ class CountriesController: UITableViewController {
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
             loadImages()
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
-            }
+            tableView.reloadData()
         }
     }
 
