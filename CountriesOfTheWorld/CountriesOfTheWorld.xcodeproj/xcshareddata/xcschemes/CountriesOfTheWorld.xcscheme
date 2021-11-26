@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89E7267E274CE540002C063B"
-               BuildableName = "Countries.app"
+               BuildableName = "CountriesOfTheWorld.app"
                BlueprintName = "CountriesOfTheWorld"
                ReferencedContainer = "container:CountriesOfTheWorld.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89E72697274CE542002C063B"
-               BuildableName = "CountriesTests.xctest"
+               BuildableName = "CountriesOfTheWorldTests.xctest"
                BlueprintName = "CountriesOfTheWorldTests"
                ReferencedContainer = "container:CountriesOfTheWorld.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89E726A1274CE542002C063B"
-               BuildableName = "CountriesUITests.xctest"
+               BuildableName = "CountriesOfTheWorldUITests.xctest"
                BlueprintName = "CountriesOfTheWorldUITests"
                ReferencedContainer = "container:CountriesOfTheWorld.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E7267E274CE540002C063B"
-            BuildableName = "Countries.app"
+            BuildableName = "CountriesOfTheWorld.app"
             BlueprintName = "CountriesOfTheWorld"
             ReferencedContainer = "container:CountriesOfTheWorld.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E7267E274CE540002C063B"
-            BuildableName = "Countries.app"
+            BuildableName = "CountriesOfTheWorld.app"
             BlueprintName = "CountriesOfTheWorld"
             ReferencedContainer = "container:CountriesOfTheWorld.xcodeproj">
          </BuildableReference>
