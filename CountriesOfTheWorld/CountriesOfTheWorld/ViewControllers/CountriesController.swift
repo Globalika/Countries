@@ -14,7 +14,7 @@ class CountriesController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
@@ -41,21 +41,25 @@ extension CountriesController {
 extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
-                                                 for: indexPath) as! CountryViewCell
-
-        let country = self.countries[indexPath.row]
-        if let image = UIImage(named: "\(country.code.lowercased())") {
-            cell.flagImage = image
-        }
-        cell.countryNameView.text = country.name
-        if let capital = country.capital {
-            cell.countryCapitalView.text = capital
+        var cell: CountryViewCell
+        if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
+                                                    for: indexPath) as? CountryViewCell {
+            cell = dequeuedcell
+            let country = self.countries[indexPath.row]
+            if let image = UIImage(named: "\(country.code.lowercased())") {
+                cell.flagImage = image
+            }
+            cell.countryNameView.text = country.name
+            if let capital = country.capital {
+                cell.countryCapitalView.text = capital
+            } else {
+                cell.countryCapitalView.text = "N-A"
+            }
+            cell.countryContinentView.text = country.continent.name
         } else {
-            cell.countryCapitalView.text = "N-A"
+            cell = CountryViewCell(style: UITableViewCell.CellStyle.default,
+                                   reuseIdentifier: CountryViewCell.identifier)
         }
-        cell.countryContinentView.text = country.continent.name
-
         return cell
     }
 

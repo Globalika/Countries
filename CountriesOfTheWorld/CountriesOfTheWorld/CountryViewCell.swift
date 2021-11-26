@@ -74,13 +74,13 @@ class CountryViewCell: UITableViewCell {
             countryContinentView.text = countryContinent
         }
     }
-    
+
     func setConstrains() {
         flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         flagImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        
+
         countryNameView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         countryNameView.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
         countryNameView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
