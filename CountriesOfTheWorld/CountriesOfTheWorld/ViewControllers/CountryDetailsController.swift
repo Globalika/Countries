@@ -23,6 +23,7 @@ class CountryDetailsController: UIViewController {
 
     var flagImageView: UIImageView = {
         var imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -64,14 +65,7 @@ class CountryDetailsController: UIViewController {
     func addLabelsToStackView() {
         for text in countryInfo.sorted(by: { $0.key > $1.key }) {
             let label = UILabel()
-            let textKeyAttributes: [NSAttributedString.Key: Any] = [.backgroundColor: UIColor.red]
-            let textValueAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
-            let keyString = NSMutableAttributedString(string: "\(text.key)",
-                                                      attributes: textKeyAttributes)
-            let valueString = NSMutableAttributedString(string: "\(text.key)",
-                                                      attributes: textValueAttributes)
-            keyString.append(valueString)
-            label.attributedText = keyString
+            label.text = "\(text.key)\(text.value)"
             stackView.addArrangedSubview(label)
         }
     }

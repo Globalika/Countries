@@ -13,6 +13,7 @@ class CountryViewCell: UITableViewCell {
 
     var flagImageView: UIImageView = {
         var imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
