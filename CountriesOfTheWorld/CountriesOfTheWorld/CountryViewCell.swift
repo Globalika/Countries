@@ -51,12 +51,8 @@ class CountryViewCell: UITableViewCell {
         fatalError("\(#function) has not been implemented")
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-
     func updateCell(country: CountriesQuery.Data.Country) {
-        if let image = UIImage(named: "32423\(country.code.lowercased())") {
+        if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
         } else {
             self.flagImageView.image = UIImage()
