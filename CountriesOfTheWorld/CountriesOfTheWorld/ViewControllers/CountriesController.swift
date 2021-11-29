@@ -8,18 +8,16 @@
 import UIKit
 
 class CountriesController: UITableViewController {
-    let cellId = "CountriesCell"
     var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
-            loadImages()
             tableView.reloadData()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
         loadData()
         title = "Countries"
     }
@@ -34,21 +32,19 @@ extension CountriesController {
             self.countries = countries
         }
     }
-    func loadImages() {
-        let _: [String] = countries.map({ $0.code.uppercased() })
-
-    }
 }
 
 extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let country = self.countries[indexPath.row]
-        cell.textLabel?.text = country.name
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
+                                                        for: indexPath) as? CountryViewCell else {
+            return UITableViewCell()
+        }
+        cell.updateCell(country: countries[indexPath.row])
         return cell
     }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
@@ -61,5 +57,11 @@ extension CountriesController {
                             didSelectRowAt indexPath: IndexPath) {
         navigationController?.pushViewController(CountryDetailsController(country: countries[indexPath.row]),
                                                  animated: true)
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.rowHeight
+    }
+    private struct Constants {
+        static let rowHeight: CGFloat = 100
     }
 }

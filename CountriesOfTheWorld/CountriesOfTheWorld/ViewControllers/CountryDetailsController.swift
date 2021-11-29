@@ -7,64 +7,98 @@
 
 import UIKit
 
-class CountryDetailsController: UITableViewController {
-    let countryCellId = "CountryDetailsCell"
-    let languagesCellId = "LanguagesCell"
+class CountryDetailsController: UIViewController {
+    var stackView = UIStackView()
+    private var countryInfo: [String: String] = [:]
     private let country: CountriesQuery.Data.Country
 
     init (country: CountriesQuery.Data.Country) {
         self.country = country
-        super.init(style: .plain)
+        super.init(nibName: nil, bundle: nil)
     }
 
-    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
 
+    var flagImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: countryCellId)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: languagesCellId)
-        title = country.name
-    }
-}
-
-extension CountryDetailsController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
-      return 2
+        view.backgroundColor = .lightGray
+        fillDetailsViewWithData()
+        configureFlagImage()
+        configureStackView()
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      if section == 0 {
-          return 3
-      }
-      return country.languages.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: countryCellId, for: indexPath)
-            if indexPath.row == 0 {
-                cell.textLabel?.text = "Code"
-                cell.detailTextLabel?.text = "\(country.code)"
-            } else if indexPath.row == 1 {
-                cell.textLabel?.text = "Capital"
-                cell.detailTextLabel?.text = "\(String(describing: country.capital))"
-            } else if indexPath.row == 2 {
-                cell.textLabel?.text = "Continent"
-                cell.detailTextLabel?.text = "\(country.continent.name)"
-            }
-            return cell
+    func fillDetailsViewWithData() {
+        flagImageView.image = UIImage(named: "\(country.code.lowercased())")
+        countryInfo["Name: "] = country.name
+        countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
+        countryInfo["Continent: "] = country.continent.name
+        countryInfo["Phone: "] = country.phone
+        countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
+        for (index, language) in country.languages.enumerated() {
+            countryInfo["Language\(index): "] = language.name!
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: languagesCellId, for: indexPath)
-
-        cell.textLabel?.text = country.languages[indexPath.row].name
-
-        return cell
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      return section == 0 ? "Country Info" : "Languages"
+    func configureFlagImage() {
+        view.addSubview(flagImageView)
+        setFlagImageViewConstrains()
+    }
+
+    func configureStackView() {
+        view.addSubview(stackView)
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 20
+        addLabelsToStackView()
+        setStackViewConstrains()
+    }
+
+    func addLabelsToStackView() {
+        for text in countryInfo.sorted(by: { $0.key > $1.key }) {
+            let label = UILabel()
+            let textKeyAttributes: [NSAttributedString.Key: Any] = [.backgroundColor: UIColor.red]
+            let textValueAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+            let keyString = NSMutableAttributedString(string: "\(text.key)",
+                                                      attributes: textKeyAttributes)
+            let valueString = NSMutableAttributedString(string: "\(text.key)",
+                                                      attributes: textValueAttributes)
+            keyString.append(valueString)
+            label.attributedText = keyString
+            stackView.addArrangedSubview(label)
+        }
+    }
+
+    func setStackViewConstrains() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: flagImageView.bottomAnchor,
+                                       constant: 30).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                                           constant: 50).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                                            constant: -50).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                                          constant: -30).isActive = true
+    }
+
+    func setFlagImageViewConstrains() {
+        flagImageView.translatesAutoresizingMaskIntoConstraints = false
+        flagImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                       constant: 2).isActive = true
+        flagImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                           constant: 80).isActive = true
+        flagImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
+                                            constant: -80).isActive = true
+        flagImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
+    private struct Constants {
+        static let notApplicableField: String = "N-A"
     }
 }
