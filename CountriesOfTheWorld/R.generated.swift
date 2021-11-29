@@ -127,6 +127,2298 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 254 images.
+  struct image {
+    /// Image `ad`.
+    static let ad = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad")
+    /// Image `ae`.
+    static let ae = Rswift.ImageResource(bundle: R.hostingBundle, name: "ae")
+    /// Image `af`.
+    static let af = Rswift.ImageResource(bundle: R.hostingBundle, name: "af")
+    /// Image `ag`.
+    static let ag = Rswift.ImageResource(bundle: R.hostingBundle, name: "ag")
+    /// Image `ai`.
+    static let ai = Rswift.ImageResource(bundle: R.hostingBundle, name: "ai")
+    /// Image `al`.
+    static let al = Rswift.ImageResource(bundle: R.hostingBundle, name: "al")
+    /// Image `am`.
+    static let am = Rswift.ImageResource(bundle: R.hostingBundle, name: "am")
+    /// Image `ao`.
+    static let ao = Rswift.ImageResource(bundle: R.hostingBundle, name: "ao")
+    /// Image `aq`.
+    static let aq = Rswift.ImageResource(bundle: R.hostingBundle, name: "aq")
+    /// Image `ar`.
+    static let ar = Rswift.ImageResource(bundle: R.hostingBundle, name: "ar")
+    /// Image `as`.
+    static let `as` = Rswift.ImageResource(bundle: R.hostingBundle, name: "as")
+    /// Image `at`.
+    static let at = Rswift.ImageResource(bundle: R.hostingBundle, name: "at")
+    /// Image `au`.
+    static let au = Rswift.ImageResource(bundle: R.hostingBundle, name: "au")
+    /// Image `aw`.
+    static let aw = Rswift.ImageResource(bundle: R.hostingBundle, name: "aw")
+    /// Image `ax`.
+    static let ax = Rswift.ImageResource(bundle: R.hostingBundle, name: "ax")
+    /// Image `az`.
+    static let az = Rswift.ImageResource(bundle: R.hostingBundle, name: "az")
+    /// Image `ba`.
+    static let ba = Rswift.ImageResource(bundle: R.hostingBundle, name: "ba")
+    /// Image `bb`.
+    static let bb = Rswift.ImageResource(bundle: R.hostingBundle, name: "bb")
+    /// Image `bd`.
+    static let bd = Rswift.ImageResource(bundle: R.hostingBundle, name: "bd")
+    /// Image `be`.
+    static let be = Rswift.ImageResource(bundle: R.hostingBundle, name: "be")
+    /// Image `bf`.
+    static let bf = Rswift.ImageResource(bundle: R.hostingBundle, name: "bf")
+    /// Image `bg`.
+    static let bg = Rswift.ImageResource(bundle: R.hostingBundle, name: "bg")
+    /// Image `bh`.
+    static let bh = Rswift.ImageResource(bundle: R.hostingBundle, name: "bh")
+    /// Image `bi`.
+    static let bi = Rswift.ImageResource(bundle: R.hostingBundle, name: "bi")
+    /// Image `bj`.
+    static let bj = Rswift.ImageResource(bundle: R.hostingBundle, name: "bj")
+    /// Image `bl`.
+    static let bl = Rswift.ImageResource(bundle: R.hostingBundle, name: "bl")
+    /// Image `bm`.
+    static let bm = Rswift.ImageResource(bundle: R.hostingBundle, name: "bm")
+    /// Image `bn`.
+    static let bn = Rswift.ImageResource(bundle: R.hostingBundle, name: "bn")
+    /// Image `bo`.
+    static let bo = Rswift.ImageResource(bundle: R.hostingBundle, name: "bo")
+    /// Image `bq`.
+    static let bq = Rswift.ImageResource(bundle: R.hostingBundle, name: "bq")
+    /// Image `br`.
+    static let br = Rswift.ImageResource(bundle: R.hostingBundle, name: "br")
+    /// Image `bs`.
+    static let bs = Rswift.ImageResource(bundle: R.hostingBundle, name: "bs")
+    /// Image `bt`.
+    static let bt = Rswift.ImageResource(bundle: R.hostingBundle, name: "bt")
+    /// Image `bv`.
+    static let bv = Rswift.ImageResource(bundle: R.hostingBundle, name: "bv")
+    /// Image `bw`.
+    static let bw = Rswift.ImageResource(bundle: R.hostingBundle, name: "bw")
+    /// Image `by`.
+    static let by = Rswift.ImageResource(bundle: R.hostingBundle, name: "by")
+    /// Image `bz`.
+    static let bz = Rswift.ImageResource(bundle: R.hostingBundle, name: "bz")
+    /// Image `ca`.
+    static let ca = Rswift.ImageResource(bundle: R.hostingBundle, name: "ca")
+    /// Image `cc`.
+    static let cc = Rswift.ImageResource(bundle: R.hostingBundle, name: "cc")
+    /// Image `cd`.
+    static let cd = Rswift.ImageResource(bundle: R.hostingBundle, name: "cd")
+    /// Image `cf`.
+    static let cf = Rswift.ImageResource(bundle: R.hostingBundle, name: "cf")
+    /// Image `cg`.
+    static let cg = Rswift.ImageResource(bundle: R.hostingBundle, name: "cg")
+    /// Image `ch`.
+    static let ch = Rswift.ImageResource(bundle: R.hostingBundle, name: "ch")
+    /// Image `ci`.
+    static let ci = Rswift.ImageResource(bundle: R.hostingBundle, name: "ci")
+    /// Image `ck`.
+    static let ck = Rswift.ImageResource(bundle: R.hostingBundle, name: "ck")
+    /// Image `cl`.
+    static let cl = Rswift.ImageResource(bundle: R.hostingBundle, name: "cl")
+    /// Image `cm`.
+    static let cm = Rswift.ImageResource(bundle: R.hostingBundle, name: "cm")
+    /// Image `cn`.
+    static let cn = Rswift.ImageResource(bundle: R.hostingBundle, name: "cn")
+    /// Image `co`.
+    static let co = Rswift.ImageResource(bundle: R.hostingBundle, name: "co")
+    /// Image `cr`.
+    static let cr = Rswift.ImageResource(bundle: R.hostingBundle, name: "cr")
+    /// Image `cu`.
+    static let cu = Rswift.ImageResource(bundle: R.hostingBundle, name: "cu")
+    /// Image `cv`.
+    static let cv = Rswift.ImageResource(bundle: R.hostingBundle, name: "cv")
+    /// Image `cw`.
+    static let cw = Rswift.ImageResource(bundle: R.hostingBundle, name: "cw")
+    /// Image `cx`.
+    static let cx = Rswift.ImageResource(bundle: R.hostingBundle, name: "cx")
+    /// Image `cy`.
+    static let cy = Rswift.ImageResource(bundle: R.hostingBundle, name: "cy")
+    /// Image `cz`.
+    static let cz = Rswift.ImageResource(bundle: R.hostingBundle, name: "cz")
+    /// Image `de`.
+    static let de = Rswift.ImageResource(bundle: R.hostingBundle, name: "de")
+    /// Image `dj`.
+    static let dj = Rswift.ImageResource(bundle: R.hostingBundle, name: "dj")
+    /// Image `dk`.
+    static let dk = Rswift.ImageResource(bundle: R.hostingBundle, name: "dk")
+    /// Image `dm`.
+    static let dm = Rswift.ImageResource(bundle: R.hostingBundle, name: "dm")
+    /// Image `do`.
+    static let `do` = Rswift.ImageResource(bundle: R.hostingBundle, name: "do")
+    /// Image `dz`.
+    static let dz = Rswift.ImageResource(bundle: R.hostingBundle, name: "dz")
+    /// Image `ec`.
+    static let ec = Rswift.ImageResource(bundle: R.hostingBundle, name: "ec")
+    /// Image `ee`.
+    static let ee = Rswift.ImageResource(bundle: R.hostingBundle, name: "ee")
+    /// Image `eg`.
+    static let eg = Rswift.ImageResource(bundle: R.hostingBundle, name: "eg")
+    /// Image `eh`.
+    static let eh = Rswift.ImageResource(bundle: R.hostingBundle, name: "eh")
+    /// Image `er`.
+    static let er = Rswift.ImageResource(bundle: R.hostingBundle, name: "er")
+    /// Image `es`.
+    static let es = Rswift.ImageResource(bundle: R.hostingBundle, name: "es")
+    /// Image `et`.
+    static let et = Rswift.ImageResource(bundle: R.hostingBundle, name: "et")
+    /// Image `fi`.
+    static let fi = Rswift.ImageResource(bundle: R.hostingBundle, name: "fi")
+    /// Image `fj`.
+    static let fj = Rswift.ImageResource(bundle: R.hostingBundle, name: "fj")
+    /// Image `fk`.
+    static let fk = Rswift.ImageResource(bundle: R.hostingBundle, name: "fk")
+    /// Image `fm`.
+    static let fm = Rswift.ImageResource(bundle: R.hostingBundle, name: "fm")
+    /// Image `fo`.
+    static let fo = Rswift.ImageResource(bundle: R.hostingBundle, name: "fo")
+    /// Image `fr`.
+    static let fr = Rswift.ImageResource(bundle: R.hostingBundle, name: "fr")
+    /// Image `ga`.
+    static let ga = Rswift.ImageResource(bundle: R.hostingBundle, name: "ga")
+    /// Image `gb-eng`.
+    static let gbEng = Rswift.ImageResource(bundle: R.hostingBundle, name: "gb-eng")
+    /// Image `gb-nir`.
+    static let gbNir = Rswift.ImageResource(bundle: R.hostingBundle, name: "gb-nir")
+    /// Image `gb-sct`.
+    static let gbSct = Rswift.ImageResource(bundle: R.hostingBundle, name: "gb-sct")
+    /// Image `gb-wls`.
+    static let gbWls = Rswift.ImageResource(bundle: R.hostingBundle, name: "gb-wls")
+    /// Image `gb`.
+    static let gb = Rswift.ImageResource(bundle: R.hostingBundle, name: "gb")
+    /// Image `gd`.
+    static let gd = Rswift.ImageResource(bundle: R.hostingBundle, name: "gd")
+    /// Image `ge`.
+    static let ge = Rswift.ImageResource(bundle: R.hostingBundle, name: "ge")
+    /// Image `gf`.
+    static let gf = Rswift.ImageResource(bundle: R.hostingBundle, name: "gf")
+    /// Image `gg`.
+    static let gg = Rswift.ImageResource(bundle: R.hostingBundle, name: "gg")
+    /// Image `gh`.
+    static let gh = Rswift.ImageResource(bundle: R.hostingBundle, name: "gh")
+    /// Image `gi`.
+    static let gi = Rswift.ImageResource(bundle: R.hostingBundle, name: "gi")
+    /// Image `gl`.
+    static let gl = Rswift.ImageResource(bundle: R.hostingBundle, name: "gl")
+    /// Image `gm`.
+    static let gm = Rswift.ImageResource(bundle: R.hostingBundle, name: "gm")
+    /// Image `gn`.
+    static let gn = Rswift.ImageResource(bundle: R.hostingBundle, name: "gn")
+    /// Image `gp`.
+    static let gp = Rswift.ImageResource(bundle: R.hostingBundle, name: "gp")
+    /// Image `gq`.
+    static let gq = Rswift.ImageResource(bundle: R.hostingBundle, name: "gq")
+    /// Image `gr`.
+    static let gr = Rswift.ImageResource(bundle: R.hostingBundle, name: "gr")
+    /// Image `gs`.
+    static let gs = Rswift.ImageResource(bundle: R.hostingBundle, name: "gs")
+    /// Image `gt`.
+    static let gt = Rswift.ImageResource(bundle: R.hostingBundle, name: "gt")
+    /// Image `gu`.
+    static let gu = Rswift.ImageResource(bundle: R.hostingBundle, name: "gu")
+    /// Image `gw`.
+    static let gw = Rswift.ImageResource(bundle: R.hostingBundle, name: "gw")
+    /// Image `gy`.
+    static let gy = Rswift.ImageResource(bundle: R.hostingBundle, name: "gy")
+    /// Image `hk`.
+    static let hk = Rswift.ImageResource(bundle: R.hostingBundle, name: "hk")
+    /// Image `hm`.
+    static let hm = Rswift.ImageResource(bundle: R.hostingBundle, name: "hm")
+    /// Image `hn`.
+    static let hn = Rswift.ImageResource(bundle: R.hostingBundle, name: "hn")
+    /// Image `hr`.
+    static let hr = Rswift.ImageResource(bundle: R.hostingBundle, name: "hr")
+    /// Image `ht`.
+    static let ht = Rswift.ImageResource(bundle: R.hostingBundle, name: "ht")
+    /// Image `hu`.
+    static let hu = Rswift.ImageResource(bundle: R.hostingBundle, name: "hu")
+    /// Image `id`.
+    static let id = Rswift.ImageResource(bundle: R.hostingBundle, name: "id")
+    /// Image `ie`.
+    static let ie = Rswift.ImageResource(bundle: R.hostingBundle, name: "ie")
+    /// Image `il`.
+    static let il = Rswift.ImageResource(bundle: R.hostingBundle, name: "il")
+    /// Image `im`.
+    static let im = Rswift.ImageResource(bundle: R.hostingBundle, name: "im")
+    /// Image `in`.
+    static let `in` = Rswift.ImageResource(bundle: R.hostingBundle, name: "in")
+    /// Image `io`.
+    static let io = Rswift.ImageResource(bundle: R.hostingBundle, name: "io")
+    /// Image `iq`.
+    static let iq = Rswift.ImageResource(bundle: R.hostingBundle, name: "iq")
+    /// Image `ir`.
+    static let ir = Rswift.ImageResource(bundle: R.hostingBundle, name: "ir")
+    /// Image `is`.
+    static let `is` = Rswift.ImageResource(bundle: R.hostingBundle, name: "is")
+    /// Image `it`.
+    static let it = Rswift.ImageResource(bundle: R.hostingBundle, name: "it")
+    /// Image `je`.
+    static let je = Rswift.ImageResource(bundle: R.hostingBundle, name: "je")
+    /// Image `jm`.
+    static let jm = Rswift.ImageResource(bundle: R.hostingBundle, name: "jm")
+    /// Image `jo`.
+    static let jo = Rswift.ImageResource(bundle: R.hostingBundle, name: "jo")
+    /// Image `jp`.
+    static let jp = Rswift.ImageResource(bundle: R.hostingBundle, name: "jp")
+    /// Image `ke`.
+    static let ke = Rswift.ImageResource(bundle: R.hostingBundle, name: "ke")
+    /// Image `kg`.
+    static let kg = Rswift.ImageResource(bundle: R.hostingBundle, name: "kg")
+    /// Image `kh`.
+    static let kh = Rswift.ImageResource(bundle: R.hostingBundle, name: "kh")
+    /// Image `ki`.
+    static let ki = Rswift.ImageResource(bundle: R.hostingBundle, name: "ki")
+    /// Image `km`.
+    static let km = Rswift.ImageResource(bundle: R.hostingBundle, name: "km")
+    /// Image `kn`.
+    static let kn = Rswift.ImageResource(bundle: R.hostingBundle, name: "kn")
+    /// Image `kp`.
+    static let kp = Rswift.ImageResource(bundle: R.hostingBundle, name: "kp")
+    /// Image `kr`.
+    static let kr = Rswift.ImageResource(bundle: R.hostingBundle, name: "kr")
+    /// Image `kw`.
+    static let kw = Rswift.ImageResource(bundle: R.hostingBundle, name: "kw")
+    /// Image `ky`.
+    static let ky = Rswift.ImageResource(bundle: R.hostingBundle, name: "ky")
+    /// Image `kz`.
+    static let kz = Rswift.ImageResource(bundle: R.hostingBundle, name: "kz")
+    /// Image `la`.
+    static let la = Rswift.ImageResource(bundle: R.hostingBundle, name: "la")
+    /// Image `lb`.
+    static let lb = Rswift.ImageResource(bundle: R.hostingBundle, name: "lb")
+    /// Image `lc`.
+    static let lc = Rswift.ImageResource(bundle: R.hostingBundle, name: "lc")
+    /// Image `li`.
+    static let li = Rswift.ImageResource(bundle: R.hostingBundle, name: "li")
+    /// Image `lk`.
+    static let lk = Rswift.ImageResource(bundle: R.hostingBundle, name: "lk")
+    /// Image `lr`.
+    static let lr = Rswift.ImageResource(bundle: R.hostingBundle, name: "lr")
+    /// Image `ls`.
+    static let ls = Rswift.ImageResource(bundle: R.hostingBundle, name: "ls")
+    /// Image `lt`.
+    static let lt = Rswift.ImageResource(bundle: R.hostingBundle, name: "lt")
+    /// Image `lu`.
+    static let lu = Rswift.ImageResource(bundle: R.hostingBundle, name: "lu")
+    /// Image `lv`.
+    static let lv = Rswift.ImageResource(bundle: R.hostingBundle, name: "lv")
+    /// Image `ly`.
+    static let ly = Rswift.ImageResource(bundle: R.hostingBundle, name: "ly")
+    /// Image `ma`.
+    static let ma = Rswift.ImageResource(bundle: R.hostingBundle, name: "ma")
+    /// Image `mc`.
+    static let mc = Rswift.ImageResource(bundle: R.hostingBundle, name: "mc")
+    /// Image `md`.
+    static let md = Rswift.ImageResource(bundle: R.hostingBundle, name: "md")
+    /// Image `me`.
+    static let me = Rswift.ImageResource(bundle: R.hostingBundle, name: "me")
+    /// Image `mf`.
+    static let mf = Rswift.ImageResource(bundle: R.hostingBundle, name: "mf")
+    /// Image `mg`.
+    static let mg = Rswift.ImageResource(bundle: R.hostingBundle, name: "mg")
+    /// Image `mh`.
+    static let mh = Rswift.ImageResource(bundle: R.hostingBundle, name: "mh")
+    /// Image `mk`.
+    static let mk = Rswift.ImageResource(bundle: R.hostingBundle, name: "mk")
+    /// Image `ml`.
+    static let ml = Rswift.ImageResource(bundle: R.hostingBundle, name: "ml")
+    /// Image `mm`.
+    static let mm = Rswift.ImageResource(bundle: R.hostingBundle, name: "mm")
+    /// Image `mn`.
+    static let mn = Rswift.ImageResource(bundle: R.hostingBundle, name: "mn")
+    /// Image `mo`.
+    static let mo = Rswift.ImageResource(bundle: R.hostingBundle, name: "mo")
+    /// Image `mp`.
+    static let mp = Rswift.ImageResource(bundle: R.hostingBundle, name: "mp")
+    /// Image `mq`.
+    static let mq = Rswift.ImageResource(bundle: R.hostingBundle, name: "mq")
+    /// Image `mr`.
+    static let mr = Rswift.ImageResource(bundle: R.hostingBundle, name: "mr")
+    /// Image `ms`.
+    static let ms = Rswift.ImageResource(bundle: R.hostingBundle, name: "ms")
+    /// Image `mt`.
+    static let mt = Rswift.ImageResource(bundle: R.hostingBundle, name: "mt")
+    /// Image `mu`.
+    static let mu = Rswift.ImageResource(bundle: R.hostingBundle, name: "mu")
+    /// Image `mv`.
+    static let mv = Rswift.ImageResource(bundle: R.hostingBundle, name: "mv")
+    /// Image `mw`.
+    static let mw = Rswift.ImageResource(bundle: R.hostingBundle, name: "mw")
+    /// Image `mx`.
+    static let mx = Rswift.ImageResource(bundle: R.hostingBundle, name: "mx")
+    /// Image `my`.
+    static let my = Rswift.ImageResource(bundle: R.hostingBundle, name: "my")
+    /// Image `mz`.
+    static let mz = Rswift.ImageResource(bundle: R.hostingBundle, name: "mz")
+    /// Image `na`.
+    static let na = Rswift.ImageResource(bundle: R.hostingBundle, name: "na")
+    /// Image `nc`.
+    static let nc = Rswift.ImageResource(bundle: R.hostingBundle, name: "nc")
+    /// Image `ne`.
+    static let ne = Rswift.ImageResource(bundle: R.hostingBundle, name: "ne")
+    /// Image `nf`.
+    static let nf = Rswift.ImageResource(bundle: R.hostingBundle, name: "nf")
+    /// Image `ng`.
+    static let ng = Rswift.ImageResource(bundle: R.hostingBundle, name: "ng")
+    /// Image `ni`.
+    static let ni = Rswift.ImageResource(bundle: R.hostingBundle, name: "ni")
+    /// Image `nl`.
+    static let nl = Rswift.ImageResource(bundle: R.hostingBundle, name: "nl")
+    /// Image `no`.
+    static let no = Rswift.ImageResource(bundle: R.hostingBundle, name: "no")
+    /// Image `np`.
+    static let np = Rswift.ImageResource(bundle: R.hostingBundle, name: "np")
+    /// Image `nr`.
+    static let nr = Rswift.ImageResource(bundle: R.hostingBundle, name: "nr")
+    /// Image `nu`.
+    static let nu = Rswift.ImageResource(bundle: R.hostingBundle, name: "nu")
+    /// Image `nz`.
+    static let nz = Rswift.ImageResource(bundle: R.hostingBundle, name: "nz")
+    /// Image `om`.
+    static let om = Rswift.ImageResource(bundle: R.hostingBundle, name: "om")
+    /// Image `pa`.
+    static let pa = Rswift.ImageResource(bundle: R.hostingBundle, name: "pa")
+    /// Image `pe`.
+    static let pe = Rswift.ImageResource(bundle: R.hostingBundle, name: "pe")
+    /// Image `pf`.
+    static let pf = Rswift.ImageResource(bundle: R.hostingBundle, name: "pf")
+    /// Image `pg`.
+    static let pg = Rswift.ImageResource(bundle: R.hostingBundle, name: "pg")
+    /// Image `ph`.
+    static let ph = Rswift.ImageResource(bundle: R.hostingBundle, name: "ph")
+    /// Image `pk`.
+    static let pk = Rswift.ImageResource(bundle: R.hostingBundle, name: "pk")
+    /// Image `pl`.
+    static let pl = Rswift.ImageResource(bundle: R.hostingBundle, name: "pl")
+    /// Image `pm`.
+    static let pm = Rswift.ImageResource(bundle: R.hostingBundle, name: "pm")
+    /// Image `pn`.
+    static let pn = Rswift.ImageResource(bundle: R.hostingBundle, name: "pn")
+    /// Image `pr`.
+    static let pr = Rswift.ImageResource(bundle: R.hostingBundle, name: "pr")
+    /// Image `ps`.
+    static let ps = Rswift.ImageResource(bundle: R.hostingBundle, name: "ps")
+    /// Image `pt`.
+    static let pt = Rswift.ImageResource(bundle: R.hostingBundle, name: "pt")
+    /// Image `pw`.
+    static let pw = Rswift.ImageResource(bundle: R.hostingBundle, name: "pw")
+    /// Image `py`.
+    static let py = Rswift.ImageResource(bundle: R.hostingBundle, name: "py")
+    /// Image `qa`.
+    static let qa = Rswift.ImageResource(bundle: R.hostingBundle, name: "qa")
+    /// Image `re`.
+    static let re = Rswift.ImageResource(bundle: R.hostingBundle, name: "re")
+    /// Image `ro`.
+    static let ro = Rswift.ImageResource(bundle: R.hostingBundle, name: "ro")
+    /// Image `rs`.
+    static let rs = Rswift.ImageResource(bundle: R.hostingBundle, name: "rs")
+    /// Image `ru`.
+    static let ru = Rswift.ImageResource(bundle: R.hostingBundle, name: "ru")
+    /// Image `rw`.
+    static let rw = Rswift.ImageResource(bundle: R.hostingBundle, name: "rw")
+    /// Image `sa`.
+    static let sa = Rswift.ImageResource(bundle: R.hostingBundle, name: "sa")
+    /// Image `sb`.
+    static let sb = Rswift.ImageResource(bundle: R.hostingBundle, name: "sb")
+    /// Image `sc`.
+    static let sc = Rswift.ImageResource(bundle: R.hostingBundle, name: "sc")
+    /// Image `sd`.
+    static let sd = Rswift.ImageResource(bundle: R.hostingBundle, name: "sd")
+    /// Image `se`.
+    static let se = Rswift.ImageResource(bundle: R.hostingBundle, name: "se")
+    /// Image `sg`.
+    static let sg = Rswift.ImageResource(bundle: R.hostingBundle, name: "sg")
+    /// Image `sh`.
+    static let sh = Rswift.ImageResource(bundle: R.hostingBundle, name: "sh")
+    /// Image `si`.
+    static let si = Rswift.ImageResource(bundle: R.hostingBundle, name: "si")
+    /// Image `sj`.
+    static let sj = Rswift.ImageResource(bundle: R.hostingBundle, name: "sj")
+    /// Image `sk`.
+    static let sk = Rswift.ImageResource(bundle: R.hostingBundle, name: "sk")
+    /// Image `sl`.
+    static let sl = Rswift.ImageResource(bundle: R.hostingBundle, name: "sl")
+    /// Image `sm`.
+    static let sm = Rswift.ImageResource(bundle: R.hostingBundle, name: "sm")
+    /// Image `sn`.
+    static let sn = Rswift.ImageResource(bundle: R.hostingBundle, name: "sn")
+    /// Image `so`.
+    static let so = Rswift.ImageResource(bundle: R.hostingBundle, name: "so")
+    /// Image `sr`.
+    static let sr = Rswift.ImageResource(bundle: R.hostingBundle, name: "sr")
+    /// Image `ss`.
+    static let ss = Rswift.ImageResource(bundle: R.hostingBundle, name: "ss")
+    /// Image `st`.
+    static let st = Rswift.ImageResource(bundle: R.hostingBundle, name: "st")
+    /// Image `sv`.
+    static let sv = Rswift.ImageResource(bundle: R.hostingBundle, name: "sv")
+    /// Image `sx`.
+    static let sx = Rswift.ImageResource(bundle: R.hostingBundle, name: "sx")
+    /// Image `sy`.
+    static let sy = Rswift.ImageResource(bundle: R.hostingBundle, name: "sy")
+    /// Image `sz`.
+    static let sz = Rswift.ImageResource(bundle: R.hostingBundle, name: "sz")
+    /// Image `tc`.
+    static let tc = Rswift.ImageResource(bundle: R.hostingBundle, name: "tc")
+    /// Image `td`.
+    static let td = Rswift.ImageResource(bundle: R.hostingBundle, name: "td")
+    /// Image `tf`.
+    static let tf = Rswift.ImageResource(bundle: R.hostingBundle, name: "tf")
+    /// Image `tg`.
+    static let tg = Rswift.ImageResource(bundle: R.hostingBundle, name: "tg")
+    /// Image `th`.
+    static let th = Rswift.ImageResource(bundle: R.hostingBundle, name: "th")
+    /// Image `tj`.
+    static let tj = Rswift.ImageResource(bundle: R.hostingBundle, name: "tj")
+    /// Image `tk`.
+    static let tk = Rswift.ImageResource(bundle: R.hostingBundle, name: "tk")
+    /// Image `tl`.
+    static let tl = Rswift.ImageResource(bundle: R.hostingBundle, name: "tl")
+    /// Image `tm`.
+    static let tm = Rswift.ImageResource(bundle: R.hostingBundle, name: "tm")
+    /// Image `tn`.
+    static let tn = Rswift.ImageResource(bundle: R.hostingBundle, name: "tn")
+    /// Image `to`.
+    static let to = Rswift.ImageResource(bundle: R.hostingBundle, name: "to")
+    /// Image `tr`.
+    static let tr = Rswift.ImageResource(bundle: R.hostingBundle, name: "tr")
+    /// Image `tt`.
+    static let tt = Rswift.ImageResource(bundle: R.hostingBundle, name: "tt")
+    /// Image `tv`.
+    static let tv = Rswift.ImageResource(bundle: R.hostingBundle, name: "tv")
+    /// Image `tw`.
+    static let tw = Rswift.ImageResource(bundle: R.hostingBundle, name: "tw")
+    /// Image `tz`.
+    static let tz = Rswift.ImageResource(bundle: R.hostingBundle, name: "tz")
+    /// Image `ua`.
+    static let ua = Rswift.ImageResource(bundle: R.hostingBundle, name: "ua")
+    /// Image `ug`.
+    static let ug = Rswift.ImageResource(bundle: R.hostingBundle, name: "ug")
+    /// Image `um`.
+    static let um = Rswift.ImageResource(bundle: R.hostingBundle, name: "um")
+    /// Image `us`.
+    static let us = Rswift.ImageResource(bundle: R.hostingBundle, name: "us")
+    /// Image `uy`.
+    static let uy = Rswift.ImageResource(bundle: R.hostingBundle, name: "uy")
+    /// Image `uz`.
+    static let uz = Rswift.ImageResource(bundle: R.hostingBundle, name: "uz")
+    /// Image `va`.
+    static let va = Rswift.ImageResource(bundle: R.hostingBundle, name: "va")
+    /// Image `vc`.
+    static let vc = Rswift.ImageResource(bundle: R.hostingBundle, name: "vc")
+    /// Image `ve`.
+    static let ve = Rswift.ImageResource(bundle: R.hostingBundle, name: "ve")
+    /// Image `vg`.
+    static let vg = Rswift.ImageResource(bundle: R.hostingBundle, name: "vg")
+    /// Image `vi`.
+    static let vi = Rswift.ImageResource(bundle: R.hostingBundle, name: "vi")
+    /// Image `vn`.
+    static let vn = Rswift.ImageResource(bundle: R.hostingBundle, name: "vn")
+    /// Image `vu`.
+    static let vu = Rswift.ImageResource(bundle: R.hostingBundle, name: "vu")
+    /// Image `wf`.
+    static let wf = Rswift.ImageResource(bundle: R.hostingBundle, name: "wf")
+    /// Image `ws`.
+    static let ws = Rswift.ImageResource(bundle: R.hostingBundle, name: "ws")
+    /// Image `xk`.
+    static let xk = Rswift.ImageResource(bundle: R.hostingBundle, name: "xk")
+    /// Image `ye`.
+    static let ye = Rswift.ImageResource(bundle: R.hostingBundle, name: "ye")
+    /// Image `yt`.
+    static let yt = Rswift.ImageResource(bundle: R.hostingBundle, name: "yt")
+    /// Image `za`.
+    static let za = Rswift.ImageResource(bundle: R.hostingBundle, name: "za")
+    /// Image `zm`.
+    static let zm = Rswift.ImageResource(bundle: R.hostingBundle, name: "zm")
+    /// Image `zw`.
+    static let zw = Rswift.ImageResource(bundle: R.hostingBundle, name: "zw")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ad", bundle: ..., traitCollection: ...)`
+    static func ad(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ad, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ae", bundle: ..., traitCollection: ...)`
+    static func ae(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ae, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "af", bundle: ..., traitCollection: ...)`
+    static func af(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.af, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ag", bundle: ..., traitCollection: ...)`
+    static func ag(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ag, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ai", bundle: ..., traitCollection: ...)`
+    static func ai(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ai, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "al", bundle: ..., traitCollection: ...)`
+    static func al(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.al, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "am", bundle: ..., traitCollection: ...)`
+    static func am(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.am, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ao", bundle: ..., traitCollection: ...)`
+    static func ao(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ao, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "aq", bundle: ..., traitCollection: ...)`
+    static func aq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.aq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ar", bundle: ..., traitCollection: ...)`
+    static func ar(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ar, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "as", bundle: ..., traitCollection: ...)`
+    static func `as`(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.`as`, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "at", bundle: ..., traitCollection: ...)`
+    static func at(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.at, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "au", bundle: ..., traitCollection: ...)`
+    static func au(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.au, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "aw", bundle: ..., traitCollection: ...)`
+    static func aw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.aw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ax", bundle: ..., traitCollection: ...)`
+    static func ax(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ax, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "az", bundle: ..., traitCollection: ...)`
+    static func az(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.az, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ba", bundle: ..., traitCollection: ...)`
+    static func ba(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ba, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bb", bundle: ..., traitCollection: ...)`
+    static func bb(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bb, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bd", bundle: ..., traitCollection: ...)`
+    static func bd(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bd, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "be", bundle: ..., traitCollection: ...)`
+    static func be(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.be, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bf", bundle: ..., traitCollection: ...)`
+    static func bf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bg", bundle: ..., traitCollection: ...)`
+    static func bg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bh", bundle: ..., traitCollection: ...)`
+    static func bh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bh, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bi", bundle: ..., traitCollection: ...)`
+    static func bi(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bi, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bj", bundle: ..., traitCollection: ...)`
+    static func bj(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bj, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bl", bundle: ..., traitCollection: ...)`
+    static func bl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bm", bundle: ..., traitCollection: ...)`
+    static func bm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bn", bundle: ..., traitCollection: ...)`
+    static func bn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bo", bundle: ..., traitCollection: ...)`
+    static func bo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bq", bundle: ..., traitCollection: ...)`
+    static func bq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "br", bundle: ..., traitCollection: ...)`
+    static func br(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.br, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bs", bundle: ..., traitCollection: ...)`
+    static func bs(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bs, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bt", bundle: ..., traitCollection: ...)`
+    static func bt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bv", bundle: ..., traitCollection: ...)`
+    static func bv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bv, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bw", bundle: ..., traitCollection: ...)`
+    static func bw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "by", bundle: ..., traitCollection: ...)`
+    static func by(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.by, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "bz", bundle: ..., traitCollection: ...)`
+    static func bz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.bz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ca", bundle: ..., traitCollection: ...)`
+    static func ca(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ca, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cc", bundle: ..., traitCollection: ...)`
+    static func cc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cd", bundle: ..., traitCollection: ...)`
+    static func cd(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cd, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cf", bundle: ..., traitCollection: ...)`
+    static func cf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cg", bundle: ..., traitCollection: ...)`
+    static func cg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ch", bundle: ..., traitCollection: ...)`
+    static func ch(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ch, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ci", bundle: ..., traitCollection: ...)`
+    static func ci(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ci, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ck", bundle: ..., traitCollection: ...)`
+    static func ck(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ck, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cl", bundle: ..., traitCollection: ...)`
+    static func cl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cm", bundle: ..., traitCollection: ...)`
+    static func cm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cn", bundle: ..., traitCollection: ...)`
+    static func cn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "co", bundle: ..., traitCollection: ...)`
+    static func co(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.co, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cr", bundle: ..., traitCollection: ...)`
+    static func cr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cu", bundle: ..., traitCollection: ...)`
+    static func cu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cv", bundle: ..., traitCollection: ...)`
+    static func cv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cv, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cw", bundle: ..., traitCollection: ...)`
+    static func cw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cx", bundle: ..., traitCollection: ...)`
+    static func cx(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cx, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cy", bundle: ..., traitCollection: ...)`
+    static func cy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cy, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "cz", bundle: ..., traitCollection: ...)`
+    static func cz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.cz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "de", bundle: ..., traitCollection: ...)`
+    static func de(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.de, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dj", bundle: ..., traitCollection: ...)`
+    static func dj(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dj, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dk", bundle: ..., traitCollection: ...)`
+    static func dk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dm", bundle: ..., traitCollection: ...)`
+    static func dm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "do", bundle: ..., traitCollection: ...)`
+    static func `do`(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.`do`, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dz", bundle: ..., traitCollection: ...)`
+    static func dz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ec", bundle: ..., traitCollection: ...)`
+    static func ec(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ec, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ee", bundle: ..., traitCollection: ...)`
+    static func ee(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ee, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "eg", bundle: ..., traitCollection: ...)`
+    static func eg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.eg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "eh", bundle: ..., traitCollection: ...)`
+    static func eh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.eh, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "er", bundle: ..., traitCollection: ...)`
+    static func er(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.er, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "es", bundle: ..., traitCollection: ...)`
+    static func es(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.es, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "et", bundle: ..., traitCollection: ...)`
+    static func et(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.et, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fi", bundle: ..., traitCollection: ...)`
+    static func fi(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fi, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fj", bundle: ..., traitCollection: ...)`
+    static func fj(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fj, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fk", bundle: ..., traitCollection: ...)`
+    static func fk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fm", bundle: ..., traitCollection: ...)`
+    static func fm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fo", bundle: ..., traitCollection: ...)`
+    static func fo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "fr", bundle: ..., traitCollection: ...)`
+    static func fr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ga", bundle: ..., traitCollection: ...)`
+    static func ga(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ga, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gb", bundle: ..., traitCollection: ...)`
+    static func gb(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gb, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gb-eng", bundle: ..., traitCollection: ...)`
+    static func gbEng(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gbEng, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gb-nir", bundle: ..., traitCollection: ...)`
+    static func gbNir(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gbNir, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gb-sct", bundle: ..., traitCollection: ...)`
+    static func gbSct(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gbSct, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gb-wls", bundle: ..., traitCollection: ...)`
+    static func gbWls(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gbWls, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gd", bundle: ..., traitCollection: ...)`
+    static func gd(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gd, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ge", bundle: ..., traitCollection: ...)`
+    static func ge(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ge, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gf", bundle: ..., traitCollection: ...)`
+    static func gf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gg", bundle: ..., traitCollection: ...)`
+    static func gg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gh", bundle: ..., traitCollection: ...)`
+    static func gh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gh, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gi", bundle: ..., traitCollection: ...)`
+    static func gi(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gi, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gl", bundle: ..., traitCollection: ...)`
+    static func gl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gm", bundle: ..., traitCollection: ...)`
+    static func gm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gn", bundle: ..., traitCollection: ...)`
+    static func gn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gp", bundle: ..., traitCollection: ...)`
+    static func gp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gq", bundle: ..., traitCollection: ...)`
+    static func gq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gr", bundle: ..., traitCollection: ...)`
+    static func gr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gs", bundle: ..., traitCollection: ...)`
+    static func gs(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gs, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gt", bundle: ..., traitCollection: ...)`
+    static func gt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gu", bundle: ..., traitCollection: ...)`
+    static func gu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gw", bundle: ..., traitCollection: ...)`
+    static func gw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "gy", bundle: ..., traitCollection: ...)`
+    static func gy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gy, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "hk", bundle: ..., traitCollection: ...)`
+    static func hk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "hm", bundle: ..., traitCollection: ...)`
+    static func hm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "hn", bundle: ..., traitCollection: ...)`
+    static func hn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "hr", bundle: ..., traitCollection: ...)`
+    static func hr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ht", bundle: ..., traitCollection: ...)`
+    static func ht(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ht, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "hu", bundle: ..., traitCollection: ...)`
+    static func hu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.hu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "id", bundle: ..., traitCollection: ...)`
+    static func id(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.id, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ie", bundle: ..., traitCollection: ...)`
+    static func ie(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ie, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "il", bundle: ..., traitCollection: ...)`
+    static func il(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.il, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "im", bundle: ..., traitCollection: ...)`
+    static func im(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.im, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "in", bundle: ..., traitCollection: ...)`
+    static func `in`(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.`in`, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "io", bundle: ..., traitCollection: ...)`
+    static func io(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.io, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "iq", bundle: ..., traitCollection: ...)`
+    static func iq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ir", bundle: ..., traitCollection: ...)`
+    static func ir(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ir, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "is", bundle: ..., traitCollection: ...)`
+    static func `is`(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.`is`, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "it", bundle: ..., traitCollection: ...)`
+    static func it(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.it, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "je", bundle: ..., traitCollection: ...)`
+    static func je(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.je, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "jm", bundle: ..., traitCollection: ...)`
+    static func jm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.jm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "jo", bundle: ..., traitCollection: ...)`
+    static func jo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.jo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "jp", bundle: ..., traitCollection: ...)`
+    static func jp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.jp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ke", bundle: ..., traitCollection: ...)`
+    static func ke(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ke, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kg", bundle: ..., traitCollection: ...)`
+    static func kg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kh", bundle: ..., traitCollection: ...)`
+    static func kh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kh, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ki", bundle: ..., traitCollection: ...)`
+    static func ki(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ki, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "km", bundle: ..., traitCollection: ...)`
+    static func km(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.km, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kn", bundle: ..., traitCollection: ...)`
+    static func kn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kp", bundle: ..., traitCollection: ...)`
+    static func kp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kr", bundle: ..., traitCollection: ...)`
+    static func kr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kw", bundle: ..., traitCollection: ...)`
+    static func kw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ky", bundle: ..., traitCollection: ...)`
+    static func ky(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ky, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "kz", bundle: ..., traitCollection: ...)`
+    static func kz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.kz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "la", bundle: ..., traitCollection: ...)`
+    static func la(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.la, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lb", bundle: ..., traitCollection: ...)`
+    static func lb(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lb, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lc", bundle: ..., traitCollection: ...)`
+    static func lc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "li", bundle: ..., traitCollection: ...)`
+    static func li(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.li, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lk", bundle: ..., traitCollection: ...)`
+    static func lk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lr", bundle: ..., traitCollection: ...)`
+    static func lr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ls", bundle: ..., traitCollection: ...)`
+    static func ls(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ls, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lt", bundle: ..., traitCollection: ...)`
+    static func lt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lu", bundle: ..., traitCollection: ...)`
+    static func lu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "lv", bundle: ..., traitCollection: ...)`
+    static func lv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.lv, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ly", bundle: ..., traitCollection: ...)`
+    static func ly(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ly, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ma", bundle: ..., traitCollection: ...)`
+    static func ma(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ma, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mc", bundle: ..., traitCollection: ...)`
+    static func mc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "md", bundle: ..., traitCollection: ...)`
+    static func md(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.md, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "me", bundle: ..., traitCollection: ...)`
+    static func me(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.me, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mf", bundle: ..., traitCollection: ...)`
+    static func mf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mg", bundle: ..., traitCollection: ...)`
+    static func mg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mh", bundle: ..., traitCollection: ...)`
+    static func mh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mh, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mk", bundle: ..., traitCollection: ...)`
+    static func mk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ml", bundle: ..., traitCollection: ...)`
+    static func ml(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ml, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mm", bundle: ..., traitCollection: ...)`
+    static func mm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mn", bundle: ..., traitCollection: ...)`
+    static func mn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mo", bundle: ..., traitCollection: ...)`
+    static func mo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mp", bundle: ..., traitCollection: ...)`
+    static func mp(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mp, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mq", bundle: ..., traitCollection: ...)`
+    static func mq(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mq, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mr", bundle: ..., traitCollection: ...)`
+    static func mr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ms", bundle: ..., traitCollection: ...)`
+    static func ms(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ms, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mt", bundle: ..., traitCollection: ...)`
+    static func mt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mu", bundle: ..., traitCollection: ...)`
+    static func mu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mv", bundle: ..., traitCollection: ...)`
+    static func mv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mv, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mw", bundle: ..., traitCollection: ...)`
+    static func mw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mx", bundle: ..., traitCollection: ...)`
+    static func mx(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mx, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "my", bundle: ..., traitCollection: ...)`
+    static func my(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.my, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mz", bundle: ..., traitCollection: ...)`
+    static func mz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "na", bundle: ..., traitCollection: ...)`
+    static func na(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.na, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "nc", bundle: ..., traitCollection: ...)`
+    static func nc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ne", bundle: ..., traitCollection: ...)`
+    static func ne(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ne, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "nf", bundle: ..., traitCollection: ...)`
+    static func nf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ng", bundle: ..., traitCollection: ...)`
+    static func ng(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ng, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ni", bundle: ..., traitCollection: ...)`
+    static func ni(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ni, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "nl", bundle: ..., traitCollection: ...)`
+    static func nl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "no", bundle: ..., traitCollection: ...)`
+    static func no(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.no, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "np", bundle: ..., traitCollection: ...)`
+    static func np(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.np, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "nr", bundle: ..., traitCollection: ...)`
+    static func nr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "nu", bundle: ..., traitCollection: ...)`
+    static func nu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "nz", bundle: ..., traitCollection: ...)`
+    static func nz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.nz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "om", bundle: ..., traitCollection: ...)`
+    static func om(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.om, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pa", bundle: ..., traitCollection: ...)`
+    static func pa(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pa, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pe", bundle: ..., traitCollection: ...)`
+    static func pe(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pe, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pf", bundle: ..., traitCollection: ...)`
+    static func pf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pg", bundle: ..., traitCollection: ...)`
+    static func pg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ph", bundle: ..., traitCollection: ...)`
+    static func ph(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ph, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pk", bundle: ..., traitCollection: ...)`
+    static func pk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pl", bundle: ..., traitCollection: ...)`
+    static func pl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pm", bundle: ..., traitCollection: ...)`
+    static func pm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pn", bundle: ..., traitCollection: ...)`
+    static func pn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pr", bundle: ..., traitCollection: ...)`
+    static func pr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ps", bundle: ..., traitCollection: ...)`
+    static func ps(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ps, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pt", bundle: ..., traitCollection: ...)`
+    static func pt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pw", bundle: ..., traitCollection: ...)`
+    static func pw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "py", bundle: ..., traitCollection: ...)`
+    static func py(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.py, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "qa", bundle: ..., traitCollection: ...)`
+    static func qa(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.qa, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "re", bundle: ..., traitCollection: ...)`
+    static func re(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.re, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ro", bundle: ..., traitCollection: ...)`
+    static func ro(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ro, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "rs", bundle: ..., traitCollection: ...)`
+    static func rs(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rs, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ru", bundle: ..., traitCollection: ...)`
+    static func ru(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ru, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "rw", bundle: ..., traitCollection: ...)`
+    static func rw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.rw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sa", bundle: ..., traitCollection: ...)`
+    static func sa(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sa, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sb", bundle: ..., traitCollection: ...)`
+    static func sb(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sb, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sc", bundle: ..., traitCollection: ...)`
+    static func sc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sd", bundle: ..., traitCollection: ...)`
+    static func sd(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sd, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "se", bundle: ..., traitCollection: ...)`
+    static func se(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.se, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sg", bundle: ..., traitCollection: ...)`
+    static func sg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sh", bundle: ..., traitCollection: ...)`
+    static func sh(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sh, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "si", bundle: ..., traitCollection: ...)`
+    static func si(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.si, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sj", bundle: ..., traitCollection: ...)`
+    static func sj(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sj, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sk", bundle: ..., traitCollection: ...)`
+    static func sk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sl", bundle: ..., traitCollection: ...)`
+    static func sl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sm", bundle: ..., traitCollection: ...)`
+    static func sm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sn", bundle: ..., traitCollection: ...)`
+    static func sn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "so", bundle: ..., traitCollection: ...)`
+    static func so(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.so, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sr", bundle: ..., traitCollection: ...)`
+    static func sr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ss", bundle: ..., traitCollection: ...)`
+    static func ss(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ss, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "st", bundle: ..., traitCollection: ...)`
+    static func st(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.st, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sv", bundle: ..., traitCollection: ...)`
+    static func sv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sv, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sx", bundle: ..., traitCollection: ...)`
+    static func sx(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sx, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sy", bundle: ..., traitCollection: ...)`
+    static func sy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sy, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "sz", bundle: ..., traitCollection: ...)`
+    static func sz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tc", bundle: ..., traitCollection: ...)`
+    static func tc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "td", bundle: ..., traitCollection: ...)`
+    static func td(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.td, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tf", bundle: ..., traitCollection: ...)`
+    static func tf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tg", bundle: ..., traitCollection: ...)`
+    static func tg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "th", bundle: ..., traitCollection: ...)`
+    static func th(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.th, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tj", bundle: ..., traitCollection: ...)`
+    static func tj(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tj, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tk", bundle: ..., traitCollection: ...)`
+    static func tk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tl", bundle: ..., traitCollection: ...)`
+    static func tl(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tl, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tm", bundle: ..., traitCollection: ...)`
+    static func tm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tn", bundle: ..., traitCollection: ...)`
+    static func tn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "to", bundle: ..., traitCollection: ...)`
+    static func to(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.to, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tr", bundle: ..., traitCollection: ...)`
+    static func tr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tt", bundle: ..., traitCollection: ...)`
+    static func tt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tv", bundle: ..., traitCollection: ...)`
+    static func tv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tv, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tw", bundle: ..., traitCollection: ...)`
+    static func tw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tz", bundle: ..., traitCollection: ...)`
+    static func tz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ua", bundle: ..., traitCollection: ...)`
+    static func ua(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ua, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ug", bundle: ..., traitCollection: ...)`
+    static func ug(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ug, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "um", bundle: ..., traitCollection: ...)`
+    static func um(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.um, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "us", bundle: ..., traitCollection: ...)`
+    static func us(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.us, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "uy", bundle: ..., traitCollection: ...)`
+    static func uy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uy, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "uz", bundle: ..., traitCollection: ...)`
+    static func uz(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.uz, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "va", bundle: ..., traitCollection: ...)`
+    static func va(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.va, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "vc", bundle: ..., traitCollection: ...)`
+    static func vc(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.vc, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ve", bundle: ..., traitCollection: ...)`
+    static func ve(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ve, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "vg", bundle: ..., traitCollection: ...)`
+    static func vg(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.vg, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "vi", bundle: ..., traitCollection: ...)`
+    static func vi(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.vi, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "vn", bundle: ..., traitCollection: ...)`
+    static func vn(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.vn, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "vu", bundle: ..., traitCollection: ...)`
+    static func vu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.vu, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "wf", bundle: ..., traitCollection: ...)`
+    static func wf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ws", bundle: ..., traitCollection: ...)`
+    static func ws(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ws, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "xk", bundle: ..., traitCollection: ...)`
+    static func xk(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.xk, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ye", bundle: ..., traitCollection: ...)`
+    static func ye(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ye, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "yt", bundle: ..., traitCollection: ...)`
+    static func yt(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.yt, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "za", bundle: ..., traitCollection: ...)`
+    static func za(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.za, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "zm", bundle: ..., traitCollection: ...)`
+    static func zm(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.zm, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "zw", bundle: ..., traitCollection: ...)`
+    static func zw(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.zw, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
