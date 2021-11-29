@@ -56,8 +56,10 @@ class CountryViewCell: UITableViewCell {
     }
 
     func updateCell(country: CountriesQuery.Data.Country) {
-        if let image = UIImage(named: "\(country.code.lowercased())") {
+        if let image = UIImage(named: "32423\(country.code.lowercased())") {
             self.flagImageView.image = image
+        } else {
+            self.flagImageView.image = UIImage()
         }
         self.countryNameLabel.text = country.name
         self.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField

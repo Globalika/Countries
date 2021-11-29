@@ -29,18 +29,22 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        fillDetailsViewWithData()
+        configureFlagImage()
+        configureStackView()
+    }
+
+    func fillDetailsViewWithData() {
+        flagImageView.image = UIImage(named: "\(country.code.lowercased())")
         countryInfo["Name: "] = country.name
         countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
         countryInfo["Continent: "] = country.continent.name
         countryInfo["Phone: "] = country.phone
         countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
-        for (language, index) in zip(country.languages, 0..<country.languages.count) {
+        for (index, language) in country.languages.enumerated() {
             countryInfo["Language\(index): "] = language.name!
         }
-        view.backgroundColor = .lightGray
-        flagImageView.image = UIImage(named: "\(country.code.lowercased())")
-        configureFlagImage()
-        configureStackView()
     }
 
     func configureFlagImage() {
@@ -60,7 +64,14 @@ class CountryDetailsController: UIViewController {
     func addLabelsToStackView() {
         for text in countryInfo.sorted(by: { $0.key > $1.key }) {
             let label = UILabel()
-            label.text = "\(text.key) \(text.value)"
+            let textKeyAttributes: [NSAttributedString.Key: Any] = [.backgroundColor: UIColor.red]
+            let textValueAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+            let keyString = NSMutableAttributedString(string: "\(text.key)",
+                                                      attributes: textKeyAttributes)
+            let valueString = NSMutableAttributedString(string: "\(text.key)",
+                                                      attributes: textValueAttributes)
+            keyString.append(valueString)
+            label.attributedText = keyString
             stackView.addArrangedSubview(label)
         }
     }
