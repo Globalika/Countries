@@ -11,7 +11,6 @@ class CountriesController: UITableViewController {
     var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
-            loadImages()
             tableView.reloadData()
         }
     }
@@ -33,9 +32,6 @@ extension CountriesController {
             self.countries = countries
         }
     }
-    func loadImages() {
-        let _: [String] = countries.map({ $0.code.lowercased() })
-    }
 }
 
 extension CountriesController {
@@ -49,7 +45,7 @@ extension CountriesController {
             cell.flagImage = image
         }
         cell.countryNameView.text = country.name
-        cell.countryCapitalView.text = country.capital ?? "N-A"
+        cell.countryCapitalView.text = country.capital ?? Constants.notApplicableField
         return cell
     }
 
@@ -71,5 +67,6 @@ extension CountriesController {
     }
     private struct Constants {
         static let rowHeight: CGFloat = 100
+        static let notApplicableField: String = "N-A"
     }
 }

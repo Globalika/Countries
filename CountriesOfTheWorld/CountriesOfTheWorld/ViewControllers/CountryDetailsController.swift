@@ -30,18 +30,10 @@ class CountryDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         countryInfo["Name: "] = country.name
-        if let capital = country.capital {
-            countryInfo["Capital: "] = capital
-        } else {
-            countryInfo["Capital: "] = "N-A"
-        }
+        countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
         countryInfo["Continent: "] = country.continent.name
         countryInfo["Phone: "] = country.phone
-        if let currency = country.currency {
-            countryInfo["Capital: "] = currency
-        } else {
-            countryInfo["Capital: "] = "N-A"
-        }
+        countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
         for (language, index) in zip(country.languages, 0..<country.languages.count) {
             countryInfo["Language\(index): "] = language.name!
         }
@@ -94,5 +86,8 @@ class CountryDetailsController: UIViewController {
         flagImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
                                             constant: -80).isActive = true
         flagImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
+    private struct Constants {
+        static let notApplicableField: String = "N-A"
     }
 }

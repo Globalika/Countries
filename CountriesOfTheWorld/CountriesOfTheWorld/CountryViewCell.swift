@@ -48,7 +48,7 @@ class CountryViewCell: UITableViewCell {
         self.addSubview(countryCapitalView)
         self.addSubview(countryContinentView)
 
-        setConstrains()
+        setCellConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -75,7 +75,7 @@ class CountryViewCell: UITableViewCell {
         }
     }
 
-    func setConstrains() {
+    func setCellConstraints() {
         flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         flagImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
