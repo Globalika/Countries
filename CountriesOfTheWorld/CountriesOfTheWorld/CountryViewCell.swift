@@ -63,25 +63,27 @@ class CountryViewCell: UITableViewCell {
     }
 
     func setCellConstraints() {
-        flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        flagImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            flagImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor),
 
-        countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        countryNameLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
-        countryNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        countryNameLabel.heightAnchor.constraint(equalToConstant: 33).isActive = true
+            countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            countryNameLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
+            countryNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryNameLabel.heightAnchor.constraint(equalToConstant: 33),
 
-        countryCapitalLabel.topAnchor.constraint(equalTo: self.countryNameLabel.bottomAnchor).isActive = true
-        countryCapitalLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
-        countryCapitalLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        countryCapitalLabel.heightAnchor.constraint(equalToConstant: 33).isActive = true
+            countryCapitalLabel.topAnchor.constraint(equalTo: self.countryNameLabel.bottomAnchor),
+            countryCapitalLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
+            countryCapitalLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryCapitalLabel.heightAnchor.constraint(equalToConstant: 33),
 
-        countryContinentLabel.topAnchor.constraint(equalTo: self.countryCapitalLabel.bottomAnchor).isActive = true
-        countryContinentLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
-        countryContinentLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        countryContinentLabel.heightAnchor.constraint(equalToConstant: 33).isActive = true
+            countryContinentLabel.topAnchor.constraint(equalTo: self.countryCapitalLabel.bottomAnchor),
+            countryContinentLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
+            countryContinentLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryContinentLabel.heightAnchor.constraint(equalToConstant: 33)
+        ])
     }
 
     private struct Constants {
