@@ -51,12 +51,16 @@ class CountryViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
-
+    var image = UIImage() {
+        didSet {
+            flagImageView.image = image
+        }
+    }
     func updateCell(country: CountriesQuery.Data.Country) {
-        if let image = UIImage(named: "\(country.code.lowercased())") {
-            self.flagImageView.image = image
+        if let url = URL(string: "https://flagcdn.com/256x192/\(country.code.lowercased()).png") {
+            self.downloadImage(from: url)
         } else {
-            self.flagImageView.image = UIImage()
+            print("error: invalid image url")
         }
         self.countryNameLabel.text = country.name
         self.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
@@ -89,5 +93,18 @@ class CountryViewCell: UITableViewCell {
 
     private struct Constants {
         static let notApplicableField: String = "N-A"
+    }
+
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+
+    func downloadImage(from url: URL) {
+        getData(from: url) { data, _, error in
+            guard let data = data, error == nil else { return }
+            DispatchQueue.main.async { [weak self] in
+                self?.flagImageView.image = UIImage(data: data) ?? UIImage()
+            }
+        }
     }
 }

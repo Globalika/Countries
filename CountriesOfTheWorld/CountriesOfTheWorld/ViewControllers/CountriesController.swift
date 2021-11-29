@@ -17,6 +17,7 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
         tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
         loadData()
         title = "Countries"
@@ -58,9 +59,11 @@ extension CountriesController {
         navigationController?.pushViewController(CountryDetailsController(country: countries[indexPath.row]),
                                                  animated: true)
     }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
     }
+
     private struct Constants {
         static let rowHeight: CGFloat = 100
     }
