@@ -38,14 +38,16 @@ extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
-                                                        for: indexPath) as? CountryViewCell else
-                                                        { return UITableViewCell() }
+                                                        for: indexPath) as? CountryViewCell else {
+            return UITableViewCell()
+        }
         let country = self.countries[indexPath.row]
         if let image = UIImage(named: "\(country.code.lowercased())") {
-            cell.flagImage = image
+            cell.flagImageView.image = image
         }
-        cell.countryNameView.text = country.name
-        cell.countryCapitalView.text = country.capital ?? Constants.notApplicableField
+        cell.countryNameLabel.text = country.name
+        cell.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
+        cell.countryContinentLabel.text = country.continent.name
         return cell
     }
 
