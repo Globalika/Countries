@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CountryDetailsController2: UIViewController {
+class CountryDetailsController: UIViewController {
     var stackView = UIStackView()
     private var countryInfo: [String: String] = [:]
     private let country: CountriesQuery.Data.Country
