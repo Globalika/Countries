@@ -23,6 +23,7 @@ class CountryDetailsController: UIViewController {
 
     var flagImageView: UIImageView = {
         var imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
