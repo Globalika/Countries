@@ -18,7 +18,7 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
+        tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
         loadData()
         title = "Countries"
     }
@@ -41,25 +41,15 @@ extension CountriesController {
 extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: CountryViewCell
-        if let dequeuedcell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
-                                                    for: indexPath) as? CountryViewCell {
-            cell = dequeuedcell
-            let country = self.countries[indexPath.row]
-            if let image = UIImage(named: "\(country.code.lowercased())") {
-                cell.flagImage = image
-            }
-            cell.countryNameView.text = country.name
-            if let capital = country.capital {
-                cell.countryCapitalView.text = capital
-            } else {
-                cell.countryCapitalView.text = "N-A"
-            }
-            cell.countryContinentView.text = country.continent.name
-        } else {
-            cell = CountryViewCell(style: UITableViewCell.CellStyle.default,
-                                   reuseIdentifier: CountryViewCell.identifier)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
+                                                        for: indexPath) as? CountryViewCell else
+                                                        { return UITableViewCell() }
+        let country = self.countries[indexPath.row]
+        if let image = UIImage(named: "\(country.code.lowercased())") {
+            cell.flagImage = image
         }
+        cell.countryNameView.text = country.name
+        cell.countryCapitalView.text = country.capital ?? "N-A"
         return cell
     }
 
