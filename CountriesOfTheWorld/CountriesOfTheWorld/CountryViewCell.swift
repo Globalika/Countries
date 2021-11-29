@@ -55,6 +55,15 @@ class CountryViewCell: UITableViewCell {
         super.layoutSubviews()
     }
 
+    func updateCell(country: CountriesQuery.Data.Country) {
+        if let image = UIImage(named: "\(country.code.lowercased())") {
+            self.flagImageView.image = image
+        }
+        self.countryNameLabel.text = country.name
+        self.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
+        self.countryContinentLabel.text = country.continent.name
+    }
+
     func setCellConstraints() {
         flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         flagImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -75,5 +84,9 @@ class CountryViewCell: UITableViewCell {
         countryContinentLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor).isActive = true
         countryContinentLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         countryContinentLabel.heightAnchor.constraint(equalToConstant: 33).isActive = true
+    }
+
+    private struct Constants {
+        static let notApplicableField: String = "N-A"
     }
 }

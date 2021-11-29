@@ -41,13 +41,7 @@ extension CountriesController {
                                                         for: indexPath) as? CountryViewCell else {
             return UITableViewCell()
         }
-        let country = self.countries[indexPath.row]
-        if let image = UIImage(named: "\(country.code.lowercased())") {
-            cell.flagImageView.image = image
-        }
-        cell.countryNameLabel.text = country.name
-        cell.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
-        cell.countryContinentLabel.text = country.continent.name
+        cell.updateCell(country: countries[indexPath.row])
         return cell
     }
 
@@ -69,6 +63,5 @@ extension CountriesController {
     }
     private struct Constants {
         static let rowHeight: CGFloat = 100
-        static let notApplicableField: String = "N-A"
     }
 }
