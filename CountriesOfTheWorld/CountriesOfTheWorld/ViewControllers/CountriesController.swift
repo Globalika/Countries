@@ -55,8 +55,9 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(CountryDetailsController(country: countries[indexPath.row]),
-                                                 animated: true)
+        showDetailViewController(UINavigationController(rootViewController: CountryDetailsController(
+            country: countries[indexPath.row])),
+                                 sender: nil)
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
