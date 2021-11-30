@@ -10,7 +10,9 @@ import UIKit
 class CountryDetailsController: UIViewController {
     var stackView = UIStackView()
     private var countryInfo: [String: String] = [:]
-    private let country: CountriesQuery.Data.Country
+    private var country: CountriesQuery.Data.Country?
+
+    init() { super.init(nibName: nil, bundle: nil) }
 
     init (country: CountriesQuery.Data.Country) {
         self.country = country
@@ -37,14 +39,16 @@ class CountryDetailsController: UIViewController {
     }
 
     func fillDetailsViewWithData() {
-        flagImageView.image = UIImage(named: "\(country.code.lowercased())")
-        countryInfo["Name: "] = country.name
-        countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
-        countryInfo["Continent: "] = country.continent.name
-        countryInfo["Phone: "] = country.phone
-        countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
-        for (index, language) in country.languages.enumerated() {
-            countryInfo["Language\(index): "] = language.name!
+        if let country = self.country {
+            flagImageView.image = UIImage(named: "\(country.code.lowercased())")
+            countryInfo["Name: "] = country.name
+            countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
+            countryInfo["Continent: "] = country.continent.name
+            countryInfo["Phone: "] = country.phone
+            countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
+            for (index, language) in country.languages.enumerated() {
+                countryInfo["Language\(index): "] = language.name!
+            }
         }
     }
 
