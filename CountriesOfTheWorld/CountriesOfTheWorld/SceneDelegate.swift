@@ -19,7 +19,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
 
-        window?.rootViewController = UINavigationController(rootViewController: CountriesController())
+        let mainController = CountriesController()
+        let mainNC = UINavigationController(rootViewController: mainController)
+
+        let detailController = CountryDetailsController()
+        let detailNC = UINavigationController(rootViewController: detailController)
+
+        let splitViewController =  UISplitViewController()
+        splitViewController.viewControllers = [mainNC, detailNC]
+
+        splitViewController.delegate = self
+
+        window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
+    }
+}
+
+extension SceneDelegate: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController,
+                             collapseSecondary secondaryViewController: UIViewController,
+                             onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }
