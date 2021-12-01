@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52B81194E870060ED48FD2B2 /* Pods_CountriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E13821EDBE709A49370DA60 /* Pods_CountriesTests.framework */; };
+		01F41D044EA05C01F3E00223 /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48FF3F4B713A1823639601C /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework */; };
+		1452189F4CE26BEAA8B80740 /* Pods_CountriesOfTheWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B339A3E85E368B375058783 /* Pods_CountriesOfTheWorld.framework */; };
+		3448D79B812FD5EB7F7E5DAC /* Pods_CountriesOfTheWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */; };
 		8938933C274E589100049179 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8938933B274E589100049179 /* .swiftlint.yml */; };
 		899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EFCA8274FA0B1006254C4 /* R.generated.swift */; };
 		899EFCAB274FA0CD006254C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899EFCAA274FA0CD006254C4 /* Assets.xcassets */; };
@@ -18,12 +20,10 @@
 		89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */; };
 		89E72683274CE540002C063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72682274CE540002C063B /* AppDelegate.swift */; };
 		89E72685274CE540002C063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72684274CE540002C063B /* SceneDelegate.swift */; };
-		89E7268D274CE540002C063B /* (null) in Sources */ = {isa = PBXBuildFile; };
+		89E7268D274CE540002C063B /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		89E7269D274CE542002C063B /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7269C274CE542002C063B /* CountriesTests.swift */; };
 		89E726A7274CE542002C063B /* CountriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E726A6274CE542002C063B /* CountriesUITests.swift */; };
 		89E726A9274CE542002C063B /* CountriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E726A8274CE542002C063B /* CountriesUITestsLaunchTests.swift */; };
-		8F3E8EF0F1135D02414F99C8 /* Pods_Countries_CountriesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BF20A268C3F58DEAB998EC /* Pods_Countries_CountriesUITests.framework */; };
-		C8CC2069D3A1D997322AC246 /* Pods_Countries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981504E91CB8890F126B045D /* Pods_Countries.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B339A3E85E368B375058783 /* Pods_CountriesOfTheWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesOfTheWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11588C6401F836E9AB91AC86 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		1FF108E23FC207D4C65E517D /* Pods-CountriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesTests/Pods-CountriesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DE6A54747BA7A39A8EB302C /* Pods-CountriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.release.xcconfig"; path = "Target Support Files/Pods-CountriesTests/Pods-CountriesTests.release.xcconfig"; sourceTree = "<group>"; };
-		45BF20A268C3F58DEAB998EC /* Pods_Countries_CountriesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries_CountriesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA7A4017883703FBD33B733 /* Pods-CountriesOfTheWorldTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorldTests.release.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorldTests/Pods-CountriesOfTheWorldTests.release.xcconfig"; sourceTree = "<group>"; };
+		4637B7DBEBE495C975CE82E1 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.release.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesOfTheWorldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DD02905DE6C4A670BC8947E /* Pods-CountriesOfTheWorld.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld.debug.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld/Pods-CountriesOfTheWorld.debug.xcconfig"; sourceTree = "<group>"; };
 		71919E02F7A983D922DC1842 /* Pods-Countries-CountriesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries-CountriesUITests.release.xcconfig"; path = "Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75A6969D22C2C5DF478B7E0F /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
+		83E41B164AE13785989C8084 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8938933B274E589100049179 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		899EFCA8274FA0B1006254C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		899EFCAA274FA0CD006254C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,9 +72,10 @@
 		89E726A2274CE542002C063B /* CountriesOfTheWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountriesOfTheWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E726A6274CE542002C063B /* CountriesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUITests.swift; sourceTree = "<group>"; };
 		89E726A8274CE542002C063B /* CountriesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8E13821EDBE709A49370DA60 /* Pods_CountriesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		981504E91CB8890F126B045D /* Pods_Countries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Countries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6454366D8951FE5B7FF4DD /* Pods-Countries-CountriesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries-CountriesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3EE404D49C854E7C4C15868 /* Pods-CountriesOfTheWorldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorldTests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorldTests/Pods-CountriesOfTheWorldTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D48FF3F4B713A1823639601C /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8756F469F99BD13EFA57A65 /* Pods-CountriesOfTheWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld.release.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld/Pods-CountriesOfTheWorld.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8CC2069D3A1D997322AC246 /* Pods_Countries.framework in Frameworks */,
+				1452189F4CE26BEAA8B80740 /* Pods_CountriesOfTheWorld.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B81194E870060ED48FD2B2 /* Pods_CountriesTests.framework in Frameworks */,
+				3448D79B812FD5EB7F7E5DAC /* Pods_CountriesOfTheWorldTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F3E8EF0F1135D02414F99C8 /* Pods_Countries_CountriesUITests.framework in Frameworks */,
+				01F41D044EA05C01F3E00223 /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +115,12 @@
 				71919E02F7A983D922DC1842 /* Pods-Countries-CountriesUITests.release.xcconfig */,
 				1FF108E23FC207D4C65E517D /* Pods-CountriesTests.debug.xcconfig */,
 				2DE6A54747BA7A39A8EB302C /* Pods-CountriesTests.release.xcconfig */,
+				6DD02905DE6C4A670BC8947E /* Pods-CountriesOfTheWorld.debug.xcconfig */,
+				F8756F469F99BD13EFA57A65 /* Pods-CountriesOfTheWorld.release.xcconfig */,
+				83E41B164AE13785989C8084 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig */,
+				4637B7DBEBE495C975CE82E1 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.release.xcconfig */,
+				D3EE404D49C854E7C4C15868 /* Pods-CountriesOfTheWorldTests.debug.xcconfig */,
+				2FA7A4017883703FBD33B733 /* Pods-CountriesOfTheWorldTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -116,9 +128,9 @@
 		7ED4BBE8D9CED71312C6AD31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				981504E91CB8890F126B045D /* Pods_Countries.framework */,
-				45BF20A268C3F58DEAB998EC /* Pods_Countries_CountriesUITests.framework */,
-				8E13821EDBE709A49370DA60 /* Pods_CountriesTests.framework */,
+				0B339A3E85E368B375058783 /* Pods_CountriesOfTheWorld.framework */,
+				D48FF3F4B713A1823639601C /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework */,
+				5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,15 +348,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89B372DF274E5777004AF1BE /* RSwift */ = {
@@ -361,7 +373,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,15 +421,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Countries/Pods-Countries-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CountriesOfTheWorld/Pods-CountriesOfTheWorld-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Countries/Pods-Countries-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-CountriesOfTheWorld/Pods-CountriesOfTheWorld-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Countries/Pods-Countries-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CountriesOfTheWorld/Pods-CountriesOfTheWorld-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2637CCDE8C2201566D534C3 /* [CP] Check Pods Manifest.lock */ = {
@@ -435,7 +447,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Countries-CountriesUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -457,7 +469,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CountriesTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CountriesOfTheWorldTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -479,7 +491,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Countries-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CountriesOfTheWorld-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -497,7 +509,7 @@
 				89E72683274CE540002C063B /* AppDelegate.swift in Sources */,
 				899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */,
 				89B28F71274EB442000C4C91 /* Apollo.swift in Sources */,
-				89E7268D274CE540002C063B /* (null) in Sources */,
+				89E7268D274CE540002C063B /* BuildFile in Sources */,
 				89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */,
 				89B28F6F274EAA33000C4C91 /* API.swift in Sources */,
 				89E72685274CE540002C063B /* SceneDelegate.swift in Sources */,
@@ -656,7 +668,7 @@
 		};
 		89E726AD274CE542002C063B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75A6969D22C2C5DF478B7E0F /* Pods-Countries.debug.xcconfig */;
+			baseConfigurationReference = 6DD02905DE6C4A670BC8947E /* Pods-CountriesOfTheWorld.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -686,7 +698,7 @@
 		};
 		89E726AE274CE542002C063B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11588C6401F836E9AB91AC86 /* Pods-Countries.release.xcconfig */;
+			baseConfigurationReference = F8756F469F99BD13EFA57A65 /* Pods-CountriesOfTheWorld.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -716,7 +728,7 @@
 		};
 		89E726B0274CE542002C063B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FF108E23FC207D4C65E517D /* Pods-CountriesTests.debug.xcconfig */;
+			baseConfigurationReference = D3EE404D49C854E7C4C15868 /* Pods-CountriesOfTheWorldTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -742,7 +754,7 @@
 		};
 		89E726B1274CE542002C063B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE6A54747BA7A39A8EB302C /* Pods-CountriesTests.release.xcconfig */;
+			baseConfigurationReference = 2FA7A4017883703FBD33B733 /* Pods-CountriesOfTheWorldTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -768,7 +780,7 @@
 		};
 		89E726B3274CE542002C063B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF6454366D8951FE5B7FF4DD /* Pods-Countries-CountriesUITests.debug.xcconfig */;
+			baseConfigurationReference = 83E41B164AE13785989C8084 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -792,7 +804,7 @@
 		};
 		89E726B4274CE542002C063B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71919E02F7A983D922DC1842 /* Pods-Countries-CountriesUITests.release.xcconfig */;
+			baseConfigurationReference = 4637B7DBEBE495C975CE82E1 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

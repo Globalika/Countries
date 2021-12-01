@@ -36,6 +36,7 @@ class CountryDetailsController: UIViewController {
         fillDetailsViewWithData()
         configureFlagImage()
         configureStackView()
+        title = "\(country?.name ?? Constants.detailsDefaultHeader)"
     }
 
     func fillDetailsViewWithData() {
@@ -45,7 +46,7 @@ class CountryDetailsController: UIViewController {
             countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
             countryInfo["Continent: "] = country.continent.name
             countryInfo["Phone: "] = country.phone
-            countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
+            countryInfo["Currency: "] = country.currency ?? Constants.notApplicableField
             for (index, language) in country.languages.enumerated() {
                 countryInfo["Language\(index): "] = language.name!
             }
@@ -96,7 +97,9 @@ class CountryDetailsController: UIViewController {
                                             constant: -80).isActive = true
         flagImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
+
     private struct Constants {
-        static let notApplicableField: String = "N-A"
+        static let notApplicableField = "N-A"
+        static let detailsDefaultHeader = "Details"
     }
 }
