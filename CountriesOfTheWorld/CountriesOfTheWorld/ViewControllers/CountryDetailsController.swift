@@ -36,6 +36,7 @@ class CountryDetailsController: UIViewController {
         fillDetailsViewWithData()
         configureFlagImage()
         configureStackView()
+        title = "\(country?.name ?? "Details")"
     }
 
     func fillDetailsViewWithData() {
@@ -45,7 +46,7 @@ class CountryDetailsController: UIViewController {
             countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
             countryInfo["Continent: "] = country.continent.name
             countryInfo["Phone: "] = country.phone
-            countryInfo["Capital: "] = country.currency ?? Constants.notApplicableField
+            countryInfo["Currency: "] = country.currency ?? Constants.notApplicableField
             for (index, language) in country.languages.enumerated() {
                 countryInfo["Language\(index): "] = language.name!
             }
