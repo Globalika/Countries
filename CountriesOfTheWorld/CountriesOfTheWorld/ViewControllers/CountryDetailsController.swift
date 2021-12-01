@@ -36,7 +36,7 @@ class CountryDetailsController: UIViewController {
         fillDetailsViewWithData()
         configureFlagImage()
         configureStackView()
-        title = "\(country?.name ?? "Details")"
+        title = "\(country?.name ?? Constants.detailsDefaultHeader)"
     }
 
     func fillDetailsViewWithData() {
@@ -97,7 +97,9 @@ class CountryDetailsController: UIViewController {
                                             constant: -80).isActive = true
         flagImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
+
     private struct Constants {
-        static let notApplicableField: String = "N-A"
+        static let notApplicableField = "N-A"
+        static let detailsDefaultHeader = "Details"
     }
 }
