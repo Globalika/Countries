@@ -88,6 +88,11 @@ class CountryViewCell: UITableViewCell {
 }
 
 extension CountryViewCell {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradient.frame = indentView.bounds
+    }
+    
     func updateCell(country: CountriesQuery.Data.Country) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
