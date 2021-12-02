@@ -17,7 +17,8 @@ class CountryViewCell: UITableViewCell {
             Constants.cellGradientFirstColor,
             Constants.cellGradientSecondColor
         ]
-        gradient.locations = [0.0, 0.5]
+        gradient.locations = [Constants.firstColorGradientStopLocation,
+                              Constants.secondColorGradientStopLocation]
         return gradient
     }()
 
@@ -32,7 +33,7 @@ class CountryViewCell: UITableViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.distribution = .fillEqually
-        stack.spacing = 20
+        stack.spacing = Constants.horizontalStackSpacing
         return stack
     }()
 
@@ -41,7 +42,7 @@ class CountryViewCell: UITableViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .fillEqually
-        stack.spacing = 20
+        stack.spacing = Constants.labelVerticalStackSpacing
         return stack
     }()
 
@@ -109,10 +110,13 @@ extension CountryViewCell {
     func setIndentViewConstraints() {
         indentView.layer.insertSublayer(gradient, at: 0)
         NSLayoutConstraint.activate([
-            indentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
-            indentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            indentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            indentView.heightAnchor.constraint(equalToConstant: 160)
+            indentView.topAnchor.constraint(equalTo: self.topAnchor,
+                                            constant: Constants.indentViewTopMargin),
+            indentView.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+                                                constant: Constants.indentViewLeftMargin),
+            indentView.trailingAnchor.constraint(equalTo: self.trailingAnchor,
+                                                 constant: Constants.indentViewRightMargin),
+            indentView.heightAnchor.constraint(equalToConstant: Constants.indentViewHeight)
         ])
     }
 
@@ -155,17 +159,17 @@ extension CountryViewCell {
             countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
             countryNameLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
             countryNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            countryNameLabel.heightAnchor.constraint(equalToConstant: 33),
+            countryNameLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
 
             countryCapitalLabel.topAnchor.constraint(equalTo: self.countryNameLabel.bottomAnchor),
             countryCapitalLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
             countryCapitalLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            countryCapitalLabel.heightAnchor.constraint(equalToConstant: 33),
+            countryCapitalLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
 
             countryContinentLabel.topAnchor.constraint(equalTo: self.countryCapitalLabel.bottomAnchor),
             countryContinentLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
             countryContinentLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            countryContinentLabel.heightAnchor.constraint(equalToConstant: 33)
+            countryContinentLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
         ])
     }
 
@@ -174,5 +178,14 @@ extension CountryViewCell {
         static let notApplicableField = "N-A"
         static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
         static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
+        static let firstColorGradientStopLocation: NSNumber = 0.5
+        static let secondColorGradientStopLocation: NSNumber = 1.0
+        static let labelHeight: CGFloat = 33
+        static let indentViewHeight: CGFloat = 160
+        static let indentViewTopMargin: CGFloat = 10
+        static let indentViewLeftMargin: CGFloat = 30
+        static let indentViewRightMargin: CGFloat = -30
+        static let horizontalStackSpacing: CGFloat = 20
+        static let labelVerticalStackSpacing: CGFloat = 20
     }
 }
