@@ -10,6 +10,7 @@
 		01F41D044EA05C01F3E00223 /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48FF3F4B713A1823639601C /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework */; };
 		1452189F4CE26BEAA8B80740 /* Pods_CountriesOfTheWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B339A3E85E368B375058783 /* Pods_CountriesOfTheWorld.framework */; };
 		3448D79B812FD5EB7F7E5DAC /* Pods_CountriesOfTheWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */; };
+		89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */; };
 		8938933C274E589100049179 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8938933B274E589100049179 /* .swiftlint.yml */; };
 		899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EFCA8274FA0B1006254C4 /* R.generated.swift */; };
 		899EFCAB274FA0CD006254C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899EFCAA274FA0CD006254C4 /* Assets.xcassets */; };
@@ -20,7 +21,7 @@
 		89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */; };
 		89E72683274CE540002C063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72682274CE540002C063B /* AppDelegate.swift */; };
 		89E72685274CE540002C063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72684274CE540002C063B /* SceneDelegate.swift */; };
-		89E7268D274CE540002C063B /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		89E7268D274CE540002C063B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		89E7269D274CE542002C063B /* CountriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7269C274CE542002C063B /* CountriesTests.swift */; };
 		89E726A7274CE542002C063B /* CountriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E726A6274CE542002C063B /* CountriesUITests.swift */; };
 		89E726A9274CE542002C063B /* CountriesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E726A8274CE542002C063B /* CountriesUITestsLaunchTests.swift */; };
@@ -55,6 +56,7 @@
 		71919E02F7A983D922DC1842 /* Pods-Countries-CountriesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries-CountriesUITests.release.xcconfig"; path = "Target Support Files/Pods-Countries-CountriesUITests/Pods-Countries-CountriesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		75A6969D22C2C5DF478B7E0F /* Pods-Countries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.debug.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.debug.xcconfig"; sourceTree = "<group>"; };
 		83E41B164AE13785989C8084 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		8938933B274E589100049179 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		899EFCA8274FA0B1006254C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		899EFCAA274FA0CD006254C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		89101A6C2758C38600BC6846 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		899EFCA7274FA039006254C4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 				89E72684274CE540002C063B /* SceneDelegate.swift */,
 				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
 				89E72693274CE542002C063B /* Info.plist */,
+				89101A6C2758C38600BC6846 /* Extensions */,
 				899EFCA7274FA039006254C4 /* Resources */,
 				89B28F6D274EA9F4000C4C91 /* ViewControllers */,
 			);
@@ -373,7 +384,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,11 +520,12 @@
 				89E72683274CE540002C063B /* AppDelegate.swift in Sources */,
 				899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */,
 				89B28F71274EB442000C4C91 /* Apollo.swift in Sources */,
-				89E7268D274CE540002C063B /* BuildFile in Sources */,
+				89E7268D274CE540002C063B /* (null) in Sources */,
 				89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */,
 				89B28F6F274EAA33000C4C91 /* API.swift in Sources */,
 				89E72685274CE540002C063B /* SceneDelegate.swift in Sources */,
 				89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */,
+				89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
