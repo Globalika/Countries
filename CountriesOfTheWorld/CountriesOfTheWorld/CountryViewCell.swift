@@ -14,8 +14,8 @@ class CountryViewCell: UITableViewCell {
     let gradient: CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.colors = [
-            UIColor(rgb: Constants.cellGradientFirstColor).cgColor,
-            UIColor(rgb: Constants.cellGradientSecondColor).cgColor
+            Constants.cellGradientFirstColor,
+            Constants.cellGradientSecondColor
         ]
         gradient.locations = [0.0, 0.5]
         return gradient
@@ -172,7 +172,7 @@ extension CountryViewCell {
     private struct Constants {
         static let cellHeight: CGFloat = 185
         static let notApplicableField = "N-A"
-        static let cellGradientFirstColor = 0xFFE485
-        static let cellGradientSecondColor = 0xBA7B00
+        static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
+        static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
     }
 }
