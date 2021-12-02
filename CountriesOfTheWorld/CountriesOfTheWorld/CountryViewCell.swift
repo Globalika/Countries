@@ -72,14 +72,8 @@ class CountryViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        contentView.backgroundColor = .lightGray
-        self.addSubview(flagImageView)
-        self.addSubview(countryNameLabel)
-        self.addSubview(countryCapitalLabel)
-        self.addSubview(countryContinentLabel)
-
-        setCellConstraints()
+        setCellViewConstraints()
+        configureCellView()
     }
 
     required init?(coder: NSCoder) {
@@ -141,13 +135,23 @@ extension CountryViewCell {
         // TODO configure horizontal stack view
     }
 
-    func setCellConstraints() {
+    func setCellViewConstraints() {
+        NSLayoutConstraint.activate([
+            contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight)
+        ])
+    }
+    
+    func setFlagImageConstraints() {
         NSLayoutConstraint.activate([
             flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
             flagImageView.topAnchor.constraint(equalTo: self.topAnchor),
             flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor),
-
+            flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor)
+        ])
+    }
+    
+    func setLabelConstraints() {
+        NSLayoutConstraint.activate([
             countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
             countryNameLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
             countryNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
@@ -166,6 +170,7 @@ extension CountryViewCell {
     }
 
     private struct Constants {
+        static let cellHeight: CGFloat = 185
         static let notApplicableField = "N-A"
         static let cellGradientFirstColor = 0xFFE485
         static let cellGradientSecondColor = 0xBA7B00
