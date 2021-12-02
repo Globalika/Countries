@@ -140,7 +140,7 @@ extension CountryViewCell {
             contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight)
         ])
     }
-    
+
     func setFlagImageConstraints() {
         NSLayoutConstraint.activate([
             flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
@@ -149,7 +149,7 @@ extension CountryViewCell {
             flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor)
         ])
     }
-    
+
     func setLabelConstraints() {
         NSLayoutConstraint.activate([
             countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
