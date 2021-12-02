@@ -11,6 +11,40 @@ import UIKit
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
 
+    let gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.colors = [
+            UIColor(rgb: Constants.cellGradientFirstColor).cgColor,
+            UIColor(rgb: Constants.cellGradientSecondColor).cgColor
+        ]
+        gradient.locations = [0.0, 0.5]
+        return gradient
+    }()
+
+    var indentView: UIView = {
+        var view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    var horizontalStackView: UIStackView = {
+        var stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        stack.spacing = 20
+        return stack
+    }()
+
+    var labelVerticalStackView: UIStackView = {
+        var stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 20
+        return stack
+    }()
+
     var flagImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -88,6 +122,8 @@ class CountryViewCell: UITableViewCell {
     }
 
     private struct Constants {
-        static let notApplicableField: String = "N-A"
+        static let notApplicableField = "N-A"
+        static let cellGradientFirstColor = 0xFFE485
+        static let cellGradientSecondColor = 0xBA7B00
     }
 }
