@@ -127,10 +127,12 @@ extension CountryViewCell {
     }
 
     func setHorizontalStackViewConstraints() {
-        horizontalStackView.layoutMargins = UIEdgeInsets(top: 0,
-                                                         left: 0,
-                                                         bottom: 0,
-                                                         right: 0)
+        NSLayoutConstraint.activate([
+            horizontalStackView.leadingAnchor.constraint(equalTo: indentView.leadingAnchor),
+            horizontalStackView.topAnchor.constraint(equalTo: indentView.topAnchor),
+            horizontalStackView.bottomAnchor.constraint(equalTo: indentView.bottomAnchor),
+            horizontalStackView.trailingAnchor.constraint(equalTo: indentView.trailingAnchor)
+        ])
     }
 
     func configureHorizontalStackView() {
