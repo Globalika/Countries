@@ -108,7 +108,6 @@ extension CountryViewCell {
     }
 
     func setIndentViewConstraints() {
-        indentView.layer.insertSublayer(gradient, at: 0)
         NSLayoutConstraint.activate([
             indentView.topAnchor.constraint(equalTo: self.topAnchor,
                                             constant: Constants.indentViewTopMargin),
@@ -121,6 +120,7 @@ extension CountryViewCell {
     }
 
     func configureIndentView() {
+        indentView.layer.insertSublayer(gradient, at: 0)
         indentView.addSubview(horizontalStackView)
         setHorizontalStackViewConstraints()
         configureHorizontalStackView()
