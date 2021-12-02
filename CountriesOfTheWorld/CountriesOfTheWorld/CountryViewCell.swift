@@ -79,14 +79,14 @@ class CountryViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
-}
 
-extension CountryViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         gradient.frame = indentView.bounds
     }
+}
 
+extension CountryViewCell {
     func updateCell(country: CountriesQuery.Data.Country) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
