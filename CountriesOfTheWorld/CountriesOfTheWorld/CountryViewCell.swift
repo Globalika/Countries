@@ -92,7 +92,7 @@ extension CountryViewCell {
         super.layoutSubviews()
         gradient.frame = indentView.bounds
     }
-    
+
     func updateCell(country: CountriesQuery.Data.Country) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
@@ -106,6 +106,41 @@ extension CountryViewCell {
 }
 
 extension CountryViewCell {
+    func configureCellView() {
+        addSubview(indentView)
+        setIndentViewConstraints()
+        configureIndentView()
+    }
+
+    func setIndentViewConstraints() {
+        indentView.layer.insertSublayer(gradient, at: 0)
+        NSLayoutConstraint.activate([
+            indentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            indentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            indentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            indentView.heightAnchor.constraint(equalToConstant: 160)
+        ])
+    }
+
+    func configureIndentView() {
+        indentView.addSubview(horizontalStackView)
+        setHorizontalStackViewConstraints()
+        configureHorizontalStackView()
+    }
+
+    func setHorizontalStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            horizontalStackView.leadingAnchor.constraint(equalTo: indentView.leadingAnchor),
+            horizontalStackView.topAnchor.constraint(equalTo: indentView.topAnchor),
+            horizontalStackView.bottomAnchor.constraint(equalTo: indentView.bottomAnchor),
+            horizontalStackView.trailingAnchor.constraint(equalTo: indentView.trailingAnchor)
+        ])
+    }
+
+    func configureHorizontalStackView() {
+        // TODO configure horizontal stack view
+    }
+
     func setCellConstraints() {
         NSLayoutConstraint.activate([
             flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
