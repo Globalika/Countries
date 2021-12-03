@@ -66,6 +66,24 @@ class CellDecoratorView: UIView {
         }
     }
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        confgiureDecoratorView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        confgiureDecoratorView()
+    }
+
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        gradientView.frame = self.bounds
+        gradientView.direction = .vertical
+        gradientView.locations = [Constants.firstColorGradientStopLocation,
+                                  Constants.secondColorGradientStopLocation]
+    }
+
     func confgiureDecoratorView() {
         addSubview(shadowView)
         addSubview(gradientView)
@@ -96,5 +114,7 @@ class CellDecoratorView: UIView {
         static let defaultShadowOpacity: Float = 0.0
         static let defaultShadowRadius: CGFloat = 0.0
         static let defaultCornerRadius: CGFloat = 0.0
+        static let firstColorGradientStopLocation = 0.2188
+        static let secondColorGradientStopLocation = 1.0
     }
 }
