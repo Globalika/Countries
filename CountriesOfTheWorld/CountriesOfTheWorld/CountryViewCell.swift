@@ -11,20 +11,16 @@ import UIKit
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
 
-    let gradient: CAGradientLayer = {
-        let gradient = CAGradientLayer()
-        gradient.colors = [
-            Constants.cellGradientFirstColor,
-            Constants.cellGradientSecondColor
-        ]
-        gradient.locations = [Constants.firstColorGradientStopLocation,
-                              Constants.secondColorGradientStopLocation]
-        return gradient
-    }()
-
-    var indentView: UIView = {
-        var view = UIView()
+    var indentView: CellDecoratorView = {
+        var view = CellDecoratorView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.cornerRadius = 15
+        view.shadowColor = UIColor(red: 0, green: 0, blue: 0)
+        view.shadowOffset = CGSize(width: 0, height: 4)
+        view.shadowRadius = 4
+        view.shadowOpacity = 0.2
+        view.gradientColors = [Constants.cellGradientFirstColor,
+                               Constants.cellGradientSecondColor]
         return view
     }()
 
@@ -79,11 +75,6 @@ class CountryViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        gradient.frame = indentView.bounds
-    }
 }
 
 extension CountryViewCell {
@@ -120,7 +111,6 @@ extension CountryViewCell {
     }
 
     func configureIndentView() {
-        indentView.layer.insertSublayer(gradient, at: 0)
         indentView.addSubview(horizontalStackView)
         setHorizontalStackViewConstraints()
         configureHorizontalStackView()
@@ -195,8 +185,8 @@ extension CountryViewCell {
         static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
         static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
-        static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
-        static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
+        static let cellGradientFirstColor = UIColor(rgb: 0xFFE485)
+        static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00)
         static let firstColorGradientStopLocation: NSNumber = 0.5
         static let secondColorGradientStopLocation: NSNumber = 1.0
         static let labelHeight: CGFloat = 33
