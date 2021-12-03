@@ -139,6 +139,13 @@ extension CountryViewCell {
         // TODO configure horizontal stack onjects constraints
     }
 
+    func configureLabelVerticalStackView() {
+        labelVerticalStackView.addArrangedSubview(countryNameLabel)
+        labelVerticalStackView.addArrangedSubview(countryCapitalLabel)
+        labelVerticalStackView.addArrangedSubview(countryContinentLabel)
+        setLabelConstraints()
+    }
+
     func setFlagImageConstraints() {
         NSLayoutConstraint.activate([
             flagImageView.leftAnchor.constraint(equalTo: horizontalStackView.leftAnchor,
