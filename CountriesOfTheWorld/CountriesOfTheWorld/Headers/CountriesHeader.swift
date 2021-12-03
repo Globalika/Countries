@@ -28,10 +28,18 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        configureTableHeader()
     }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
+    }
+
+    func configureTableHeader() {
+        contentView.addSubview(imageView)
+        setImageConstraints()
+        contentView.addSubview(headerLabel)
+        setLabelConstraints()
     }
 
     func setImageConstraints() {
