@@ -4,6 +4,7 @@ target 'CountriesOfTheWorld' do
   pod 'Apollo'
   pod 'SwiftLint'
   pod 'R.swift'
+  pod 'GradientView'
 
   target 'CountriesOfTheWorldTests' do
     inherit! :search_paths
