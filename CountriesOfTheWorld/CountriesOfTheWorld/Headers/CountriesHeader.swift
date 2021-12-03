@@ -28,10 +28,6 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
         return label
     }()
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         configureTableHeader()
