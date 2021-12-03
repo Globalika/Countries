@@ -136,7 +136,11 @@ extension CountryViewCell {
     }
 
     func configureHorizontalStackView() {
-        // TODO configure horizontal stack onjects constraints
+        horizontalStackView.addArrangedSubview(flagImageView)
+        setFlagImageConstraints()
+        horizontalStackView.addArrangedSubview(labelVerticalStackView)
+        setLabelVerticalStackViewConstraints()
+        configureLabelVerticalStackView()
     }
 
     func configureLabelVerticalStackView() {
