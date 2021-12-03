@@ -14,11 +14,11 @@ class CountryViewCell: UITableViewCell {
     var indentView: CellDecoratorView = {
         var view = CellDecoratorView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.cornerRadius = 15
-        view.shadowColor = UIColor(red: 0, green: 0, blue: 0)
-        view.shadowOffset = CGSize(width: 0, height: 4)
-        view.shadowRadius = 4
-        view.shadowOpacity = 0.2
+        view.cornerRadius = Constants.decoratorViewCornerRadius
+        view.shadowColor = Constants.decoratorShadowColor
+        view.shadowOffset = Constants.decaratorShadowOffset
+        view.shadowRadius = Constants.decaratorShadowRadius
+        view.shadowOpacity = Constants.decaratorShadowOpacity
         view.gradientColors = [Constants.cellGradientFirstColor,
                                Constants.cellGradientSecondColor]
         return view
@@ -190,5 +190,10 @@ extension CountryViewCell {
         static let labelHeight: CGFloat = 33
         static let horizontalStackSpacing: CGFloat = 20
         static let labelVerticalStackSpacing: CGFloat = 20
+        static let decoratorViewCornerRadius: CGFloat = 15
+        static let decoratorShadowColor = UIColor(red: 0, green: 0, blue: 0)
+        static let decaratorShadowOffset = CGSize(width: 0, height: 4)
+        static let decaratorShadowRadius: CGFloat = 4
+        static let decaratorShadowOpacity: Float = 0.2
     }
 }
