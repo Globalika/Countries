@@ -30,7 +30,6 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor = Constants.headerBackgroundColor
     }
 
     override init(reuseIdentifier: String?) {
@@ -43,6 +42,7 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
     }
 
     func configureTableHeader() {
+        contentView.backgroundColor = Constants.headerBackgroundColor
         contentView.addSubview(imageView)
         setImageConstraints()
         contentView.addSubview(headerLabel)
