@@ -146,6 +146,15 @@ extension CountryViewCell {
         setLabelsConstraints()
     }
 
+    func setLabelVerticalStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            labelVerticalStackView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor),
+            labelVerticalStackView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor),
+            labelVerticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor),
+            labelVerticalStackView.trailingAnchor.constraint(equalTo: horizontalStackView.trailingAnchor)
+        ])
+    }
+
     func setFlagImageConstraints() {
         NSLayoutConstraint.activate([
             flagImageView.leftAnchor.constraint(equalTo: horizontalStackView.leftAnchor,
