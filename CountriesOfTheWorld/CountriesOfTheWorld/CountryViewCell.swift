@@ -177,12 +177,12 @@ extension CountryViewCell {
             countryNameLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.leftAnchor),
             countryNameLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryNameLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
- 
+
             countryCapitalLabel.topAnchor.constraint(equalTo: countryNameLabel.bottomAnchor),
             countryCapitalLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryCapitalLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryCapitalLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
- 
+
             countryContinentLabel.topAnchor.constraint(equalTo: countryCapitalLabel.bottomAnchor),
             countryContinentLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryContinentLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
