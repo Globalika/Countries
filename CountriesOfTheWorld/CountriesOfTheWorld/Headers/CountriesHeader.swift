@@ -14,6 +14,7 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.image = Constants.headerImage
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -21,6 +22,7 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
     let headerLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: Constants.headerLabelFont)
+        label.text = Constants.headerLabelText
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         return label
@@ -71,5 +73,7 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
         static let imageHeight: CGFloat = 100
         static let labelBottomInset: CGFloat = -15
         static let headerBackgroundColor = UIColor(rgb: 0xF1F1F1)
+        static let headerLabelText = "Choose a card :)"
+        static let headerImage = UIImage(named: "world")
     }
 }

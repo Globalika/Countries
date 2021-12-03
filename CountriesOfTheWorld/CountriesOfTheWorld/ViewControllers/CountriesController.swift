@@ -56,8 +56,6 @@ extension CountriesController {
                             viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CountriesHeaderView.identifier)
                 as? CountriesHeaderView else { return UITableViewHeaderFooterView() }
-        header.imageView.image = UIImage(named: Constants.headerImageName)
-        header.headerLabel.text = Constants.headerLabelText
         return header
     }
 
@@ -79,7 +77,5 @@ extension CountriesController {
     private struct Constants {
         static let rowHeight: CGFloat = 185
         static let headerHeight: CGFloat = 160
-        static let headerLabelText = "Choose a card :)"
-        static let headerImageName = "world"
     }
 }
