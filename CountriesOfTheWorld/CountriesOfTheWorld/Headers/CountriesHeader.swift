@@ -34,6 +34,25 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
         fatalError("\(#function) has not been implemented")
     }
 
+    func setImageConstraints() {
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: self.topAnchor),
+            imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            imageView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: Constants.imageHeight)
+        ])
+    }
+
+    func setLabelConstraints() {
+        NSLayoutConstraint.activate([
+            headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            headerLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
+            headerLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            headerLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor,
+                                                constant: Constants.labelBottomInset)
+        ])
+    }
+
     private struct Constants {
         static let headerLabelFont: CGFloat = 40
         static let imageHeight: CGFloat = 100
