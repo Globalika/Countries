@@ -187,8 +187,6 @@ extension CountryViewCell {
         static let notApplicableField = "N-A"
         static let cellGradientFirstColor = UIColor(rgb: 0xFFE485)
         static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00)
-        static let firstColorGradientStopLocation: NSNumber = 0.5
-        static let secondColorGradientStopLocation: NSNumber = 1.0
         static let labelHeight: CGFloat = 33
         static let horizontalStackSpacing: CGFloat = 20
         static let labelVerticalStackSpacing: CGFloat = 20
