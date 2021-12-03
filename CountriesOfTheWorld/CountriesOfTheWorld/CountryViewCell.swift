@@ -140,12 +140,14 @@ extension CountryViewCell {
     }
 
     func setFlagImageConstraints() {
-        // TODO renew constraints
         NSLayoutConstraint.activate([
-            flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            flagImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor)
+            flagImageView.leftAnchor.constraint(equalTo: horizontalStackView.leftAnchor,
+                                                constant: Constants.flagViewInsets.left),
+            flagImageView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor,
+                                               constant: Constants.flagViewInsets.top),
+            flagImageView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor,
+                                                  constant: Constants.flagViewInsets.bottom),
+            flagImageView.widthAnchor.constraint(equalToConstant: Constants.flagViewWidth)
         ])
     }
 
@@ -171,6 +173,8 @@ extension CountryViewCell {
 
     private struct Constants {
         static let indentViewInsets = UIEdgeInsets(top: 10, left: 30, bottom: -10, right: -30)
+        static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
+        static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
         static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
         static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
