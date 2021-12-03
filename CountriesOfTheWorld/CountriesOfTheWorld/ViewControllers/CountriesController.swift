@@ -57,15 +57,33 @@ extension CountriesController {
     }
 
     override func tableView(_ tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CountriesHeaderView.identifier)
+                as? CountriesHeaderView else { return UITableViewHeaderFooterView() }
+        header.imageView.image = UIImage(named: Constants.headerImageName)
+        header.headerLabel.text = Constants.headerLabelText
+        return header
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.headerHeight
+    }
+
+    override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
         showDetailViewController(UINavigationController(rootViewController: CountryDetailsController(
             country: countries[indexPath.row])),
                                  sender: nil)
     }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
     }
+
     private struct Constants {
         static let rowHeight: CGFloat = 185
+        static let headerHeight: CGFloat = 160
+        static let headerLabelText = "Choose a card :)"
+        static let headerImageName = "world"
     }
 }

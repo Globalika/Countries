@@ -11,14 +11,14 @@ import UIKit
 class CountriesHeaderView: UITableViewHeaderFooterView {
     static let identifier = "countriesTableHeader"
 
-    private let imageView: UIImageView = {
+    let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
-    private let headerLabel: UILabel = {
+    let headerLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: Constants.headerLabelFont)
         label.translatesAutoresizingMaskIntoConstraints = false
