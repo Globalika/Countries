@@ -35,7 +35,8 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
     }
 
     private struct Constants {
-        static let headerLabelFont: CGFloat = 25
-        static let headerImageName = "world"
+        static let headerLabelFont: CGFloat = 40
+        static let imageHeight: CGFloat = 100
+        static let labelBottomInset: CGFloat = -15
     }
 }
