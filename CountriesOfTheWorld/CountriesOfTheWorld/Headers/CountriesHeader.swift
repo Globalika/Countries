@@ -14,14 +14,14 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: Constants.headerImageName)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
     private let headerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Choose a card :)"
         label.font = .systemFont(ofSize: Constants.headerLabelFont)
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         return label
     }()
