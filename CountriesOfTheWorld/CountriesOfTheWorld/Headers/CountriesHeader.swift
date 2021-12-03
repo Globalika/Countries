@@ -11,6 +11,13 @@ import UIKit
 class CountriesHeaderView: UITableViewHeaderFooterView {
     static let identifier = "countriesTableHeader"
 
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: Constants.headerImageName)
+        return imageView
+    }()
+
     private let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Choose a card :)"
@@ -29,5 +36,6 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
 
     private struct Constants {
         static let headerLabelFont: CGFloat = 25
+        static let headerImageName = "world"
     }
 }
