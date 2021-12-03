@@ -10,8 +10,20 @@ import Foundation
 import UIKit
 
 class CellDecoratorView: UIView {
-    var shadowView: UIView = UIView()
-    var gradientView: GradientView = GradientView()
+    var shadowView: UIView = {
+        var view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    var gradientView: GradientView = {
+        var view = GradientView()
+        view.backgroundColor = .white
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     var shadowOpacity: Float = Constants.defaultShadowOpacity {
         didSet {
@@ -56,39 +68,28 @@ class CellDecoratorView: UIView {
 
     func confgiureDecoratorView() {
         addSubview(shadowView)
-        configureShadowView()
         addSubview(gradientView)
-        configureGradientView()
         sendSubviewToBack(gradientView)
         sendSubviewToBack(shadowView)
-        backgroundColor = UIColor.clear
+        backgroundColor = .clear
     }
-    
-    func configureShadowView() {
-        setShadowVIewConstraints()
-        shadowView.backgroundColor = UIColor.white
-        shadowView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    func configureGradientView() {
-        setGradientViewConstraints()
-        gradientView.backgroundColor = UIColor.white
-        gradientView.clipsToBounds = true
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
-    }
-    
+
     func setShadowVIewConstraints() {
-        shadowView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        shadowView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        shadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        shadowView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            shadowView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            shadowView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            shadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            shadowView.topAnchor.constraint(equalTo: self.topAnchor)
+        ])
     }
-    
+
     func setGradientViewConstraints() {
-        gradientView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        gradientView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        gradientView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        gradientView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            gradientView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            gradientView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            gradientView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            gradientView.topAnchor.constraint(equalTo: self.topAnchor)
+        ])
     }
 
     private struct Constants {
