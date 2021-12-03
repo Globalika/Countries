@@ -143,7 +143,7 @@ extension CountryViewCell {
         labelVerticalStackView.addArrangedSubview(countryNameLabel)
         labelVerticalStackView.addArrangedSubview(countryCapitalLabel)
         labelVerticalStackView.addArrangedSubview(countryContinentLabel)
-        setLabelConstraints()
+        setLabelsConstraints()
     }
 
     func setFlagImageConstraints() {
@@ -158,7 +158,7 @@ extension CountryViewCell {
         ])
     }
 
-    func setLabelConstraints() {
+    func setLabelsConstraints() {
         // TODO renew constraints
         NSLayoutConstraint.activate([
             countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
