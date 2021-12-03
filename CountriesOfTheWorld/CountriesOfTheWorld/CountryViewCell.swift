@@ -73,7 +73,6 @@ class CountryViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setCellViewConstraints()
         configureCellView()
     }
 
@@ -137,48 +136,64 @@ extension CountryViewCell {
     }
 
     func configureHorizontalStackView() {
-        // TODO configure horizontal stack onjects constraints
+        horizontalStackView.addArrangedSubview(flagImageView)
+        setFlagImageConstraints()
+        horizontalStackView.addArrangedSubview(labelVerticalStackView)
+        setLabelVerticalStackViewConstraints()
+        configureLabelVerticalStackView()
     }
 
-    func setCellViewConstraints() {
+    func configureLabelVerticalStackView() {
+        labelVerticalStackView.addArrangedSubview(countryNameLabel)
+        labelVerticalStackView.addArrangedSubview(countryCapitalLabel)
+        labelVerticalStackView.addArrangedSubview(countryContinentLabel)
+        setLabelsConstraints()
+    }
+
+    func setLabelVerticalStackViewConstraints() {
         NSLayoutConstraint.activate([
-            contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight)
+            labelVerticalStackView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor),
+            labelVerticalStackView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor),
+            labelVerticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor),
+            labelVerticalStackView.trailingAnchor.constraint(equalTo: horizontalStackView.trailingAnchor)
         ])
     }
 
     func setFlagImageConstraints() {
-        // TODO renew constraints
         NSLayoutConstraint.activate([
-            flagImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            flagImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            flagImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            flagImageView.widthAnchor.constraint(equalTo: self.heightAnchor)
+            flagImageView.leftAnchor.constraint(equalTo: horizontalStackView.leftAnchor,
+                                                constant: Constants.flagViewInsets.left),
+            flagImageView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor,
+                                               constant: Constants.flagViewInsets.top),
+            flagImageView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor,
+                                                  constant: Constants.flagViewInsets.bottom),
+            flagImageView.widthAnchor.constraint(equalToConstant: Constants.flagViewWidth)
         ])
     }
 
-    func setLabelConstraints() {
-        // TODO renew constraints
+    func setLabelsConstraints() {
         NSLayoutConstraint.activate([
-            countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            countryNameLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
-            countryNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryNameLabel.topAnchor.constraint(equalTo: labelVerticalStackView.topAnchor),
+            countryNameLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.leftAnchor),
+            countryNameLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryNameLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
 
-            countryCapitalLabel.topAnchor.constraint(equalTo: self.countryNameLabel.bottomAnchor),
-            countryCapitalLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
-            countryCapitalLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryCapitalLabel.topAnchor.constraint(equalTo: countryNameLabel.bottomAnchor),
+            countryCapitalLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
+            countryCapitalLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryCapitalLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
 
-            countryContinentLabel.topAnchor.constraint(equalTo: self.countryCapitalLabel.bottomAnchor),
-            countryContinentLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
-            countryContinentLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryContinentLabel.topAnchor.constraint(equalTo: countryCapitalLabel.bottomAnchor),
+            countryContinentLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
+            countryContinentLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryContinentLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
         ])
     }
 
     private struct Constants {
         static let indentViewInsets = UIEdgeInsets(top: 10, left: 30, bottom: -10, right: -30)
-        static let cellHeight: CGFloat = 185
+        static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
+        static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
         static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
         static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
