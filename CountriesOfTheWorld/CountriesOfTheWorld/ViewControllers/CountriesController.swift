@@ -17,7 +17,10 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
+        tableView.register(CountryViewCell.self,
+                           forCellReuseIdentifier: CountryViewCell.identifier)
+        tableView.register(CountriesHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: CountriesHeaderView.identifier)
         loadData()
         title = "Countries"
     }
@@ -49,8 +52,15 @@ extension CountriesController {
         return countries.count
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Countries"
+    override func tableView(_ tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CountriesHeaderView.identifier)
+                as? CountriesHeaderView else { return UITableViewHeaderFooterView() }
+        return header
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.headerHeight
     }
 
     override func tableView(_ tableView: UITableView,
@@ -59,10 +69,13 @@ extension CountriesController {
             country: countries[indexPath.row])),
                                  sender: nil)
     }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
     }
+
     private struct Constants {
         static let rowHeight: CGFloat = 185
+        static let headerHeight: CGFloat = 160
     }
 }

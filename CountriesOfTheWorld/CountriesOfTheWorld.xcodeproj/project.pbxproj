@@ -19,6 +19,7 @@
 		89B28F71274EB442000C4C91 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F70274EB442000C4C91 /* Apollo.swift */; };
 		89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F72274EC812000C4C91 /* CountryDetailsController.swift */; };
 		89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */; };
+		89E349EE275A3028007F4459 /* CountriesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E349ED275A3028007F4459 /* CountriesHeader.swift */; };
 		89E72683274CE540002C063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72682274CE540002C063B /* AppDelegate.swift */; };
 		89E72685274CE540002C063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72684274CE540002C063B /* SceneDelegate.swift */; };
 		89E7268D274CE540002C063B /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -65,6 +66,7 @@
 		89B28F70274EB442000C4C91 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		89B28F72274EC812000C4C91 /* CountryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsController.swift; sourceTree = "<group>"; };
 		89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
+		89E349ED275A3028007F4459 /* CountriesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesHeader.swift; sourceTree = "<group>"; };
 		89E7267F274CE540002C063B /* CountriesOfTheWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesOfTheWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E72682274CE540002C063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E72684274CE540002C063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		89E349EC275A3009007F4459 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				89E349ED275A3028007F4459 /* CountriesHeader.swift */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		89E72676274CE540002C063B = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		89E72681274CE540002C063B /* CountriesOfTheWorld */ = {
 			isa = PBXGroup;
 			children = (
+				89E349EC275A3009007F4459 /* Headers */,
 				89B28F70274EB442000C4C91 /* Apollo.swift */,
 				89B28F6E274EAA33000C4C91 /* API.swift */,
 				89E72682274CE540002C063B /* AppDelegate.swift */,
@@ -523,6 +534,7 @@
 				89E7268D274CE540002C063B /* (null) in Sources */,
 				89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */,
 				89B28F6F274EAA33000C4C91 /* API.swift in Sources */,
+				89E349EE275A3028007F4459 /* CountriesHeader.swift in Sources */,
 				89E72685274CE540002C063B /* SceneDelegate.swift in Sources */,
 				89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */,
 				89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */,
