@@ -17,7 +17,10 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(CountryViewCell.self, forCellReuseIdentifier: CountryViewCell.identifier)
+        tableView.register(CountryViewCell.self,
+                           forCellReuseIdentifier: CountryViewCell.identifier)
+        tableView.register(CountriesHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: CountriesHeaderView.identifier)
         loadData()
         title = "Countries"
     }
