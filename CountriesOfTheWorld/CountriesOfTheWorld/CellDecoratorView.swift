@@ -54,6 +54,43 @@ class CellDecoratorView: UIView {
         }
     }
 
+    func confgiureDecoratorView() {
+        addSubview(shadowView)
+        configureShadowView()
+        addSubview(gradientView)
+        configureGradientView()
+        sendSubviewToBack(gradientView)
+        sendSubviewToBack(shadowView)
+        backgroundColor = UIColor.clear
+    }
+    
+    func configureShadowView() {
+        setShadowVIewConstraints()
+        shadowView.backgroundColor = UIColor.white
+        shadowView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func configureGradientView() {
+        setGradientViewConstraints()
+        gradientView.backgroundColor = UIColor.white
+        gradientView.clipsToBounds = true
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func setShadowVIewConstraints() {
+        shadowView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        shadowView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        shadowView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        shadowView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    }
+    
+    func setGradientViewConstraints() {
+        gradientView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        gradientView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        gradientView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        gradientView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+    }
+
     private struct Constants {
         static let defaultShadowOpacity: Float = 0.0
         static let defaultShadowRadius: CGFloat = 0.0
