@@ -27,8 +27,8 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
     }()
 
     override func layoutSubviews() {
-        backgroundView = UIView(frame: self.bounds)
-        backgroundView?.backgroundColor = Constants.headerBackgroundColor
+        super.layoutSubviews()
+        contentView.backgroundColor = Constants.headerBackgroundColor
     }
 
     override init(reuseIdentifier: String?) {
