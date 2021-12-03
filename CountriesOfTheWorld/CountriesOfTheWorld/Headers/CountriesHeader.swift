@@ -26,6 +26,11 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
         return label
     }()
 
+    override func layoutSubviews() {
+        backgroundView = UIView(frame: self.bounds)
+        backgroundView?.backgroundColor = Constants.headerBackgroundColor
+    }
+
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         configureTableHeader()
@@ -65,5 +70,6 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
         static let headerLabelFont: CGFloat = 40
         static let imageHeight: CGFloat = 100
         static let labelBottomInset: CGFloat = -15
+        static let headerBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
     }
 }
