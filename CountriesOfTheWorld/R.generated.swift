@@ -127,7 +127,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 254 images.
+  /// This `R.image` struct is generated, and contains static references to 255 images.
   struct image {
     /// Image `ad`.
     static let ad = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad")
@@ -623,6 +623,8 @@ struct R: Rswift.Validatable {
     static let vu = Rswift.ImageResource(bundle: R.hostingBundle, name: "vu")
     /// Image `wf`.
     static let wf = Rswift.ImageResource(bundle: R.hostingBundle, name: "wf")
+    /// Image `world`.
+    static let world = Rswift.ImageResource(bundle: R.hostingBundle, name: "world")
     /// Image `ws`.
     static let ws = Rswift.ImageResource(bundle: R.hostingBundle, name: "ws")
     /// Image `xk`.
@@ -2364,6 +2366,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "wf", bundle: ..., traitCollection: ...)`
     static func wf(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.wf, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "world", bundle: ..., traitCollection: ...)`
+    static func world(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.world, compatibleWith: traitCollection)
     }
     #endif
 
