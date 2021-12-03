@@ -70,6 +70,6 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
         static let headerLabelFont: CGFloat = 40
         static let imageHeight: CGFloat = 100
         static let labelBottomInset: CGFloat = -15
-        static let headerBackgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        static let headerBackgroundColor = UIColor(rgb: 0xF1F1F1)
     }
 }
