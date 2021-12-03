@@ -63,6 +63,6 @@ extension CountriesController {
         return Constants.rowHeight
     }
     private struct Constants {
-        static let rowHeight: CGFloat = 100
+        static let rowHeight: CGFloat = 185
     }
 }

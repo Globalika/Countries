@@ -73,7 +73,6 @@ class CountryViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setCellViewConstraints()
         configureCellView()
     }
 
@@ -140,12 +139,6 @@ extension CountryViewCell {
         // TODO configure horizontal stack onjects constraints
     }
 
-    func setCellViewConstraints() {
-        NSLayoutConstraint.activate([
-            contentView.heightAnchor.constraint(equalToConstant: Constants.cellHeight)
-        ])
-    }
-
     func setFlagImageConstraints() {
         // TODO renew constraints
         NSLayoutConstraint.activate([
@@ -178,7 +171,6 @@ extension CountryViewCell {
 
     private struct Constants {
         static let indentViewInsets = UIEdgeInsets(top: 10, left: 30, bottom: -10, right: -30)
-        static let cellHeight: CGFloat = 185
         static let notApplicableField = "N-A"
         static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
         static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
