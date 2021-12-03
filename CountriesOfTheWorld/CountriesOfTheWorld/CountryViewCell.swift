@@ -168,21 +168,20 @@ extension CountryViewCell {
     }
 
     func setLabelsConstraints() {
-        // TODO renew constraints
         NSLayoutConstraint.activate([
-            countryNameLabel.topAnchor.constraint(equalTo: self.topAnchor),
-            countryNameLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
-            countryNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryNameLabel.topAnchor.constraint(equalTo: labelVerticalStackView.topAnchor),
+            countryNameLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.leftAnchor),
+            countryNameLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryNameLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
-
-            countryCapitalLabel.topAnchor.constraint(equalTo: self.countryNameLabel.bottomAnchor),
-            countryCapitalLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
-            countryCapitalLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+ 
+            countryCapitalLabel.topAnchor.constraint(equalTo: countryNameLabel.bottomAnchor),
+            countryCapitalLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
+            countryCapitalLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryCapitalLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
-
-            countryContinentLabel.topAnchor.constraint(equalTo: self.countryCapitalLabel.bottomAnchor),
-            countryContinentLabel.leftAnchor.constraint(equalTo: self.flagImageView.rightAnchor),
-            countryContinentLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+ 
+            countryContinentLabel.topAnchor.constraint(equalTo: countryCapitalLabel.bottomAnchor),
+            countryContinentLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
+            countryContinentLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
             countryContinentLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
         ])
     }
