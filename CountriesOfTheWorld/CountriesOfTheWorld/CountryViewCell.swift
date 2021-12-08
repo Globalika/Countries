@@ -185,10 +185,11 @@ class CountryViewCell: UITableViewCell {
 
     private struct Constants {
         static let indentViewInsets = UIEdgeInsets(top: 10, left: 30, bottom: -10, right: -30)
-        static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
+        static let flagViewInsets = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
+        static let verticalStackInsets = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
+        static let verticalStackMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
-        static let labelHeight: CGFloat = 33
         static let horizontalStackSpacing: CGFloat = 20
         static let labelVerticalStackSpacing: CGFloat = 20
         static let decoratorViewCornerRadius: CGFloat = 15
