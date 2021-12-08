@@ -16,9 +16,9 @@ class CountryViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.cornerRadius = Constants.decoratorViewCornerRadius
         view.shadowColor = Constants.decoratorShadowColor
-        view.shadowOffset = Constants.decaratorShadowOffset
-        view.shadowRadius = Constants.decaratorShadowRadius
-        view.shadowOpacity = Constants.decaratorShadowOpacity
+        view.shadowOffset = Constants.decoratorShadowOffset
+        view.shadowRadius = Constants.decoratorShadowRadius
+        view.shadowOpacity = Constants.decoratorShadowOpacity
         view.gradientColors = [Constants.cellGradientFirstColor,
                                Constants.cellGradientSecondColor]
         return view
@@ -192,8 +192,8 @@ extension CountryViewCell {
         static let labelVerticalStackSpacing: CGFloat = 20
         static let decoratorViewCornerRadius: CGFloat = 15
         static let decoratorShadowColor = UIColor(red: 0, green: 0, blue: 0)
-        static let decaratorShadowOffset = CGSize(width: 0, height: 4)
-        static let decaratorShadowRadius: CGFloat = 4
-        static let decaratorShadowOpacity: Float = 0.2
+        static let decoratorShadowOffset = CGSize(width: 0, height: 4)
+        static let decoratorShadowRadius: CGFloat = 4
+        static let decoratorShadowOpacity: Float = 0.2
     }
 }

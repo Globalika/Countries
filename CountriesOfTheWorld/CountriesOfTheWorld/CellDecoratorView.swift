@@ -86,7 +86,7 @@ class CellDecoratorView: UIView {
 
     func confgiureDecoratorView() {
         addSubview(shadowView)
-        setShadowVIewConstraints()
+        setShadowViewConstraints()
         addSubview(gradientView)
         setGradientViewConstraints()
         sendSubviewToBack(gradientView)
@@ -94,7 +94,7 @@ class CellDecoratorView: UIView {
         backgroundColor = .clear
     }
 
-    func setShadowVIewConstraints() {
+    func setShadowViewConstraints() {
         NSLayoutConstraint.activate([
             shadowView.leftAnchor.constraint(equalTo: self.leftAnchor),
             shadowView.rightAnchor.constraint(equalTo: self.rightAnchor),
