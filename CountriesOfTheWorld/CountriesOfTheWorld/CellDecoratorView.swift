@@ -73,15 +73,22 @@ class CellDecoratorView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        confgiureDecoratorView()
     }
 
     func confgiureDecoratorView() {
+        backgroundColor = .clear
         addSubview(shadowView)
         setShadowViewConstraints()
         addSubview(gradientView)
         setGradientViewConstraints()
-        backgroundColor = .clear
+        configureGradientView()
+    }
+
+    func configureGradientView() {
+        gradientView.frame = self.bounds
+        gradientView.direction = .vertical
+        gradientView.locations = [Constants.firstColorGradientStopLocation,
+                                  Constants.secondColorGradientStopLocation]
     }
 
     func setShadowViewConstraints() {
