@@ -80,7 +80,7 @@ extension CountriesController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Constants.headerHeight
+        return (UIDevice.current.userInterfaceIdiom == .phone) ? Constants.headerHeight : 0
     }
 
     override func tableView(_ tableView: UITableView,
