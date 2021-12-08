@@ -34,6 +34,8 @@ class CountryViewCell: UITableViewCell {
     var labelVerticalStackView: UIStackView = {
         var stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.layoutMargins = Constants.verticalStackMargins
+        stack.isLayoutMarginsRelativeArrangement = true
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = Constants.labelVerticalStackSpacing
@@ -164,10 +166,14 @@ class CountryViewCell: UITableViewCell {
 
     func setLabelVerticalStackViewConstraints() {
         NSLayoutConstraint.activate([
-            labelVerticalStackView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor),
-            labelVerticalStackView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor),
-            labelVerticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor),
-            labelVerticalStackView.trailingAnchor.constraint(equalTo: horizontalStackView.trailingAnchor)
+            labelVerticalStackView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor,
+                                                            constant: Constants.verticalStackInsets.left),
+            labelVerticalStackView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor,
+                                                        constant: Constants.verticalStackInsets.top),
+            labelVerticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor,
+                                                           constant: Constants.verticalStackInsets.bottom),
+            labelVerticalStackView.trailingAnchor.constraint(equalTo: horizontalStackView.trailingAnchor,
+                                                             constant: Constants.verticalStackInsets.right)
         ])
     }
 
