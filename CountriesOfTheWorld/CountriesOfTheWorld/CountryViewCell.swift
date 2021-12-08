@@ -88,9 +88,30 @@ class CountryViewCell: UITableViewCell {
         } else {
             self.flagImageView.image = UIImage()
         }
-        self.countryNameLabel.text = country.name
-        self.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
-        self.countryContinentLabel.text = country.continent.name
+        countryNameLabel.setAttributedText(
+            descriptionText: Constants.countryNameDescriptionText,
+            descriptionTextFont: .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                             weight: Constants.labelDescriptionFontWeight),
+            dataText: country.name,
+            dataTextFont: .systemFont(ofSize: Constants.labelDataFontSize,
+                                      weight: Constants.labelDataFontWeight)
+        )
+        countryCapitalLabel.setAttributedText(
+            descriptionText: Constants.countryCapitalDescriptionText,
+            descriptionTextFont: .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                             weight: Constants.labelDescriptionFontWeight),
+            dataText: country.capital ?? Constants.notApplicableField,
+            dataTextFont: .systemFont(ofSize: Constants.labelDataFontSize,
+                                      weight: Constants.labelDataFontWeight)
+        )
+        countryContinentLabel.setAttributedText(
+            descriptionText: Constants.countryContinentDescriptionText,
+            descriptionTextFont: .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                             weight: Constants.labelDescriptionFontWeight),
+            dataText: country.continent.name,
+            dataTextFont: .systemFont(ofSize: Constants.labelDataFontSize,
+                                      weight: Constants.labelDataFontWeight)
+        )
     }
 
     func configureCellView() {
@@ -197,5 +218,12 @@ class CountryViewCell: UITableViewCell {
         static let decoratorShadowOpacity: Float = 0.2
         static let allowedNumberOfLinesToWrap = 3
         static let labelMinimumScaleFactor = 0.5
+        static let labelDescriptionFontSize: CGFloat = 12
+        static let labelDescriptionFontWeight: UIFont.Weight = .thin
+        static let labelDataFontSize: CGFloat = 20
+        static let labelDataFontWeight: UIFont.Weight = .bold
+        static let countryNameDescriptionText = "Country"
+        static let countryCapitalDescriptionText = "Capital"
+        static let countryContinentDescriptionText = "Continent"
     }
 }
