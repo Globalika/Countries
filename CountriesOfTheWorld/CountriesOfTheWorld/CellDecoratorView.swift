@@ -56,16 +56,6 @@ class CellDecoratorView: UIView {
         }
     }
 
-    var gradientColors: [UIColor] = [UIColor.white] {
-        didSet {
-            var colors: [UIColor] = []
-            for color in gradientColors {
-                colors.append(color)
-            }
-            gradientView.colors = colors
-        }
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         confgiureDecoratorView()
@@ -87,6 +77,8 @@ class CellDecoratorView: UIView {
     func configureGradientView() {
         gradientView.frame = self.bounds
         gradientView.direction = .vertical
+        gradientView.colors = [Constants.cellGradientFirstColor,
+                               Constants.cellGradientSecondColor]
         gradientView.locations = [Constants.firstColorGradientStopLocation,
                                   Constants.secondColorGradientStopLocation]
     }
@@ -115,5 +107,7 @@ class CellDecoratorView: UIView {
         static let defaultCornerRadius: CGFloat = 0.0
         static let firstColorGradientStopLocation = 0.2188
         static let secondColorGradientStopLocation = 1.0
+        static let cellGradientFirstColor = UIColor(rgb: 0xFFE485)
+        static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00)
     }
 }

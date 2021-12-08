@@ -19,8 +19,6 @@ class CountryViewCell: UITableViewCell {
         view.shadowOffset = Constants.decoratorShadowOffset
         view.shadowRadius = Constants.decoratorShadowRadius
         view.shadowOpacity = Constants.decoratorShadowOpacity
-        view.gradientColors = [Constants.cellGradientFirstColor,
-                               Constants.cellGradientSecondColor]
         return view
     }()
 
@@ -185,8 +183,6 @@ extension CountryViewCell {
         static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
         static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
-        static let cellGradientFirstColor = UIColor(rgb: 0xFFE485)
-        static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00)
         static let labelHeight: CGFloat = 33
         static let horizontalStackSpacing: CGFloat = 20
         static let labelVerticalStackSpacing: CGFloat = 20
