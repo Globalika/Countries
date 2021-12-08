@@ -85,9 +85,20 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        showDetailViewController(UINavigationController(rootViewController: CountryDetailsController(
-            country: countries[indexPath.row])),
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
+                cell.didSelect(indexPath: indexPath)
+            }
+        }
+        let detailsController = CountryDetailsController(country: countries[indexPath.row])
+        showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
+            cell.didDeselect(indexPath: indexPath)
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -100,6 +111,6 @@ extension CountriesController {
         static let navigationBarTitle = "Country List"
         static let tableViewPadding: CGFloat = 0
         static let headerLabelHeight: CGFloat = 30
-        static let imageViewHeight : CGFloat = 110
+        static let imageViewHeight: CGFloat = 110
     }
 }
