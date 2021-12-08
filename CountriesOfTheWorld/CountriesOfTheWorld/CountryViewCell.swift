@@ -22,6 +22,23 @@ class CountryViewCell: UITableViewCell {
         return view
     }()
 
+    var selectedCellBorderView: UIView = {
+        var view = UIView()
+        view.layer.borderWidth = Constants.selectedCellBorderWidth
+        view.layer.cornerRadius = Constants.selectedCellBorderCornerRadius
+        view.layer.borderColor = Constants.selectedCellBorderColor
+        return view
+    }()
+
+    func didSelect(indexPath: IndexPath) {
+        selectedCellBorderView.frame = indentView.bounds
+        indentView.addSubview(selectedCellBorderView)
+    }
+
+    func didDeselect(indexPath: IndexPath) {
+        selectedCellBorderView.removeFromSuperview()
+    }
+
     var horizontalStackView: UIStackView = {
         var stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -212,5 +229,8 @@ class CountryViewCell: UITableViewCell {
         static let countryNameDescriptionText = "Country"
         static let countryCapitalDescriptionText = "Capital"
         static let countryContinentDescriptionText = "Continent"
+        static let selectedCellBorderWidth: CGFloat = 2
+        static let selectedCellBorderColor = UIColor.green.cgColor
+        static let selectedCellBorderCornerRadius: CGFloat = 15
     }
 }
