@@ -89,8 +89,6 @@ class CellDecoratorView: UIView {
         setShadowViewConstraints()
         addSubview(gradientView)
         setGradientViewConstraints()
-        sendSubviewToBack(gradientView)
-        sendSubviewToBack(shadowView)
         backgroundColor = .clear
     }
 
