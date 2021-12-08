@@ -160,7 +160,6 @@ class CountryViewCell: UITableViewCell {
         labelVerticalStackView.addArrangedSubview(countryNameLabel)
         labelVerticalStackView.addArrangedSubview(countryCapitalLabel)
         labelVerticalStackView.addArrangedSubview(countryContinentLabel)
-        setLabelsConstraints()
     }
 
     func setLabelVerticalStackViewConstraints() {
@@ -181,25 +180,6 @@ class CountryViewCell: UITableViewCell {
             flagImageView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor,
                                                   constant: Constants.flagViewInsets.bottom),
             flagImageView.widthAnchor.constraint(equalToConstant: Constants.flagViewWidth)
-        ])
-    }
-
-    func setLabelsConstraints() {
-        NSLayoutConstraint.activate([
-            countryNameLabel.topAnchor.constraint(equalTo: labelVerticalStackView.topAnchor),
-            countryNameLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.leftAnchor),
-            countryNameLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryNameLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
-
-            countryCapitalLabel.topAnchor.constraint(equalTo: countryNameLabel.bottomAnchor),
-            countryCapitalLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryCapitalLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryCapitalLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
-
-            countryContinentLabel.topAnchor.constraint(equalTo: countryCapitalLabel.bottomAnchor),
-            countryContinentLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryContinentLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryContinentLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
         ])
     }
 
