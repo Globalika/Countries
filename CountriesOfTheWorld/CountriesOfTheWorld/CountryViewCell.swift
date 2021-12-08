@@ -47,21 +47,29 @@ class CountryViewCell: UITableViewCell {
         return imageView
     }()
 
+    static func setLabelProperties(label: UILabel) {
+        label.lineBreakMode = .byTruncatingTail
+        label.numberOfLines = Constants.allowedNumberOfLinesToWrap
+        label.minimumScaleFactor = Constants.labelMinimumScaleFactor
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+    }
+
     var countryNameLabel: UILabel = {
         var labelView = UILabel()
-        labelView.translatesAutoresizingMaskIntoConstraints = false
+        setLabelProperties(label: labelView)
         return labelView
     }()
 
     var countryCapitalLabel: UILabel = {
         var labelView = UILabel()
-        labelView.translatesAutoresizingMaskIntoConstraints = false
+        setLabelProperties(label: labelView)
         return labelView
     }()
 
     var countryContinentLabel: UILabel = {
         var labelView = UILabel()
-        labelView.translatesAutoresizingMaskIntoConstraints = false
+        setLabelProperties(label: labelView)
         return labelView
     }()
 
@@ -191,5 +199,7 @@ extension CountryViewCell {
         static let decoratorShadowOffset = CGSize(width: 0, height: 4)
         static let decoratorShadowRadius: CGFloat = 4
         static let decoratorShadowOpacity: Float = 0.2
+        static let allowedNumberOfLinesToWrap = 3
+        static let labelMinimumScaleFactor = 0.5
     }
 }
