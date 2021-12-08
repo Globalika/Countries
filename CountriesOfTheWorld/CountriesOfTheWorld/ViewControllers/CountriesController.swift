@@ -17,12 +17,24 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+        configureTableView()
+    }
+    
+    func configureTableView() {
         tableView.register(CountryViewCell.self,
                            forCellReuseIdentifier: CountryViewCell.identifier)
         tableView.register(CountriesHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: CountriesHeaderView.identifier)
-        loadData()
-        title = "Countries"
+        tableView.separatorStyle = .none
+        tableView.bounces = false
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.title = Constants.navigationBarTitle
+        navigationItem.backButtonTitle = ""
+        tableView.contentInsetAdjustmentBehavior = .never
+        if #available(iOS 15, *) {
+            tableView.sectionHeaderTopPadding = Constants.tableViewPadding
+        }
     }
 }
 
@@ -77,5 +89,7 @@ extension CountriesController {
     private struct Constants {
         static let rowHeight: CGFloat = 185
         static let headerHeight: CGFloat = 160
+        static let navigationBarTitle = "Country List"
+        static let tableViewPadding: CGFloat = 0
     }
 }
