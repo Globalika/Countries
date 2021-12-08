@@ -76,14 +76,6 @@ class CellDecoratorView: UIView {
         confgiureDecoratorView()
     }
 
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        gradientView.frame = self.bounds
-        gradientView.direction = .vertical
-        gradientView.locations = [Constants.firstColorGradientStopLocation,
-                                  Constants.secondColorGradientStopLocation]
-    }
-
     func confgiureDecoratorView() {
         addSubview(shadowView)
         setShadowViewConstraints()
