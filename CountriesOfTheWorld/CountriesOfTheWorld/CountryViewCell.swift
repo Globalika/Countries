@@ -81,9 +81,7 @@ class CountryViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
-}
 
-extension CountryViewCell {
     func updateCell(country: CountriesQuery.Data.Country) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
@@ -94,9 +92,7 @@ extension CountryViewCell {
         self.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
         self.countryContinentLabel.text = country.continent.name
     }
-}
 
-extension CountryViewCell {
     func configureCellView() {
         addSubview(indentView)
         setIndentViewConstraints()
