@@ -23,6 +23,13 @@ class CountryDetailsController: UIViewController {
         fatalError("\(#function) has not been implemented")
     }
 
+    var header: CountriesDetailsHeader = {
+        var header = CountriesDetailsHeader()
+        header.contentMode = .scaleAspectFit
+        header.translatesAutoresizingMaskIntoConstraints = false
+        return header
+    }()
+
     var flagImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -34,7 +41,6 @@ class CountryDetailsController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         fillDetailsViewWithData()
-        configureFlagImage()
         configureStackView()
         title = "\(country?.name ?? Constants.detailsDefaultHeader)"
     }
@@ -59,12 +65,25 @@ class CountryDetailsController: UIViewController {
     }
 
     func configureStackView() {
+        view.addSubview(header)
+        setHeaderConstraints()
+        configureFlagImage()
         view.addSubview(stackView)
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
         stackView.spacing = 20
         addLabelsToStackView()
         setStackViewConstrains()
+    }
+
+    func setHeaderConstraints() {
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                        constant: Constants.headerTopInset),
+            header.leftAnchor.constraint(equalTo: view.leftAnchor),
+            header.rightAnchor.constraint(equalTo: view.rightAnchor),
+            header.heightAnchor.constraint(equalToConstant: Constants.headerHeight)
+        ])
     }
 
     func addLabelsToStackView() {
@@ -89,7 +108,7 @@ class CountryDetailsController: UIViewController {
 
     func setFlagImageViewConstrains() {
         flagImageView.translatesAutoresizingMaskIntoConstraints = false
-        flagImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+        flagImageView.topAnchor.constraint(equalTo: header.bottomAnchor,
                                        constant: 2).isActive = true
         flagImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                            constant: 80).isActive = true
@@ -101,5 +120,7 @@ class CountryDetailsController: UIViewController {
     private struct Constants {
         static let notApplicableField = "N-A"
         static let detailsDefaultHeader = "Details"
+        static let headerTopInset: CGFloat = 25
+        static let headerHeight: CGFloat = 180
     }
 }
