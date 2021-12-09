@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsFieldPlaceHolder: UIView {
+class DetailsFieldPlaceHolderView: UIView {
     var verticalStack: UIStackView = {
         var stack = UIStackView()
         stack.distribution = .fillEqually

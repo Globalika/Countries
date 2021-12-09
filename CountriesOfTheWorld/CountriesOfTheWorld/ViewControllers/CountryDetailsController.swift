@@ -46,9 +46,11 @@ class CountryDetailsController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         startHeader.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        startHeader.imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        startHeader.headerLabel.font = .systemFont(ofSize: 80)
+        startHeader.imageView.heightAnchor.constraint(equalToConstant:
+                                                        Constants.headerHeight).isActive = true
+        startHeader.headerLabel.font = .systemFont(ofSize: Constants.headerLabelFontSize)
     }
 
     var header: CountriesDetailsHeader = {
@@ -150,7 +152,7 @@ class CountryDetailsController: UIViewController {
     func addLabelsToStackView() {
         var scenery: Scenery = .greenCircle
         for text in countryInfo {
-            let placeHolder = DetailsFieldPlaceHolder()
+            let placeHolder = DetailsFieldPlaceHolderView()
             placeHolder.circleImageView.image = UIImage(named: "\(scenery)")
             if text.0 != countryInfo.last?.0 {
                 placeHolder.curveLineImageView.image = Constants.curveLineImage
@@ -214,6 +216,8 @@ class CountryDetailsController: UIViewController {
         static let stackInsets = UIEdgeInsets(top: 10, left: 5, bottom: -70, right: -30)
         static let flagWidth: CGFloat = 100
         static let flagHeight: CGFloat = 80
+        static let headerImageHeight: CGFloat = 200
+        static let headerLabelFontSize: CGFloat = 80
     }
 }
 
