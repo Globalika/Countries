@@ -22,6 +22,23 @@ class CountryViewCell: UITableViewCell {
         return view
     }()
 
+    var selectedCellBorderView: UIView = {
+        var view = UIView()
+        view.layer.borderWidth = Constants.selectedCellBorderWidth
+        view.layer.cornerRadius = Constants.selectedCellBorderCornerRadius
+        view.layer.borderColor = Constants.selectedCellBorderColor
+        return view
+    }()
+
+    func didSelect(indexPath: IndexPath) {
+        selectedCellBorderView.frame = indentView.bounds
+        indentView.addSubview(selectedCellBorderView)
+    }
+
+    func didDeselect(indexPath: IndexPath) {
+        selectedCellBorderView.removeFromSuperview()
+    }
+
     var horizontalStackView: UIStackView = {
         var stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +51,8 @@ class CountryViewCell: UITableViewCell {
     var labelVerticalStackView: UIStackView = {
         var stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.layoutMargins = Constants.verticalStackMargins
+        stack.isLayoutMarginsRelativeArrangement = true
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.spacing = Constants.labelVerticalStackSpacing
@@ -47,21 +66,29 @@ class CountryViewCell: UITableViewCell {
         return imageView
     }()
 
+    static func setLabelProperties(label: UILabel) {
+        label.lineBreakMode = .byTruncatingTail
+        label.numberOfLines = Constants.allowedNumberOfLinesToWrap
+        label.minimumScaleFactor = Constants.labelMinimumScaleFactor
+        label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+    }
+
     var countryNameLabel: UILabel = {
         var labelView = UILabel()
-        labelView.translatesAutoresizingMaskIntoConstraints = false
+        setLabelProperties(label: labelView)
         return labelView
     }()
 
     var countryCapitalLabel: UILabel = {
         var labelView = UILabel()
-        labelView.translatesAutoresizingMaskIntoConstraints = false
+        setLabelProperties(label: labelView)
         return labelView
     }()
 
     var countryContinentLabel: UILabel = {
         var labelView = UILabel()
-        labelView.translatesAutoresizingMaskIntoConstraints = false
+        setLabelProperties(label: labelView)
         return labelView
     }()
 
@@ -73,22 +100,39 @@ class CountryViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
-}
 
-extension CountryViewCell {
     func updateCell(country: CountriesQuery.Data.Country) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
         } else {
             self.flagImageView.image = UIImage()
         }
-        self.countryNameLabel.text = country.name
-        self.countryCapitalLabel.text = country.capital ?? Constants.notApplicableField
-        self.countryContinentLabel.text = country.continent.name
+        countryNameLabel.setAttributedText(
+            descriptionText: Constants.countryNameDescriptionText,
+            descriptionTextFont: .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                             weight: Constants.labelDescriptionFontWeight),
+            dataText: country.name,
+            dataTextFont: .systemFont(ofSize: Constants.labelDataFontSize,
+                                      weight: Constants.labelDataFontWeight)
+        )
+        countryCapitalLabel.setAttributedText(
+            descriptionText: Constants.countryCapitalDescriptionText,
+            descriptionTextFont: .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                             weight: Constants.labelDescriptionFontWeight),
+            dataText: country.capital ?? Constants.notApplicableField,
+            dataTextFont: .systemFont(ofSize: Constants.labelDataFontSize,
+                                      weight: Constants.labelDataFontWeight)
+        )
+        countryContinentLabel.setAttributedText(
+            descriptionText: Constants.countryContinentDescriptionText,
+            descriptionTextFont: .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                             weight: Constants.labelDescriptionFontWeight),
+            dataText: country.continent.name,
+            dataTextFont: .systemFont(ofSize: Constants.labelDataFontSize,
+                                      weight: Constants.labelDataFontWeight)
+        )
     }
-}
 
-extension CountryViewCell {
     func configureCellView() {
         addSubview(indentView)
         setIndentViewConstraints()
@@ -135,15 +179,18 @@ extension CountryViewCell {
         labelVerticalStackView.addArrangedSubview(countryNameLabel)
         labelVerticalStackView.addArrangedSubview(countryCapitalLabel)
         labelVerticalStackView.addArrangedSubview(countryContinentLabel)
-        setLabelsConstraints()
     }
 
     func setLabelVerticalStackViewConstraints() {
         NSLayoutConstraint.activate([
-            labelVerticalStackView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor),
-            labelVerticalStackView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor),
-            labelVerticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor),
-            labelVerticalStackView.trailingAnchor.constraint(equalTo: horizontalStackView.trailingAnchor)
+            labelVerticalStackView.leadingAnchor.constraint(equalTo: flagImageView.trailingAnchor,
+                                                            constant: Constants.verticalStackInsets.left),
+            labelVerticalStackView.topAnchor.constraint(equalTo: horizontalStackView.topAnchor,
+                                                        constant: Constants.verticalStackInsets.top),
+            labelVerticalStackView.bottomAnchor.constraint(equalTo: horizontalStackView.bottomAnchor,
+                                                           constant: Constants.verticalStackInsets.bottom),
+            labelVerticalStackView.trailingAnchor.constraint(equalTo: horizontalStackView.trailingAnchor,
+                                                             constant: Constants.verticalStackInsets.right)
         ])
     }
 
@@ -159,31 +206,13 @@ extension CountryViewCell {
         ])
     }
 
-    func setLabelsConstraints() {
-        NSLayoutConstraint.activate([
-            countryNameLabel.topAnchor.constraint(equalTo: labelVerticalStackView.topAnchor),
-            countryNameLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.leftAnchor),
-            countryNameLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryNameLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
-
-            countryCapitalLabel.topAnchor.constraint(equalTo: countryNameLabel.bottomAnchor),
-            countryCapitalLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryCapitalLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryCapitalLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight),
-
-            countryContinentLabel.topAnchor.constraint(equalTo: countryCapitalLabel.bottomAnchor),
-            countryContinentLabel.leftAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryContinentLabel.rightAnchor.constraint(equalTo: labelVerticalStackView.rightAnchor),
-            countryContinentLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
-        ])
-    }
-
     private struct Constants {
         static let indentViewInsets = UIEdgeInsets(top: 10, left: 30, bottom: -10, right: -30)
-        static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
+        static let flagViewInsets = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
+        static let verticalStackInsets = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
+        static let verticalStackMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
-        static let labelHeight: CGFloat = 33
         static let horizontalStackSpacing: CGFloat = 20
         static let labelVerticalStackSpacing: CGFloat = 20
         static let decoratorViewCornerRadius: CGFloat = 15
@@ -191,5 +220,17 @@ extension CountryViewCell {
         static let decoratorShadowOffset = CGSize(width: 0, height: 4)
         static let decoratorShadowRadius: CGFloat = 4
         static let decoratorShadowOpacity: Float = 0.2
+        static let allowedNumberOfLinesToWrap = 3
+        static let labelMinimumScaleFactor = 0.5
+        static let labelDescriptionFontSize: CGFloat = 12
+        static let labelDescriptionFontWeight: UIFont.Weight = .thin
+        static let labelDataFontSize: CGFloat = 20
+        static let labelDataFontWeight: UIFont.Weight = .bold
+        static let countryNameDescriptionText = "Country"
+        static let countryCapitalDescriptionText = "Capital"
+        static let countryContinentDescriptionText = "Continent"
+        static let selectedCellBorderWidth: CGFloat = 2
+        static let selectedCellBorderColor = UIColor.green.cgColor
+        static let selectedCellBorderCornerRadius: CGFloat = 15
     }
 }
