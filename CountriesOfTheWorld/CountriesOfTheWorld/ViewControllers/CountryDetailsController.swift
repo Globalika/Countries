@@ -152,14 +152,14 @@ class CountryDetailsController: UIViewController {
     }
 
     func setFlagImageViewConstrains() {
-        flagImageView.translatesAutoresizingMaskIntoConstraints = false
-        flagImageView.topAnchor.constraint(equalTo: header.bottomAnchor,
-                                       constant: 2).isActive = true
-        flagImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                           constant: 80).isActive = true
-        flagImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor,
-                                            constant: -80).isActive = true
-        flagImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        NSLayoutConstraint.activate([
+            flagImageView.topAnchor.constraint(equalTo: scrollView.topAnchor,
+                                               constant: Constants.flagInset.top),
+            flagImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
+                                                   constant: Constants.flagInset.left),
+            flagImageView.widthAnchor.constraint(equalToConstant: Constants.flagWidth),
+            flagImageView.heightAnchor.constraint(equalToConstant: Constants.flagHeight)
+        ])
     }
 
     private struct Constants {
@@ -180,6 +180,9 @@ class CountryDetailsController: UIViewController {
         static let labelDescriptionFontWeight: UIFont.Weight = .thin
         static let labelDataFontSize: CGFloat = 20
         static let labelDataFontWeight: UIFont.Weight = .bold
+        static let flagInset = UIEdgeInsets(top: 3, left: 25, bottom: 0, right: 0)
+        static let flagWidth: CGFloat = 100
+        static let flagHeight: CGFloat = 80
     }
 }
 
