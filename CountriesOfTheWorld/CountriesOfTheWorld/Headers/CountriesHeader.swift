@@ -21,7 +21,6 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
 
     let headerLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: Constants.headerLabelFont)
         label.text = Constants.headerLabelText
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -47,27 +46,23 @@ class CountriesHeaderView: UITableViewHeaderFooterView {
 
     func setImageConstraints() {
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: self.topAnchor),
-            imageView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            imageView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: Constants.imageHeight)
+            imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor,
+                                               constant: Constants.subviewsTopInset),
+            imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
 
     func setLabelConstraints() {
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
+            headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
+                                             constant: Constants.subviewsTopInset),
             headerLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
-            headerLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            headerLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor,
-                                                constant: Constants.labelBottomInset)
+            headerLabel.rightAnchor.constraint(equalTo: self.rightAnchor)
         ])
     }
 
     private struct Constants {
-        static let headerLabelFont: CGFloat = 40
-        static let imageHeight: CGFloat = 100
-        static let labelBottomInset: CGFloat = -15
+        static let subviewsTopInset: CGFloat = -15
         static let headerBackgroundColor = UIColor(rgb: 0xF1F1F1)
         static let headerLabelText = "Choose a card :)"
         static let headerImage = UIImage(named: "world")
