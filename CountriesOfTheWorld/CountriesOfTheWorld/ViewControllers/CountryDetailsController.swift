@@ -118,9 +118,26 @@ class CountryDetailsController: UIViewController {
         ])
     }
 
-   func addLabelsToStackView() {
-       // TO DO renew func
-   }
+    func addLabelsToStackView() {
+        var scenery: Scenery = .greenCircle
+        for text in countryInfo {
+            let placeHolder = DetailsFieldPlaceHolder()
+            placeHolder.circleImageView.image = UIImage(named: "\(scenery)")
+            if text.0 != countryInfo.last?.0 {
+                placeHolder.curveLineImageView.image = Constants.curveLineImage
+            }
+            placeHolder.fieldLabel.setAttributedText(descriptionText: text.0,
+                                                     descriptionTextFont:
+                                                            .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                                                        weight: Constants.labelDescriptionFontWeight),
+                                                     dataText: text.1,
+                                                     dataTextFont:
+                                                            .systemFont(ofSize: Constants.labelDataFontSize,
+                                                                        weight: Constants.labelDataFontWeight))
+            stackView.addArrangedSubview(placeHolder)
+            scenery = scenery.cicleScenery()
+        }
+    }
 
     func setStackViewConstrains() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -158,5 +175,10 @@ class CountryDetailsController: UIViewController {
         static let countryLanguagesDescription = "Official Languages:"
         static let countryLanguageDescription = "Official Language:"
         static let countryCallingCodeDescription = "Calling Code:"
+        static let curveLineImage = UIImage(named: "curveLine")
+        static let labelDescriptionFontSize: CGFloat = 15
+        static let labelDescriptionFontWeight: UIFont.Weight = .thin
+        static let labelDataFontSize: CGFloat = 20
+        static let labelDataFontWeight: UIFont.Weight = .bold
     }
 }
