@@ -20,6 +20,7 @@
 		89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F72274EC812000C4C91 /* CountryDetailsController.swift */; };
 		89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */; };
 		89E349EE275A3028007F4459 /* CountriesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E349ED275A3028007F4459 /* CountriesHeader.swift */; };
+		89E349F4275A640B007F4459 /* CellDecoratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E349F3275A640B007F4459 /* CellDecoratorView.swift */; };
 		89E72683274CE540002C063B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72682274CE540002C063B /* AppDelegate.swift */; };
 		89E72685274CE540002C063B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E72684274CE540002C063B /* SceneDelegate.swift */; };
 		89E7268D274CE540002C063B /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -67,6 +68,7 @@
 		89B28F72274EC812000C4C91 /* CountryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsController.swift; sourceTree = "<group>"; };
 		89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCell.swift; sourceTree = "<group>"; };
 		89E349ED275A3028007F4459 /* CountriesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesHeader.swift; sourceTree = "<group>"; };
+		89E349F3275A640B007F4459 /* CellDecoratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDecoratorView.swift; sourceTree = "<group>"; };
 		89E7267F274CE540002C063B /* CountriesOfTheWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesOfTheWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E72682274CE540002C063B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E72684274CE540002C063B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				89101A6C2758C38600BC6846 /* Extensions */,
 				899EFCA7274FA039006254C4 /* Resources */,
 				89B28F6D274EA9F4000C4C91 /* ViewControllers */,
+				89E349F3275A640B007F4459 /* CellDecoratorView.swift */,
 			);
 			path = CountriesOfTheWorld;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E349F4275A640B007F4459 /* CellDecoratorView.swift in Sources */,
 				89B28F6C274E9E34000C4C91 /* CountriesController.swift in Sources */,
 				89E72683274CE540002C063B /* AppDelegate.swift in Sources */,
 				899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */,

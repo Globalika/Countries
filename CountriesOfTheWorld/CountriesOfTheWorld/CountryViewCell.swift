@@ -11,20 +11,14 @@ import UIKit
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
 
-    let gradient: CAGradientLayer = {
-        let gradient = CAGradientLayer()
-        gradient.colors = [
-            Constants.cellGradientFirstColor,
-            Constants.cellGradientSecondColor
-        ]
-        gradient.locations = [Constants.firstColorGradientStopLocation,
-                              Constants.secondColorGradientStopLocation]
-        return gradient
-    }()
-
-    var indentView: UIView = {
-        var view = UIView()
+    var indentView: CellDecoratorView = {
+        var view = CellDecoratorView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.cornerRadius = Constants.decoratorViewCornerRadius
+        view.shadowColor = Constants.decoratorShadowColor
+        view.shadowOffset = Constants.decoratorShadowOffset
+        view.shadowRadius = Constants.decoratorShadowRadius
+        view.shadowOpacity = Constants.decoratorShadowOpacity
         return view
     }()
 
@@ -79,11 +73,6 @@ class CountryViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        gradient.frame = indentView.bounds
-    }
 }
 
 extension CountryViewCell {
@@ -120,7 +109,6 @@ extension CountryViewCell {
     }
 
     func configureIndentView() {
-        indentView.layer.insertSublayer(gradient, at: 0)
         indentView.addSubview(horizontalStackView)
         setHorizontalStackViewConstraints()
         configureHorizontalStackView()
@@ -195,12 +183,13 @@ extension CountryViewCell {
         static let flagViewInsets = UIEdgeInsets(top: 5, left: 5, bottom: -5, right: -5)
         static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
-        static let cellGradientFirstColor = UIColor(rgb: 0xFFE485).cgColor
-        static let cellGradientSecondColor = UIColor(rgb: 0xBA7B00).cgColor
-        static let firstColorGradientStopLocation: NSNumber = 0.5
-        static let secondColorGradientStopLocation: NSNumber = 1.0
         static let labelHeight: CGFloat = 33
         static let horizontalStackSpacing: CGFloat = 20
         static let labelVerticalStackSpacing: CGFloat = 20
+        static let decoratorViewCornerRadius: CGFloat = 15
+        static let decoratorShadowColor = UIColor(red: 0, green: 0, blue: 0)
+        static let decoratorShadowOffset = CGSize(width: 0, height: 4)
+        static let decoratorShadowRadius: CGFloat = 4
+        static let decoratorShadowOpacity: Float = 0.2
     }
 }
