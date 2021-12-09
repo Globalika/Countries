@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PlaceHolderView: UIView {
+class DetailsFieldPlaceHolder: UIView {
     var verticalStack: UIStackView = {
         var stack = UIStackView()
         stack.distribution = .fillEqually
@@ -31,7 +31,7 @@ class PlaceHolderView: UIView {
         return view
     }()
 
-    var tLable: UILabel = {
+    var fieldLabel: UILabel = {
         var label = UILabel()
         label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = Constants.labelAllowedLines
@@ -60,11 +60,11 @@ class PlaceHolderView: UIView {
 
     func setLabelConstraints() {
         NSLayoutConstraint.activate([
-            tLable.topAnchor.constraint(equalTo: self.topAnchor,
+            fieldLabel.topAnchor.constraint(equalTo: self.topAnchor,
                                         constant: Constants.labelTopInset),
-            tLable.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            tLable.leadingAnchor.constraint(equalTo: verticalStack.trailingAnchor),
-            tLable.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
+            fieldLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            fieldLabel.leadingAnchor.constraint(equalTo: verticalStack.trailingAnchor),
+            fieldLabel.heightAnchor.constraint(equalToConstant: Constants.labelHeight)
         ])
     }
 
