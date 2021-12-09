@@ -220,8 +220,8 @@ class CountryViewCell: UITableViewCell {
         static let decoratorShadowOffset = CGSize(width: 0, height: 4)
         static let decoratorShadowRadius: CGFloat = 4
         static let decoratorShadowOpacity: Float = 0.2
-        static let allowedNumberOfLinesToWrap = 3
-        static let labelMinimumScaleFactor = 0.5
+        static let allowedNumberOfLinesToWrap = 0
+        static let labelMinimumScaleFactor = 0.4
         static let labelDescriptionFontSize: CGFloat = 12
         static let labelDescriptionFontWeight: UIFont.Weight = .thin
         static let labelDataFontSize: CGFloat = 20
