@@ -182,3 +182,15 @@ class CountryDetailsController: UIViewController {
         static let labelDataFontWeight: UIFont.Weight = .bold
     }
 }
+
+enum Scenery: String {
+    case greenCircle, redCircle
+    func cicleScenery() -> Scenery {
+        switch self {
+        case.greenCircle:
+            return .redCircle
+        case.redCircle:
+            return .greenCircle
+        }
+    }
+}

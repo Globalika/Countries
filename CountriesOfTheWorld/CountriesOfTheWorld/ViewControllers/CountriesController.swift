@@ -114,15 +114,3 @@ extension CountriesController {
         static let imageViewHeight: CGFloat = 110
     }
 }
-
-enum Scenery: String {
-    case greenCircle, redCircle
-    func cicleScenery() -> Scenery {
-        switch self {
-        case.greenCircle:
-            return .redCircle
-        case.redCircle:
-            return .greenCircle
-        }
-    }
-}
