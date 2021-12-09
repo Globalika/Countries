@@ -36,12 +36,19 @@ class CountryDetailsController: UIViewController {
     init() { super.init(nibName: nil, bundle: nil) }
 
     init (country: CountriesQuery.Data.Country) {
-        self.country = country
         super.init(nibName: nil, bundle: nil)
+        self.country = country
+        fillDetailsViewWithData()
     }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
+    }
+
+    override func viewDidLayoutSubviews() {
+        startHeader.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        startHeader.imageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        startHeader.headerLabel.font = .systemFont(ofSize: 80)
     }
 
     var header: CountriesDetailsHeader = {
@@ -60,13 +67,23 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureDetailsView()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if !countryInfo.isEmpty {
+                if startHeader.isDescendant(of: view) {
+                    startHeader.removeFromSuperview()
+                }
+                configureDetailsView()
+            } else {
+                view.addSubview(startHeader)
+            }
+        } else {
+            configureDetailsView()
+        }
     }
 
     func configureDetailsView() {
         navigationItem.title = "Country List"
         view.backgroundColor = .white
-        fillDetailsViewWithData()
         view.addSubview(header)
         setHeaderConstraints()
         view.addSubview(scrollView)
