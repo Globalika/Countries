@@ -60,10 +60,30 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        configureDetailsView()
+    }
+
+    func configureDetailsView() {
+        navigationItem.title = "Country List"
+        view.backgroundColor = .white
         fillDetailsViewWithData()
+        view.addSubview(header)
+        setHeaderConstraints()
+        view.addSubview(scrollView)
+        setScrollViewConstraints()
+        configureScrollView()
+    }
+
+    func configureScrollView() {
+        scrollView.addSubview(flagImageView)
+        setFlagImageViewConstrains()
         configureStackView()
-        title = "\(country?.name ?? Constants.detailsDefaultHeader)"
+    }
+
+    func configureStackView() {
+        scrollView.addSubview(stackView)
+        setStackViewConstrains()
+        addLabelsToStackView()
     }
 
     func fillDetailsViewWithData() {
@@ -89,23 +109,6 @@ class CountryDetailsController: UIViewController {
             }
             countryInfo.append(("Calling Code:", "\(country.phone)"))
         }
-    }
-
-    func configureFlagImage() {
-        view.addSubview(flagImageView)
-        setFlagImageViewConstrains()
-    }
-
-    func configureStackView() {
-        view.addSubview(header)
-        setHeaderConstraints()
-        configureFlagImage()
-        view.addSubview(stackView)
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = 20
-        addLabelsToStackView()
-        setStackViewConstrains()
     }
 
     func setScrollViewConstraints() {
