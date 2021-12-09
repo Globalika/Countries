@@ -8,7 +8,7 @@
 import UIKit
 
 class CountryDetailsController: UIViewController {
-    private var countryInfo: [String: String] = [:]
+    private var countryInfo = [(String, String)]()
     private var country: CountriesQuery.Data.Country?
 
     var scrollView: UIScrollView = {
@@ -68,15 +68,26 @@ class CountryDetailsController: UIViewController {
 
     func fillDetailsViewWithData() {
         if let country = self.country {
-            flagImageView.image = UIImage(named: "\(country.code.lowercased())")
-            countryInfo["Name: "] = country.name
-            countryInfo["Capital: "] = country.capital ?? Constants.notApplicableField
-            countryInfo["Continent: "] = country.continent.name
-            countryInfo["Phone: "] = country.phone
-            countryInfo["Currency: "] = country.currency ?? Constants.notApplicableField
-            for (index, language) in country.languages.enumerated() {
-                countryInfo["Language\(index): "] = language.name!
+            flagImageView.image = UIImage(named: country.code.lowercased())
+            countryInfo.append(("\(Constants.countryNameDescription)",
+                                "\(country.name)"))
+            countryInfo.append(("\(Constants.countryCapitalDescription)",
+                                "\(country.capital ?? Constants.notApplicableField)"))
+            countryInfo.append(("\(Constants.countryContinentDescription)",
+                                "\(country.continent.name)"))
+            countryInfo.append(("\(Constants.countryCurrencyDescription)",
+                                "\(country.currency ?? Constants.notApplicableField)"))
+            let languages = country.languages.reduce("") {
+                "\($0 + (((country.languages.count == 1) || ($0 == "")) ? "" : ", ") + ($1.name ?? ""))"
             }
+            if country.languages.isEmpty {
+                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
+            } else if country.languages.count == 1 {
+                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
+            } else {
+                countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
+            }
+            countryInfo.append(("Calling Code:", "\(country.phone)"))
         }
     }
 
@@ -107,13 +118,9 @@ class CountryDetailsController: UIViewController {
         ])
     }
 
-    func addLabelsToStackView() {
-        for text in countryInfo.sorted(by: { $0.key > $1.key }) {
-            let label = UILabel()
-            label.text = "\(text.key)\(text.value)"
-            stackView.addArrangedSubview(label)
-        }
-    }
+   func addLabelsToStackView() {
+       // TO DO renew func
+   }
 
     func setStackViewConstrains() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -144,5 +151,12 @@ class CountryDetailsController: UIViewController {
         static let headerTopInset: CGFloat = 25
         static let headerHeight: CGFloat = 180
         static let stackSpacing: CGFloat = -12
+        static let countryNameDescription = "Country:"
+        static let countryCapitalDescription = "Capital:"
+        static let countryContinentDescription = "Continent:"
+        static let countryCurrencyDescription = "Currency:"
+        static let countryLanguagesDescription = "Official Languages:"
+        static let countryLanguageDescription = "Official Language:"
+        static let countryCallingCodeDescription = "Calling Code:"
     }
 }
