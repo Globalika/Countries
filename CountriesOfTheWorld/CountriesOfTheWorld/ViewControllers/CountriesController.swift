@@ -101,6 +101,19 @@ extension CountriesController {
         }
     }
 
+    override func tableView(_ tableView: UITableView,
+                            willDisplay cell: UITableViewCell,
+                            forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? CountryViewCell else { return }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if cell.isSelected {
+                cell.didSelect(indexPath: indexPath)
+            } else {
+                cell.didDeselect(indexPath: indexPath)
+            }
+        }
+    }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
     }
