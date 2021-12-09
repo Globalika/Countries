@@ -140,23 +140,24 @@ class CountryDetailsController: UIViewController {
     }
 
     func setStackViewConstrains() {
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.topAnchor.constraint(equalTo: flagImageView.bottomAnchor,
-                                       constant: 30).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                                           constant: 50).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                                            constant: -50).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                          constant: -30).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: flagImageView.bottomAnchor,
+                                           constant: Constants.stackInsets.top),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
+                                               constant: Constants.stackInsets.left),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor,
+                                                constant: Constants.stackInsets.right),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,
+                                              constant: Constants.stackInsets.bottom)
+        ])
     }
 
     func setFlagImageViewConstrains() {
         NSLayoutConstraint.activate([
             flagImageView.topAnchor.constraint(equalTo: scrollView.topAnchor,
-                                               constant: Constants.flagInset.top),
+                                               constant: Constants.flagInsets.top),
             flagImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
-                                                   constant: Constants.flagInset.left),
+                                                   constant: Constants.flagInsets.left),
             flagImageView.widthAnchor.constraint(equalToConstant: Constants.flagWidth),
             flagImageView.heightAnchor.constraint(equalToConstant: Constants.flagHeight)
         ])
@@ -180,7 +181,8 @@ class CountryDetailsController: UIViewController {
         static let labelDescriptionFontWeight: UIFont.Weight = .thin
         static let labelDataFontSize: CGFloat = 20
         static let labelDataFontWeight: UIFont.Weight = .bold
-        static let flagInset = UIEdgeInsets(top: 3, left: 25, bottom: 0, right: 0)
+        static let flagInsets = UIEdgeInsets(top: 3, left: 25, bottom: 0, right: 0)
+        static let stackInsets = UIEdgeInsets(top: 10, left: 5, bottom: -70, right: -30)
         static let flagWidth: CGFloat = 100
         static let flagHeight: CGFloat = 80
     }
