@@ -1,5 +1,5 @@
 //
-//  DetailsFieldPlaceHolder.swift
+//  DetailsFieldPlaceHolderView.swift
 //  CountriesOfTheWorld
 //
 //  Created by Volodymyr Seredovych on 09.12.2021.
