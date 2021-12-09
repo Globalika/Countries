@@ -32,8 +32,33 @@ class CountriesDetailsHeader: UIView {
         fatalError("\(#function) has not been implemented")
     }
 
+    func setworldImageConstraints() {
+        NSLayoutConstraint.activate([
+            worldImageView.topAnchor.constraint(equalTo: self.topAnchor,
+                                                constant: Constants.worldImageTopInset),
+            worldImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            worldImageView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            worldImageView.heightAnchor.constraint(equalToConstant: Constants.worldImageHeight)
+        ])
+    }
+
+    func setFlagsImageConstraints() {
+        NSLayoutConstraint.activate([
+            flagsImageView.topAnchor.constraint(equalTo: worldImageView.bottomAnchor,
+                                                constant: Constants.flagsImageTopInset),
+            flagsImageView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
+            flagsImageView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
+            flagsImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor,
+                                                   constant: Constants.flagsImageBottomInset)
+        ])
+    }
+
     private struct Constants {
         static let worldImage = UIImage(named: "world")
         static let flagsImage = UIImage(named: "flags")
+        static let worldImageTopInset: CGFloat = 10
+        static let worldImageHeight: CGFloat = 110
+        static let flagsImageTopInset: CGFloat = -40
+        static let flagsImageBottomInset: CGFloat = -10
     }
 }
