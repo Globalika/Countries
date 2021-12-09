@@ -8,9 +8,30 @@
 import UIKit
 
 class CountryDetailsController: UIViewController {
-    var stackView = UIStackView()
     private var countryInfo: [String: String] = [:]
     private var country: CountriesQuery.Data.Country?
+
+    var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.bounces = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.showsHorizontalScrollIndicator = false
+        return view
+    }()
+
+    var stackView: UIStackView = {
+        var stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = Constants.stackSpacing
+        stack.distribution = .fillEqually
+        return stack
+    }()
+
+    let startHeader: CountriesHeaderView = {
+        let header = CountriesHeaderView()
+        return header
+    }()
 
     init() { super.init(nibName: nil, bundle: nil) }
 
@@ -122,5 +143,6 @@ class CountryDetailsController: UIViewController {
         static let detailsDefaultHeader = "Details"
         static let headerTopInset: CGFloat = 25
         static let headerHeight: CGFloat = 180
+        static let stackSpacing: CGFloat = -12
     }
 }
