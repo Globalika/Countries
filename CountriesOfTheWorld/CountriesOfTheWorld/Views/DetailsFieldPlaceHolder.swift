@@ -43,10 +43,26 @@ class DetailsFieldPlaceHolder: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configureView() {
+        addSubview(verticalStack)
+        setVerticalStackConstraints()
+        configureStackView()
+        addSubview(fieldLabel)
+        setLabelConstraints()
+    }
+
+    func configureStackView() {
+        verticalStack.addArrangedSubview(circleImageView)
+        setCircleImageConstraints()
+        verticalStack.addArrangedSubview(curveLineImageView)
+        setCurveLineImageConstraints()
     }
 
     func setVerticalStackConstraints() {
