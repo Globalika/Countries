@@ -127,7 +127,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 256 images.
+  /// This `R.image` struct is generated, and contains static references to 259 images.
   struct image {
     /// Image `ad`.
     static let ad = Rswift.ImageResource(bundle: R.hostingBundle, name: "ad")
@@ -231,6 +231,8 @@ struct R: Rswift.Validatable {
     static let cr = Rswift.ImageResource(bundle: R.hostingBundle, name: "cr")
     /// Image `cu`.
     static let cu = Rswift.ImageResource(bundle: R.hostingBundle, name: "cu")
+    /// Image `curveLine`.
+    static let curveLine = Rswift.ImageResource(bundle: R.hostingBundle, name: "curveLine")
     /// Image `cv`.
     static let cv = Rswift.ImageResource(bundle: R.hostingBundle, name: "cv")
     /// Image `cw`.
@@ -317,6 +319,8 @@ struct R: Rswift.Validatable {
     static let gq = Rswift.ImageResource(bundle: R.hostingBundle, name: "gq")
     /// Image `gr`.
     static let gr = Rswift.ImageResource(bundle: R.hostingBundle, name: "gr")
+    /// Image `greenCircle`.
+    static let greenCircle = Rswift.ImageResource(bundle: R.hostingBundle, name: "greenCircle")
     /// Image `gs`.
     static let gs = Rswift.ImageResource(bundle: R.hostingBundle, name: "gs")
     /// Image `gt`.
@@ -515,6 +519,8 @@ struct R: Rswift.Validatable {
     static let qa = Rswift.ImageResource(bundle: R.hostingBundle, name: "qa")
     /// Image `re`.
     static let re = Rswift.ImageResource(bundle: R.hostingBundle, name: "re")
+    /// Image `redCircle`.
+    static let redCircle = Rswift.ImageResource(bundle: R.hostingBundle, name: "redCircle")
     /// Image `ro`.
     static let ro = Rswift.ImageResource(bundle: R.hostingBundle, name: "ro")
     /// Image `rs`.
@@ -1000,6 +1006,13 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "curveLine", bundle: ..., traitCollection: ...)`
+    static func curveLine(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.curveLine, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "cv", bundle: ..., traitCollection: ...)`
     static func cv(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.cv, compatibleWith: traitCollection)
@@ -1297,6 +1310,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "gr", bundle: ..., traitCollection: ...)`
     static func gr(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.gr, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "greenCircle", bundle: ..., traitCollection: ...)`
+    static func greenCircle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.greenCircle, compatibleWith: traitCollection)
     }
     #endif
 
@@ -1990,6 +2010,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "re", bundle: ..., traitCollection: ...)`
     static func re(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.re, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "redCircle", bundle: ..., traitCollection: ...)`
+    static func redCircle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.redCircle, compatibleWith: traitCollection)
     }
     #endif
 
