@@ -31,12 +31,16 @@ class CountryViewCell: UITableViewCell {
     }()
 
     func didSelect(indexPath: IndexPath) {
-        selectedCellBorderView.frame = indentView.bounds
-        indentView.addSubview(selectedCellBorderView)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            selectedCellBorderView.frame = indentView.bounds
+            indentView.addSubview(selectedCellBorderView)
+        }
     }
 
     func didDeselect(indexPath: IndexPath) {
-        selectedCellBorderView.removeFromSuperview()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            selectedCellBorderView.removeFromSuperview()
+        }
     }
 
     var horizontalStackView: UIStackView = {

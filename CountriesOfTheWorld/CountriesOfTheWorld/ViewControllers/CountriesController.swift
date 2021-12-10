@@ -85,10 +85,8 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
-                cell.didSelect(indexPath: indexPath)
-            }
+        if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
+            cell.didSelect(indexPath: indexPath)
         }
         let detailsController = CountryDetailsController(country: countries[indexPath.row])
         showDetailViewController(UINavigationController(rootViewController: detailsController),
@@ -105,12 +103,10 @@ extension CountriesController {
                             willDisplay cell: UITableViewCell,
                             forRowAt indexPath: IndexPath) {
         guard let cell = cell as? CountryViewCell else { return }
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            if cell.isSelected {
-                cell.didSelect(indexPath: indexPath)
-            } else {
-                cell.didDeselect(indexPath: indexPath)
-            }
+        if cell.isSelected {
+            cell.didSelect(indexPath: indexPath)
+        } else {
+            cell.didDeselect(indexPath: indexPath)
         }
     }
 
