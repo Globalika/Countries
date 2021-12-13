@@ -39,6 +39,7 @@ class CountriesController: UITableViewController {
 }
 
 extension CountriesController {
+
     func loadData() {
         let query = CountriesQuery()
 
@@ -53,7 +54,7 @@ extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
-                                                        for: indexPath) as? CountryViewCell else {
+                                                       for: indexPath) as? CountryViewCell else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
@@ -83,14 +84,16 @@ extension CountriesController {
         return (UIDevice.current.userInterfaceIdiom == .phone) ? Constants.headerHeight : 0
     }
 
-    override func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if UIDevice.current.userInterfaceIdiom == .pad {
             if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
                 cell.didSelect(indexPath: indexPath)
             }
         }
-        let detailsController = CountryDetailsController(country: countries[indexPath.row])
+
+        let detailsController = CountryDetailsController()
+        detailsController.countryBasic = countries[indexPath.row]
+        detailsController.countryCode = countries[indexPath.row].code
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
     }

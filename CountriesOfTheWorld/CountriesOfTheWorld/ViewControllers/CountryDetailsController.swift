@@ -9,7 +9,14 @@ import UIKit
 
 class CountryDetailsController: UIViewController {
     private var countryInfo = [(String, String)]()
-    private var country: CountriesQuery.Data.Country?
+    private var country: CountryQuery.Data.Country? {
+        didSet {
+            configureAllViews()
+        }
+    }
+    var countryBasic: CountriesQuery.Data.Country?
+    
+    var countryCode: String?
 
     var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -33,13 +40,13 @@ class CountryDetailsController: UIViewController {
         return header
     }()
 
-    init() { super.init(nibName: nil, bundle: nil) }
+    lazy var refrechControl: UIRefreshControl = {
+        let refrechControl = UIRefreshControl()
+        refrechControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refrechControl
+    }()
 
-    init (country: CountriesQuery.Data.Country) {
-        super.init(nibName: nil, bundle: nil)
-        self.country = country
-        fillDetailsViewWithData()
-    }
+    init() { super.init(nibName: nil, bundle: nil) }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
@@ -69,6 +76,19 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureRefreshControl()
+        configureAllViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let countryCode = countryCode else { return }
+        loadData(code: countryCode)
+    }
+
+    private func configureAllViews() {
+        fillDetailsViewWithData()
+
         if UIDevice.current.userInterfaceIdiom == .pad {
             if !countryInfo.isEmpty {
                 if startHeader.isDescendant(of: view) {
@@ -81,6 +101,18 @@ class CountryDetailsController: UIViewController {
         } else {
             configureDetailsView()
         }
+    }
+
+    private func configureRefreshControl() {
+        scrollView.refreshControl = refrechControl
+    }
+
+    @objc private func refresh(sender: UIRefreshControl) {
+        guard let countryCode = country?.code else { return }
+
+        loadData(code: countryCode)
+        configureAllViews()
+        sender.endRefreshing()
     }
 
     func configureDetailsView() {
@@ -106,14 +138,15 @@ class CountryDetailsController: UIViewController {
     }
 
     func fillDetailsViewWithData() {
+
         if let country = self.country {
             flagImageView.image = UIImage(named: country.code.lowercased())
             countryInfo.append(("\(Constants.countryNameDescription)",
-                                "\(country.name)"))
+                                "\(String(describing: countryBasic?.name))"))
             countryInfo.append(("\(Constants.countryCapitalDescription)",
-                                "\(country.capital ?? Constants.notApplicableField)"))
+                                "\(countryBasic?.capital ?? Constants.notApplicableField)"))
             countryInfo.append(("\(Constants.countryContinentDescription)",
-                                "\(country.continent.name)"))
+                                "\(String(describing: countryBasic?.continent.name))"))
             countryInfo.append(("\(Constants.countryCurrencyDescription)",
                                 "\(country.currency ?? Constants.notApplicableField)"))
             let languages = country.languages.reduce("") {
@@ -232,3 +265,18 @@ enum Scenery: String {
         }
     }
 }
+
+extension CountryDetailsController {
+
+    func loadData(code: String) {
+        let query = CountryQuery(code: code)
+
+        Apollo.shared.client?.fetch(query: query) { result in
+            guard let country = try? result.get().data?.country else { return }
+            self.country = country
+        }
+    }
+}
+
+
+

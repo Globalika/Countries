@@ -1,15 +1,25 @@
+
 query Countries {
-  countries {
-    code
-    name
-    phone
-    continent {
-      name
+    countries {
+        code
+        name
+        capital
+        continent{
+            name
+        }
     }
-    capital
-    currency
-    languages {
-      name
-    }
-  }
 }
+
+
+query country($code: ID!) {
+    country(code: $code) {
+        code
+        phone
+        currency
+        languages {
+            __typename
+            name
+        }
+    }
+}
+
