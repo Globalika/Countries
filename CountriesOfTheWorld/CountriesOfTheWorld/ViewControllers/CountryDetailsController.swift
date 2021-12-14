@@ -20,7 +20,6 @@ class CountryDetailsController: UIViewController {
 
     var scrollView: UIScrollView = {
         let view = UIScrollView()
-//        view.bounces = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.showsHorizontalScrollIndicator = false
         return view
