@@ -93,7 +93,6 @@ extension CountriesController {
 
         let detailsController = CountryDetailsController()
         detailsController.countryBasic = countries[indexPath.row]
-        detailsController.countryCode = countries[indexPath.row].code
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
     }
