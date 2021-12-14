@@ -71,7 +71,6 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureRefreshControl()
         configureAllViews()
     }
 
