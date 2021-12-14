@@ -1,16 +1,4 @@
 
-query Countries {
-    countries {
-        code
-        name
-        capital
-        continent {
-            name
-        }
-    }
-}
-
-
 query country($code: ID!) {
     country(code: $code) {
         code
