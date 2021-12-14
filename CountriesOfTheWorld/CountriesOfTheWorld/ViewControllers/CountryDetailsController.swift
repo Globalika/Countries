@@ -16,8 +16,6 @@ class CountryDetailsController: UIViewController {
     }
     var countryBasic: CountriesQuery.Data.Country?
 
-    var countryCode: String?
-
     var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.bounces = false
@@ -76,7 +74,7 @@ class CountryDetailsController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let countryCode = countryCode else { return }
+        guard let countryCode = country?.code else { return }
         loadData(code: countryCode)
     }
 
@@ -96,7 +94,6 @@ class CountryDetailsController: UIViewController {
             configureDetailsView()
         }
     }
-
 
     func configureDetailsView() {
         navigationItem.title = "Country List"
