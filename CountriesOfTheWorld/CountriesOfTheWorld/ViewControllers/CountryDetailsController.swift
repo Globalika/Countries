@@ -20,7 +20,7 @@ class CountryDetailsController: UIViewController {
 
     var scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.bounces = false
+//        view.bounces = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.showsHorizontalScrollIndicator = false
         return view
@@ -40,6 +40,11 @@ class CountryDetailsController: UIViewController {
         return header
     }()
 
+    lazy var refrechControl: UIRefreshControl = {
+        let refrechControl = UIRefreshControl()
+        refrechControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refrechControl
+    }()
 
     init() { super.init(nibName: nil, bundle: nil) }
 
@@ -71,6 +76,7 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureRefreshControl()
         configureAllViews()
     }
 
@@ -97,6 +103,17 @@ class CountryDetailsController: UIViewController {
         }
     }
 
+    private func configureRefreshControl() {
+        scrollView.refreshControl = refrechControl
+    }
+
+    @objc private func refresh(sender: UIRefreshControl) {
+        guard let countryCode = country?.code else { return }
+
+        loadData(code: countryCode)
+        configureAllViews()
+        sender.endRefreshing()
+    }
 
     func configureDetailsView() {
         navigationItem.title = "Country List"
@@ -260,6 +277,4 @@ extension CountryDetailsController {
         }
     }
 }
-
-
 
