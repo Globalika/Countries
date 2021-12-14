@@ -173,6 +173,12 @@ public final class CountryQuery: GraphQLQuery {
       country(code: $code) {
         __typename
         code
+        name
+        capital
+        continent {
+          __typename
+          name
+        }
         phone
         currency
         languages {
@@ -230,6 +236,9 @@ public final class CountryQuery: GraphQLQuery {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("code", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          GraphQLField("capital", type: .scalar(String.self)),
+          GraphQLField("continent", type: .nonNull(.object(Continent.selections))),
           GraphQLField("phone", type: .nonNull(.scalar(String.self))),
           GraphQLField("currency", type: .scalar(String.self)),
           GraphQLField("languages", type: .nonNull(.list(.nonNull(.object(Language.selections))))),
@@ -242,8 +251,8 @@ public final class CountryQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(code: GraphQLID, phone: String, currency: String? = nil, languages: [Language]) {
-        self.init(unsafeResultMap: ["__typename": "Country", "code": code, "phone": phone, "currency": currency, "languages": languages.map { (value: Language) -> ResultMap in value.resultMap }])
+      public init(code: GraphQLID, name: String, capital: String? = nil, continent: Continent, phone: String, currency: String? = nil, languages: [Language]) {
+        self.init(unsafeResultMap: ["__typename": "Country", "code": code, "name": name, "capital": capital, "continent": continent.resultMap, "phone": phone, "currency": currency, "languages": languages.map { (value: Language) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -261,6 +270,33 @@ public final class CountryQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "code")
+        }
+      }
+
+      public var name: String {
+        get {
+          return resultMap["name"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var capital: String? {
+        get {
+          return resultMap["capital"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "capital")
+        }
+      }
+
+      public var continent: Continent {
+        get {
+          return Continent(unsafeResultMap: resultMap["continent"]! as! ResultMap)
+        }
+        set {
+          resultMap.updateValue(newValue.resultMap, forKey: "continent")
         }
       }
 
@@ -288,6 +324,45 @@ public final class CountryQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.map { (value: Language) -> ResultMap in value.resultMap }, forKey: "languages")
+        }
+      }
+
+      public struct Continent: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Continent"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(name: String) {
+          self.init(unsafeResultMap: ["__typename": "Continent", "name": name])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var name: String {
+          get {
+            return resultMap["name"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
+          }
         }
       }
 

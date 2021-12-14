@@ -1,7 +1,11 @@
-
 query country($code: ID!) {
     country(code: $code) {
         code
+        name
+        capital
+        continent {
+            name
+        }
         phone
         currency
         languages {
@@ -10,4 +14,3 @@ query country($code: ID!) {
         }
     }
 }
-

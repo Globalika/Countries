@@ -38,7 +38,6 @@ class CountryDetailsController: UIViewController {
         return header
     }()
 
-
     init() { super.init(nibName: nil, bundle: nil) }
 
     required init?(coder: NSCoder) {
@@ -74,12 +73,14 @@ class CountryDetailsController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let countryCode = country?.code else { return }
+        guard let countryCode = countryBasic?.code else { return }
         loadData(code: countryCode)
     }
 
     private func configureAllViews() {
-        fillDetailsViewWithData()
+        country != nil ? fillDetailsViewWithNewData() : fillDetailsViewWithData()
+//        fillDetailsViewWithData()
+//        fillDetailsViewWithNewData()
 
         if UIDevice.current.userInterfaceIdiom == .pad {
             if !countryInfo.isEmpty {
@@ -118,28 +119,41 @@ class CountryDetailsController: UIViewController {
     }
 
     func fillDetailsViewWithData() {
-
-        if let country = self.country {
-            flagImageView.image = UIImage(named: country.code.lowercased())
+        if let countryBasic = countryBasic {
+            flagImageView.image = UIImage(named: countryBasic.code.lowercased())
             countryInfo.append(("\(Constants.countryNameDescription)",
-                                "\(String(describing: countryBasic?.name))"))
+                                "\(String(describing: countryBasic.name))"))
             countryInfo.append(("\(Constants.countryCapitalDescription)",
-                                "\(countryBasic?.capital ?? Constants.notApplicableField)"))
+                                "\(countryBasic.capital ?? Constants.notApplicableField)"))
             countryInfo.append(("\(Constants.countryContinentDescription)",
-                                "\(String(describing: countryBasic?.continent.name))"))
-            countryInfo.append(("\(Constants.countryCurrencyDescription)",
-                                "\(country.currency ?? Constants.notApplicableField)"))
+                                "\(String(describing: countryBasic.continent.name))"))
+        }
+    }
+
+    func fillDetailsViewWithNewData() {
+        if let country = self.country {
+            countryInfo.removeAll()
+            stackView.removeAllArrangedSubviews()
+            self.flagImageView.image = UIImage(named: country.code.lowercased())
+            self.countryInfo.append(("\(Constants.countryNameDescription)",
+                                     "\(String(describing: country.name))"))
+            self.countryInfo.append(("\(Constants.countryCapitalDescription)",
+                                     "\(country.capital ?? Constants.notApplicableField)"))
+            self.countryInfo.append(("\(Constants.countryContinentDescription)",
+                                     "\(String(describing: country.continent.name))"))
+            self.countryInfo.append(("\(Constants.countryCurrencyDescription)",
+                                     "\(country.currency ?? Constants.notApplicableField)"))
             let languages = country.languages.reduce("") {
                 "\($0 + (((country.languages.count == 1) || ($0 == "")) ? "" : ", ") + ($1.name ?? ""))"
             }
             if country.languages.isEmpty {
-                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
+                self.countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
             } else if country.languages.count == 1 {
-                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
+                self.countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
             } else {
-                countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
+                self.countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
             }
-            countryInfo.append(("Calling Code:", "\(country.phone)"))
+            self.countryInfo.append(("Calling Code:", "\(country.phone)"))
         }
     }
 
@@ -257,3 +271,4 @@ extension CountryDetailsController {
         }
     }
 }
+
