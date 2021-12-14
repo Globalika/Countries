@@ -257,6 +257,3 @@ extension CountryDetailsController {
         }
     }
 }
-
-
-
