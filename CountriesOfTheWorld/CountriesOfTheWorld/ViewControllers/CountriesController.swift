@@ -8,6 +8,8 @@
 import UIKit
 
 class CountriesController: UITableViewController {
+
+    let searchController = UISearchController(searchResultsController: nil)
     var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
@@ -19,6 +21,12 @@ class CountriesController: UITableViewController {
         super.viewDidLoad()
         loadData()
         configureTableView()
+        setupSearchBar()
+    }
+
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
 
     func configureTableView() {
@@ -114,5 +122,18 @@ extension CountriesController {
         static let tableViewPadding: CGFloat = 0
         static let headerLabelHeight: CGFloat = 30
         static let imageViewHeight: CGFloat = 110
+    }
+}
+
+extension CountriesController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        self.search = nil
+//        self.table?.reloadData()
     }
 }
