@@ -19,7 +19,7 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+//        loadData()
         configureTableView()
         setupSearchBar()
     }
@@ -48,12 +48,17 @@ class CountriesController: UITableViewController {
 
 extension CountriesController {
 
-    func loadData() {
+    func loadData(searchText: String) {
         let query = CountriesQuery()
 
         Apollo.shared.client?.fetch(query: query) { result in
+
             guard let countries = try? result.get().data?.countries else { return }
-            self.countries = countries
+            self.countries = countries.filter({ country in
+                country.name.lowercased().contains(searchText.lowercased()) ||
+                (country.capital ?? "N/A").lowercased().contains(searchText.lowercased()) ||
+                country.continent.name.lowercased().contains(searchText.lowercased())
+            })
         }
     }
 }
@@ -126,12 +131,10 @@ extension CountriesController {
 }
 
 extension CountriesController: UISearchBarDelegate {
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
-
+        loadData(searchText: searchText)
     }
-    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 //        self.search = nil
 //        self.table?.reloadData()
