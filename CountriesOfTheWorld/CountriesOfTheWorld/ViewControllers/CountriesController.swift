@@ -9,7 +9,12 @@ import UIKit
 
 class CountriesController: UITableViewController {
 
-    let searchController = UISearchController(searchResultsController: nil)
+    let searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
+    }()
+
     var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
@@ -34,7 +39,7 @@ class CountriesController: UITableViewController {
         tableView.register(CountriesHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: CountriesHeaderView.identifier)
         tableView.separatorStyle = .none
-        tableView.bounces = false
+
         navigationController?.navigationBar.tintColor = .black
         navigationItem.title = Constants.navigationBarTitle
         navigationItem.backButtonTitle = ""
@@ -132,5 +137,8 @@ extension CountriesController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         loadData(searchText: searchText)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+
     }
 }
