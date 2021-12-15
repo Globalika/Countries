@@ -22,8 +22,11 @@ class CountriesController: UITableViewController {
         }
     }
 
+    var filteredCountries: [CountriesQuery.Data.Country]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         configureTableView()
         setupSearchBar()
     }
@@ -52,16 +55,12 @@ class CountriesController: UITableViewController {
 
 extension CountriesController {
 
-    func loadData(searchText: String) {
+    func loadData() {
         let query = CountriesQuery()
 
         Apollo.shared.client?.fetch(query: query) { result in
             guard let countries = try? result.get().data?.countries else { return }
-            self.countries = countries.filter({ country in
-                country.name.lowercased().contains(searchText.lowercased()) ||
-                (country.capital ?? "N/A").lowercased().contains(searchText.lowercased()) ||
-                country.continent.name.lowercased().contains(searchText.lowercased())
-            })
+            self.countries = countries
         }
     }
 }
@@ -74,12 +73,12 @@ extension CountriesController {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.updateCell(country: countries[indexPath.row])
+        cell.updateCell(country: filteredCountries?[indexPath.row] ?? countries[indexPath.row])
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return filteredCountries?.count ?? countries.count
     }
 
     override func tableView(_ tableView: UITableView,
@@ -136,9 +135,15 @@ extension CountriesController {
 extension CountriesController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        loadData(searchText: searchText)
+        self.filteredCountries = countries.filter({ country in
+            country.name.lowercased().contains(searchText.lowercased()) ||
+            (country.capital ?? "N/A").lowercased().contains(searchText.lowercased()) ||
+            country.continent.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-
+        filteredCountries = nil
+        tableView.reloadData()
     }
 }
