@@ -9,11 +9,15 @@ import UIKit
 
 class CountryDetailsController: UIViewController {
     private var countryInfo = [(String, String)]()
-    private var country: CountriesQuery.Data.Country?
+    private var country: CountryQuery.Data.Country? {
+        didSet {
+            configureAllViews()
+        }
+    }
+    var countryBasic: CountriesQuery.Data.Country?
 
     var scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.bounces = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.showsHorizontalScrollIndicator = false
         return view
@@ -33,13 +37,13 @@ class CountryDetailsController: UIViewController {
         return header
     }()
 
-    init() { super.init(nibName: nil, bundle: nil) }
+    lazy var refrechControl: UIRefreshControl = {
+        let refrechControl = UIRefreshControl()
+        refrechControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refrechControl
+    }()
 
-    init (country: CountriesQuery.Data.Country) {
-        super.init(nibName: nil, bundle: nil)
-        self.country = country
-        fillDetailsViewWithData()
-    }
+    init() { super.init(nibName: nil, bundle: nil) }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
@@ -69,6 +73,27 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureRefreshControl()
+        configureAllViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let countryCode = countryBasic?.code else { return }
+        loadData(code: countryCode)
+    }
+    
+    func loadData(code: String) {
+        let query = CountryQuery(code: code)
+
+        Apollo.shared.client?.fetch(query: query) { result in
+            guard let country = try? result.get().data?.country else { return }
+            self.country = country
+        }
+    }
+
+    private func configureAllViews() {
+        country != nil ? fillDetailsViewWithCountryQuery() : fillDetailsViewWithData()
         if UIDevice.current.userInterfaceIdiom == .pad {
             if !countryInfo.isEmpty {
                 if startHeader.isDescendant(of: view) {
@@ -81,6 +106,18 @@ class CountryDetailsController: UIViewController {
         } else {
             configureDetailsView()
         }
+    }
+
+    private func configureRefreshControl() {
+        scrollView.refreshControl = refrechControl
+    }
+
+    @objc private func refresh(sender: UIRefreshControl) {
+        guard let countryCode = country?.code else { return }
+
+        loadData(code: countryCode)
+        configureAllViews()
+        sender.endRefreshing()
     }
 
     func configureDetailsView() {
@@ -106,28 +143,40 @@ class CountryDetailsController: UIViewController {
     }
 
     func fillDetailsViewWithData() {
-        if let country = self.country {
-            flagImageView.image = UIImage(named: country.code.lowercased())
+        guard let countryBasic = countryBasic else { return }
+            flagImageView.image = UIImage(named: countryBasic.code.lowercased())
             countryInfo.append(("\(Constants.countryNameDescription)",
-                                "\(country.name)"))
+                                "\(String(describing: countryBasic.name))"))
             countryInfo.append(("\(Constants.countryCapitalDescription)",
-                                "\(country.capital ?? Constants.notApplicableField)"))
+                                "\(countryBasic.capital ?? Constants.notApplicableField)"))
             countryInfo.append(("\(Constants.countryContinentDescription)",
-                                "\(country.continent.name)"))
-            countryInfo.append(("\(Constants.countryCurrencyDescription)",
-                                "\(country.currency ?? Constants.notApplicableField)"))
-            let languages = country.languages.reduce("") {
-                "\($0 + (((country.languages.count == 1) || ($0 == "")) ? "" : ", ") + ($1.name ?? ""))"
-            }
-            if country.languages.isEmpty {
-                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
-            } else if country.languages.count == 1 {
-                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
-            } else {
-                countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
-            }
-            countryInfo.append(("Calling Code:", "\(country.phone)"))
+                                "\(String(describing: countryBasic.continent.name))"))
         }
+
+    func fillDetailsViewWithCountryQuery() {
+        guard let country = self.country else { return }
+        countryInfo.removeAll()
+        stackView.removeAllSubviews()
+        flagImageView.image = UIImage(named: country.code.lowercased())
+        countryInfo.append(("\(Constants.countryNameDescription)",
+                            "\(String(describing: country.name))"))
+        countryInfo.append(("\(Constants.countryCapitalDescription)",
+                            "\(country.capital ?? Constants.notApplicableField)"))
+        countryInfo.append(("\(Constants.countryContinentDescription)",
+                            "\(String(describing: country.continent.name))"))
+        countryInfo.append(("\(Constants.countryCurrencyDescription)",
+                            "\(country.currency ?? Constants.notApplicableField)"))
+        let languages = country.languages.reduce("") {
+            "\($0 + (((country.languages.count == 1) || ($0 == "")) ? "" : ", ") + ($1.name ?? ""))"
+        }
+        if country.languages.isEmpty {
+            countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
+        } else if country.languages.count == 1 {
+            countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
+        } else {
+            countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
+        }
+        countryInfo.append(("Calling Code:", "\(country.phone)"))
     }
 
     func setScrollViewConstraints() {
