@@ -156,7 +156,7 @@ class CountryDetailsController: UIViewController {
     func fillDetailsViewWithCountryQuery() {
         guard let country = self.country else { return }
         countryInfo.removeAll()
-        stackView.removeAllArrangedSubviews()
+        stackView.removeAllSubviews()
         flagImageView.image = UIImage(named: country.code.lowercased())
         countryInfo.append(("\(Constants.countryNameDescription)",
                             "\(String(describing: country.name))"))
