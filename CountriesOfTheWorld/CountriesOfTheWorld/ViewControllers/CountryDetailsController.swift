@@ -79,13 +79,21 @@ class CountryDetailsController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let countryCode = country?.code else { return }
+        guard let countryCode = countryBasic?.code else { return }
         loadData(code: countryCode)
+    }
+    
+    func loadData(code: String) {
+        let query = CountryQuery(code: code)
+
+        Apollo.shared.client?.fetch(query: query) { result in
+            guard let country = try? result.get().data?.country else { return }
+            self.country = country
+        }
     }
 
     private func configureAllViews() {
-        fillDetailsViewWithData()
-
+        country != nil ? fillDetailsViewWithCountryQuery() : fillDetailsViewWithData()
         if UIDevice.current.userInterfaceIdiom == .pad {
             if !countryInfo.isEmpty {
                 if startHeader.isDescendant(of: view) {
@@ -135,29 +143,40 @@ class CountryDetailsController: UIViewController {
     }
 
     func fillDetailsViewWithData() {
-
-        if let country = self.country {
-            flagImageView.image = UIImage(named: country.code.lowercased())
+        guard let countryBasic = countryBasic else { return }
+            flagImageView.image = UIImage(named: countryBasic.code.lowercased())
             countryInfo.append(("\(Constants.countryNameDescription)",
-                                "\(String(describing: countryBasic?.name))"))
+                                "\(String(describing: countryBasic.name))"))
             countryInfo.append(("\(Constants.countryCapitalDescription)",
-                                "\(countryBasic?.capital ?? Constants.notApplicableField)"))
+                                "\(countryBasic.capital ?? Constants.notApplicableField)"))
             countryInfo.append(("\(Constants.countryContinentDescription)",
-                                "\(String(describing: countryBasic?.continent.name))"))
-            countryInfo.append(("\(Constants.countryCurrencyDescription)",
-                                "\(country.currency ?? Constants.notApplicableField)"))
-            let languages = country.languages.reduce("") {
-                "\($0 + (((country.languages.count == 1) || ($0 == "")) ? "" : ", ") + ($1.name ?? ""))"
-            }
-            if country.languages.isEmpty {
-                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
-            } else if country.languages.count == 1 {
-                countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
-            } else {
-                countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
-            }
-            countryInfo.append(("Calling Code:", "\(country.phone)"))
+                                "\(String(describing: countryBasic.continent.name))"))
         }
+
+    func fillDetailsViewWithCountryQuery() {
+        guard let country = self.country else { return }
+        countryInfo.removeAll()
+        stackView.removeAllArrangedSubviews()
+        flagImageView.image = UIImage(named: country.code.lowercased())
+        countryInfo.append(("\(Constants.countryNameDescription)",
+                            "\(String(describing: country.name))"))
+        countryInfo.append(("\(Constants.countryCapitalDescription)",
+                            "\(country.capital ?? Constants.notApplicableField)"))
+        countryInfo.append(("\(Constants.countryContinentDescription)",
+                            "\(String(describing: country.continent.name))"))
+        countryInfo.append(("\(Constants.countryCurrencyDescription)",
+                            "\(country.currency ?? Constants.notApplicableField)"))
+        let languages = country.languages.reduce("") {
+            "\($0 + (((country.languages.count == 1) || ($0 == "")) ? "" : ", ") + ($1.name ?? ""))"
+        }
+        if country.languages.isEmpty {
+            countryInfo.append(("\(Constants.countryLanguageDescription)", "\(Constants.notApplicableField)"))
+        } else if country.languages.count == 1 {
+            countryInfo.append(("\(Constants.countryLanguageDescription)", "\(languages)" ))
+        } else {
+            countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
+        }
+        countryInfo.append(("Calling Code:", "\(country.phone)"))
     }
 
     func setScrollViewConstraints() {
@@ -259,18 +278,6 @@ enum Scenery: String {
             return .redCircle
         case.redCircle:
             return .greenCircle
-        }
-    }
-}
-
-extension CountryDetailsController {
-
-    func loadData(code: String) {
-        let query = CountryQuery(code: code)
-
-        Apollo.shared.client?.fetch(query: query) { result in
-            guard let country = try? result.get().data?.country else { return }
-            self.country = country
         }
     }
 }

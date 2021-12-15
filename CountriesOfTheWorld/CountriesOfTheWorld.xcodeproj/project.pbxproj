@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01F41D044EA05C01F3E00223 /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D48FF3F4B713A1823639601C /* Pods_CountriesOfTheWorld_CountriesOfTheWorldUITests.framework */; };
+		0268C8AD2768F22F00A4EE96 /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0268C8AC2768F22F00A4EE96 /* UIStackViewExtensions.swift */; };
 		1452189F4CE26BEAA8B80740 /* Pods_CountriesOfTheWorld.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B339A3E85E368B375058783 /* Pods_CountriesOfTheWorld.framework */; };
 		3448D79B812FD5EB7F7E5DAC /* Pods_CountriesOfTheWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */; };
 		89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0268C8AC2768F22F00A4EE96 /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
 		0B339A3E85E368B375058783 /* Pods_CountriesOfTheWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountriesOfTheWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11588C6401F836E9AB91AC86 /* Pods-Countries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Countries.release.xcconfig"; path = "Target Support Files/Pods-Countries/Pods-Countries.release.xcconfig"; sourceTree = "<group>"; };
 		1FF108E23FC207D4C65E517D /* Pods-CountriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesTests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesTests/Pods-CountriesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */,
 				89E91A7D27616A7000C23801 /* UILabelExtensions.swift */,
+				0268C8AC2768F22F00A4EE96 /* UIStackViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				89E349F4275A640B007F4459 /* CellDecoratorView.swift in Sources */,
 				89B28F6C274E9E34000C4C91 /* CountriesController.swift in Sources */,
 				89E72683274CE540002C063B /* AppDelegate.swift in Sources */,
+				0268C8AD2768F22F00A4EE96 /* UIStackViewExtensions.swift in Sources */,
 				89E91A7E27616A7000C23801 /* UILabelExtensions.swift in Sources */,
 				899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */,
 				89B28F71274EB442000C4C91 /* Apollo.swift in Sources */,
