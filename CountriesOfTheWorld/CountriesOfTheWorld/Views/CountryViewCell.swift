@@ -30,16 +30,14 @@ class CountryViewCell: UITableViewCell {
         return view
     }()
 
-    func didSelect(indexPath: IndexPath) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
             selectedCellBorderView.frame = indentView.bounds
             indentView.addSubview(selectedCellBorderView)
-        }
-    }
-
-    func didDeselect(indexPath: IndexPath) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            selectedCellBorderView.removeFromSuperview()
+        } else {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                selectedCellBorderView.removeFromSuperview()
+            }
         }
     }
 

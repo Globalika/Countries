@@ -85,29 +85,9 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
-            cell.didSelect(indexPath: indexPath)
-        }
         let detailsController = CountryDetailsController(country: countries[indexPath.row])
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
-    }
-
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
-            cell.didDeselect(indexPath: indexPath)
-        }
-    }
-
-    override func tableView(_ tableView: UITableView,
-                            willDisplay cell: UITableViewCell,
-                            forRowAt indexPath: IndexPath) {
-        guard let cell = cell as? CountryViewCell else { return }
-        if cell.isSelected {
-            cell.didSelect(indexPath: indexPath)
-        } else {
-            cell.didDeselect(indexPath: indexPath)
-        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
