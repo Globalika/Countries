@@ -163,7 +163,8 @@ class CountryViewCell: UITableViewCell {
             horizontalStackView.leadingAnchor.constraint(equalTo: indentView.leadingAnchor),
             horizontalStackView.topAnchor.constraint(equalTo: indentView.topAnchor),
             horizontalStackView.bottomAnchor.constraint(equalTo: indentView.bottomAnchor),
-            horizontalStackView.trailingAnchor.constraint(equalTo: indentView.trailingAnchor, constant: -10)
+            horizontalStackView.trailingAnchor.constraint(equalTo: indentView.trailingAnchor,
+                                                          constant: Constants.horizontalStackRightInset)
         ])
     }
 
@@ -207,6 +208,7 @@ class CountryViewCell: UITableViewCell {
     }
 
     private struct Constants {
+        static let horizontalStackRightInset: CGFloat = -10
         static let indentViewInsets = UIEdgeInsets(top: 10, left: 30, bottom: -10, right: -30)
         static let flagViewInsets = UIEdgeInsets(top: 15, left: 15, bottom: -15, right: -15)
         static let verticalStackInsets = UIEdgeInsets(top: 10, left: 10, bottom: -10, right: -10)
