@@ -107,7 +107,7 @@ extension CountriesController {
         }
 
         let detailsController = CountryDetailsController()
-        detailsController.countryBasic = countries[indexPath.row]
+        detailsController.countryBasic = filteredCountries?[indexPath.row] ?? countries[indexPath.row]
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
     }
