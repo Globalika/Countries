@@ -54,11 +54,9 @@ class CountryViewCell: UITableViewCell {
 
     var labelVerticalStackView: UIStackView = {
         var stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.layoutMargins = Constants.verticalStackMargins
         stack.isLayoutMarginsRelativeArrangement = true
         stack.axis = .vertical
-        stack.distribution = .fillEqually
+        stack.distribution = .fillProportionally
         stack.spacing = Constants.labelVerticalStackSpacing
         return stack
     }()
@@ -71,11 +69,9 @@ class CountryViewCell: UITableViewCell {
     }()
 
     static func setLabelProperties(label: UILabel) {
-        label.lineBreakMode = .byTruncatingTail
         label.numberOfLines = Constants.allowedNumberOfLinesToWrap
         label.minimumScaleFactor = Constants.labelMinimumScaleFactor
         label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
     }
 
     var countryNameLabel: UILabel = {
@@ -167,7 +163,7 @@ class CountryViewCell: UITableViewCell {
             horizontalStackView.leadingAnchor.constraint(equalTo: indentView.leadingAnchor),
             horizontalStackView.topAnchor.constraint(equalTo: indentView.topAnchor),
             horizontalStackView.bottomAnchor.constraint(equalTo: indentView.bottomAnchor),
-            horizontalStackView.trailingAnchor.constraint(equalTo: indentView.trailingAnchor)
+            horizontalStackView.trailingAnchor.constraint(equalTo: indentView.trailingAnchor, constant: -10)
         ])
     }
 
@@ -218,17 +214,17 @@ class CountryViewCell: UITableViewCell {
         static let flagViewWidth: CGFloat = 80
         static let notApplicableField = "N-A"
         static let horizontalStackSpacing: CGFloat = 20
-        static let labelVerticalStackSpacing: CGFloat = 20
+        static let labelVerticalStackSpacing: CGFloat = 5
         static let decoratorViewCornerRadius: CGFloat = 15
         static let decoratorShadowColor = UIColor(red: 0, green: 0, blue: 0)
         static let decoratorShadowOffset = CGSize(width: 0, height: 4)
         static let decoratorShadowRadius: CGFloat = 4
         static let decoratorShadowOpacity: Float = 0.2
         static let allowedNumberOfLinesToWrap = 0
-        static let labelMinimumScaleFactor = 0.4
-        static let labelDescriptionFontSize: CGFloat = 12
+        static let labelMinimumScaleFactor = 0.8
+        static let labelDescriptionFontSize: CGFloat = 9
         static let labelDescriptionFontWeight: UIFont.Weight = .thin
-        static let labelDataFontSize: CGFloat = 20
+        static let labelDataFontSize: CGFloat = 15
         static let labelDataFontWeight: UIFont.Weight = .bold
         static let countryNameDescriptionText = "Country"
         static let countryCapitalDescriptionText = "Capital"
