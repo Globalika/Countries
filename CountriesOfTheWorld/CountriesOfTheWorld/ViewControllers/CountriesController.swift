@@ -129,6 +129,7 @@ extension CountriesController {
         static let tableViewPadding: CGFloat = 0
         static let headerLabelHeight: CGFloat = 30
         static let imageViewHeight: CGFloat = 110
+        static let notApplicableField = "N-A"
     }
 }
 
@@ -137,7 +138,7 @@ extension CountriesController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filteredCountries = countries.filter({ country in
             country.name.lowercased().contains(searchText.lowercased()) ||
-            (country.capital ?? "N/A").lowercased().contains(searchText.lowercased()) ||
+            (country.capital ?? Constants.notApplicableField).lowercased().contains(searchText.lowercased()) ||
             country.continent.name.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
