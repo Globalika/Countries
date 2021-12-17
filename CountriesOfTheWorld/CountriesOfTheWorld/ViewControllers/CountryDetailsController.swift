@@ -82,7 +82,7 @@ class CountryDetailsController: UIViewController {
         guard let countryCode = countryBasic?.code else { return }
         loadData(code: countryCode)
     }
-    
+
     func loadData(code: String) {
         let query = CountryQuery(code: code)
 
