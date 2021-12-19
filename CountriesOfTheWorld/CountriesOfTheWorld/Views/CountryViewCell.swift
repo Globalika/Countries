@@ -31,11 +31,11 @@ class CountryViewCell: UITableViewCell {
     }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if selected {
-            selectedCellBorderView.frame = indentView.bounds
-            indentView.addSubview(selectedCellBorderView)
-        } else {
-            if UIDevice.current.userInterfaceIdiom == .pad {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if selected {
+                selectedCellBorderView.frame = indentView.bounds
+                indentView.addSubview(selectedCellBorderView)
+            } else {
                 selectedCellBorderView.removeFromSuperview()
             }
         }

@@ -8,6 +8,13 @@
 import UIKit
 
 class CountriesController: UITableViewController {
+
+    let searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
+    }()
+
     var images: [UIImage] = []
     var countries = [CountriesQuery.Data.Country]() {
         didSet {
@@ -15,10 +22,18 @@ class CountriesController: UITableViewController {
         }
     }
 
+    var filteredCountries: [CountriesQuery.Data.Country]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         configureTableView()
+        setupSearchBar()
+    }
+
+    private func setupSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.delegate = self
     }
 
     func configureTableView() {
@@ -27,7 +42,7 @@ class CountriesController: UITableViewController {
         tableView.register(CountriesHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: CountriesHeaderView.identifier)
         tableView.separatorStyle = .none
-        tableView.bounces = false
+
         navigationController?.navigationBar.tintColor = .black
         navigationItem.title = Constants.navigationBarTitle
         navigationItem.backButtonTitle = ""
@@ -39,6 +54,7 @@ class CountriesController: UITableViewController {
 }
 
 extension CountriesController {
+
     func loadData() {
         let query = CountriesQuery()
 
@@ -53,16 +69,16 @@ extension CountriesController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CountryViewCell.identifier,
-                                                        for: indexPath) as? CountryViewCell else {
+                                                       for: indexPath) as? CountryViewCell else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.updateCell(country: countries[indexPath.row])
+        cell.updateCell(country: filteredCountries?[indexPath.row] ?? countries[indexPath.row])
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return filteredCountries?.count ?? countries.count
     }
 
     override func tableView(_ tableView: UITableView,
@@ -85,7 +101,8 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        let detailsController = CountryDetailsController(country: countries[indexPath.row])
+        let detailsController = CountryDetailsController()
+        detailsController.countryBasic = filteredCountries?[indexPath.row] ?? countries[indexPath.row]
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
     }
@@ -101,5 +118,22 @@ extension CountriesController {
         static let tableViewPadding: CGFloat = 0
         static let headerLabelHeight: CGFloat = 30
         static let imageViewHeight: CGFloat = 110
+        static let notApplicableField = "N-A"
+    }
+}
+
+extension CountriesController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredCountries = countries.filter({ country in
+            country.name.lowercased().contains(searchText.lowercased()) ||
+            (country.capital ?? Constants.notApplicableField).lowercased().contains(searchText.lowercased()) ||
+            country.continent.name.lowercased().contains(searchText.lowercased())
+        })
+        tableView.reloadData()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filteredCountries = nil
+        tableView.reloadData()
     }
 }
