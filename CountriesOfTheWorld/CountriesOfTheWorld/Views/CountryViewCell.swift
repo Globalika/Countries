@@ -67,7 +67,7 @@ class CountryViewCell: UITableViewCell {
     }()
 
     static func setLabelProperties(label: UILabel) {
-        label.numberOfLines = Constants.allowedNumberOfLinesToWrap
+        label.numberOfLines = Int.zero
         label.minimumScaleFactor = Constants.labelMinimumScaleFactor
         label.adjustsFontSizeToFitWidth = true
     }
@@ -220,7 +220,6 @@ class CountryViewCell: UITableViewCell {
         static let decoratorShadowOffset = CGSize(width: 0, height: 4)
         static let decoratorShadowRadius: CGFloat = 4
         static let decoratorShadowOpacity: Float = 0.2
-        static let allowedNumberOfLinesToWrap = 0
         static let labelMinimumScaleFactor = 0.8
         static let labelDescriptionFontSize: CGFloat = 9
         static let labelDescriptionFontWeight: UIFont.Weight = .thin
