@@ -212,18 +212,16 @@
 		89E72681274CE540002C063B /* CountriesOfTheWorld */ = {
 			isa = PBXGroup;
 			children = (
-				89E91A8127618EA600C23801 /* Views */,
-				89E349EC275A3009007F4459 /* Headers */,
 				89B28F70274EB442000C4C91 /* Apollo.swift */,
 				89B28F6E274EAA33000C4C91 /* API.swift */,
 				89E72682274CE540002C063B /* AppDelegate.swift */,
 				89E72684274CE540002C063B /* SceneDelegate.swift */,
-				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
 				89E72693274CE542002C063B /* Info.plist */,
+				89E91A8127618EA600C23801 /* Views */,
+				89E349EC275A3009007F4459 /* Headers */,
 				89101A6C2758C38600BC6846 /* Extensions */,
 				899EFCA7274FA039006254C4 /* Resources */,
 				89B28F6D274EA9F4000C4C91 /* ViewControllers */,
-				89E349F3275A640B007F4459 /* CellDecoratorView.swift */,
 			);
 			path = CountriesOfTheWorld;
 			sourceTree = "<group>";
@@ -249,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				89E91A8227618EE100C23801 /* DetailsFieldPlaceHolderView.swift */,
+				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
+				89E349F3275A640B007F4459 /* CellDecoratorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

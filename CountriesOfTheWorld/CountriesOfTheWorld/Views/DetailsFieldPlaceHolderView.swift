@@ -104,8 +104,8 @@ class DetailsFieldPlaceHolderView: UIView {
     }
 
     private struct Constants {
-        static let labelAllowedLines = 3
-        static let labelMinimumScaleFactor: CGFloat = 0.5
+        static let labelAllowedLines = 0
+        static let labelMinimumScaleFactor: CGFloat = 0.8
         static let verticalStackWidth: CGFloat = 80
         static let labelTopInset: CGFloat = 10
         static let labelHeight: CGFloat = 35

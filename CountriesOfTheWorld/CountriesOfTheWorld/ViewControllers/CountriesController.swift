@@ -99,23 +99,12 @@ extension CountriesController {
         return (UIDevice.current.userInterfaceIdiom == .phone) ? Constants.headerHeight : 0
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
-                cell.didSelect(indexPath: indexPath)
-            }
-        }
-
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         let detailsController = CountryDetailsController()
         detailsController.countryBasic = filteredCountries?[indexPath.row] ?? countries[indexPath.row]
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
-    }
-
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CountryViewCell {
-            cell.didDeselect(indexPath: indexPath)
-        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
