@@ -23,6 +23,7 @@ class CountryDetailsController: UIViewController {
 
     var contentView: DetailsContentForIPhoneView {
         let view = DetailsContentForIPhoneView(info: countryInfo, frame: view.bounds)
+        //view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
 
@@ -98,8 +99,10 @@ class CountryDetailsController: UIViewController {
     func configureContentView() {
         navigationItem.title = "Country List"
         view.backgroundColor = .white
+        //let contentView = DetailsContentForIPhoneView(info: countryInfo,
+        //                                              frame: view.bounds)
         view.addSubview(contentView)
-        setContentViewConstraints()
+        //setContentViewConstraints()
     }
 
     func fillDetailsViewWithData() {
