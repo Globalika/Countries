@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsContentForIPhoneView {
+class DetailsContentForIPhoneView: UIView {
     var header: CountriesDetailsHeader = {
         var header = CountriesDetailsHeader()
         header.contentMode = .scaleAspectFit
@@ -39,7 +39,56 @@ class DetailsContentForIPhoneView {
         return stack
     }()
 
+    func setScrollViewConstraints() {
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: header.bottomAnchor),
+            scrollView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+
+    func setHeaderConstraints() {
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: self.topAnchor,
+                                        constant: Constants.headerTopInset),
+            header.leftAnchor.constraint(equalTo: self.leftAnchor),
+            header.rightAnchor.constraint(equalTo: self.rightAnchor),
+            header.heightAnchor.constraint(equalToConstant: Constants.headerHeight)
+        ])
+    }
+
+    func setStackViewConstrains() {
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: flagImageView.bottomAnchor,
+                                           constant: Constants.stackInsets.top),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
+                                               constant: Constants.stackInsets.left),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.safeAreaLayoutGuide.trailingAnchor,
+                                                constant: Constants.stackInsets.right),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,
+                                              constant: Constants.stackInsets.bottom)
+        ])
+    }
+
+    func setFlagImageViewConstrains() {
+        NSLayoutConstraint.activate([
+            flagImageView.topAnchor.constraint(equalTo: scrollView.topAnchor,
+                                               constant: Constants.flagInsets.top),
+            flagImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
+                                                   constant: Constants.flagInsets.left),
+            flagImageView.widthAnchor.constraint(equalToConstant: Constants.flagWidth),
+            flagImageView.heightAnchor.constraint(equalToConstant: Constants.flagHeight)
+        ])
+    }
+
     private struct Constants {
-        static let stackSpacing: CGFloat = 5
+        static let headerTopInset: CGFloat = 25
+        static let headerHeight: CGFloat = 180
+        static let stackSpacing: CGFloat = -12
+        static let flagInsets = UIEdgeInsets(top: 3, left: 25, bottom: 0, right: 0)
+        static let stackInsets = UIEdgeInsets(top: 10, left: 5, bottom: -70, right: -30)
+        static let flagWidth: CGFloat = 100
+        static let flagHeight: CGFloat = 80
     }
 }
