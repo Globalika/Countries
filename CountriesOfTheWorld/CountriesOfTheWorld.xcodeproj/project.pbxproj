@@ -13,6 +13,7 @@
 		3448D79B812FD5EB7F7E5DAC /* Pods_CountriesOfTheWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */; };
 		89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */; };
 		8938933C274E589100049179 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8938933B274E589100049179 /* .swiftlint.yml */; };
+		893D99092770998200B1A28B /* DetailsContentForIPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D99082770998200B1A28B /* DetailsContentForIPhoneView.swift */; };
 		899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EFCA8274FA0B1006254C4 /* R.generated.swift */; };
 		899EFCAB274FA0CD006254C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899EFCAA274FA0CD006254C4 /* Assets.xcassets */; };
 		89B28F6C274E9E34000C4C91 /* CountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F6B274E9E34000C4C91 /* CountriesController.swift */; };
@@ -65,6 +66,7 @@
 		83E41B164AE13785989C8084 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		8938933B274E589100049179 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		893D99082770998200B1A28B /* DetailsContentForIPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContentForIPhoneView.swift; sourceTree = "<group>"; };
 		899EFCA8274FA0B1006254C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		899EFCAA274FA0CD006254C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B28F6B274E9E34000C4C91 /* CountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				89E91A8227618EE100C23801 /* DetailsFieldPlaceHolderView.swift */,
 				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
 				89E349F3275A640B007F4459 /* CellDecoratorView.swift */,
+				893D99082770998200B1A28B /* DetailsContentForIPhoneView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				0268C8AD2768F22F00A4EE96 /* UIStackViewExtensions.swift in Sources */,
 				89E91A7E27616A7000C23801 /* UILabelExtensions.swift in Sources */,
 				899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */,
+				893D99092770998200B1A28B /* DetailsContentForIPhoneView.swift in Sources */,
 				89B28F71274EB442000C4C91 /* Apollo.swift in Sources */,
 				89E7268D274CE540002C063B /* (null) in Sources */,
 				89B28F78274EE7FE000C4C91 /* CountryViewCell.swift in Sources */,
