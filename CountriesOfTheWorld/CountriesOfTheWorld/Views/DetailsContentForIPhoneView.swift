@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 class DetailsContentForIPhoneView: UIView {
+    private var countryInfo = [(String, String)]()
+
     var header: CountriesDetailsHeader = {
         var header = CountriesDetailsHeader()
         header.contentMode = .scaleAspectFit
@@ -38,6 +40,57 @@ class DetailsContentForIPhoneView: UIView {
         stack.distribution = .fillEqually
         return stack
     }()
+
+    init(info: [(String, String)], frame: CGRect) {
+        super.init(frame: frame)
+        self.countryInfo = info
+        configureDetailsView()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func configureDetailsView() {
+        addSubview(header)
+        setHeaderConstraints()
+        addSubview(scrollView)
+        setScrollViewConstraints()
+        configureScrollView()
+    }
+
+    func configureScrollView() {
+        scrollView.addSubview(flagImageView)
+        setFlagImageViewConstrains()
+        configureStackView()
+    }
+
+    func configureStackView() {
+        scrollView.addSubview(stackView)
+        setStackViewConstrains()
+        addLabelsToStackView()
+    }
+
+    func addLabelsToStackView() {
+        var scenery: Scenery = .greenCircle
+        for text in countryInfo {
+            let placeHolder = DetailsFieldPlaceHolderView()
+            placeHolder.circleImageView.image = UIImage(named: "\(scenery)")
+            if text.0 != countryInfo.last?.0 {
+                placeHolder.curveLineImageView.image = Constants.curveLineImage
+            }
+            placeHolder.fieldLabel.setAttributedText(descriptionText: text.0,
+                                                     descriptionTextFont:
+                                                            .systemFont(ofSize: Constants.labelDescriptionFontSize,
+                                                                        weight: Constants.labelDescriptionFontWeight),
+                                                     dataText: text.1,
+                                                     dataTextFont:
+                                                            .systemFont(ofSize: Constants.labelDataFontSize,
+                                                                        weight: Constants.labelDataFontWeight))
+            stackView.addArrangedSubview(placeHolder)
+            scenery = scenery.cicleScenery()
+        }
+    }
 
     func setScrollViewConstraints() {
         NSLayoutConstraint.activate([
@@ -90,5 +143,10 @@ class DetailsContentForIPhoneView: UIView {
         static let stackInsets = UIEdgeInsets(top: 10, left: 5, bottom: -70, right: -30)
         static let flagWidth: CGFloat = 100
         static let flagHeight: CGFloat = 80
+        static let curveLineImage = UIImage(named: "curveLine")
+        static let labelDescriptionFontSize: CGFloat = 15
+        static let labelDescriptionFontWeight: UIFont.Weight = .thin
+        static let labelDataFontSize: CGFloat = 20
+        static let labelDataFontWeight: UIFont.Weight = .bold
     }
 }
