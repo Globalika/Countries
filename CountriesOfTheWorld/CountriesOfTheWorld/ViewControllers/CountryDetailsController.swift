@@ -164,7 +164,6 @@ class CountryDetailsController: UIViewController {
         static let countryLanguagesDescription = "Official Languages:"
         static let countryLanguageDescription = "Official Language:"
         static let countryCallingCodeDescription = "Calling Code:"
-        static let headerImageHeight: CGFloat = 200
         static let headerLabelFontSize: CGFloat = 80
     }
 }

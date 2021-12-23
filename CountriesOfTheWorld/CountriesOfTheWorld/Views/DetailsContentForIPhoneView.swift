@@ -139,8 +139,8 @@ class DetailsContentForIPhoneView: UIView {
     }
 
     private struct Constants {
-        static let headerTopInset: CGFloat = 25
-        static let headerHeight: CGFloat = 180
+        static let headerTopInset: CGFloat = 20
+        static let headerHeight: CGFloat = 160
         static let stackSpacing: CGFloat = -12
         static let flagInsets = UIEdgeInsets(top: 3, left: 25, bottom: 0, right: 0)
         static let stackInsets = UIEdgeInsets(top: 10, left: 5, bottom: -70, right: -30)
