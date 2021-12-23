@@ -45,7 +45,7 @@ class DetailsContentForIPhoneView: UIView {
         return stack
     }()
 
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         configureDetailsView()
     }
