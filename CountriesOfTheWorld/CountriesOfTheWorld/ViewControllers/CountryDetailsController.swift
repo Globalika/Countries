@@ -8,13 +8,14 @@
 import UIKit
 
 class CountryDetailsController: UIViewController {
+    typealias Country = CountryQuery.Data.Country
     private var countryInfo = [(String, String)]()
-    private var country: CountryQuery.Data.Country? {
+    private var country: Country? {
         didSet {
             configureAllViews()
         }
     }
-    var countryBasic: CountriesQuery.Data.Country?
+    var countryBasic: Country?
 
     let startHeader: CountriesHeaderView = {
         let header = CountriesHeaderView()
@@ -105,21 +106,19 @@ class CountryDetailsController: UIViewController {
 
     func fillDetailsViewWithData() {
         guard let countryBasic = countryBasic else { return }
-        contentView.flagImageView.image = UIImage(named: countryBasic.code.lowercased())
         countryInfo.append(("\(Constants.countryNameDescription)",
                             "\(String(describing: countryBasic.name))"))
         countryInfo.append(("\(Constants.countryCapitalDescription)",
                             "\(countryBasic.capital ?? Constants.notApplicableField)"))
         countryInfo.append(("\(Constants.countryContinentDescription)",
                             "\(String(describing: countryBasic.continent.name))"))
-        contentView.countryInfo = self.countryInfo
+        updateContentData(countryBasic)
     }
 
     func fillDetailsViewWithCountryQuery() {
         guard let country = self.country else { return }
         countryInfo.removeAll()
         contentView.stackView.removeAllSubviews()
-        contentView.flagImageView.image = UIImage(named: country.code.lowercased())
         countryInfo.append(("\(Constants.countryNameDescription)",
                             "\(String(describing: country.name))"))
         countryInfo.append(("\(Constants.countryCapitalDescription)",
@@ -139,6 +138,11 @@ class CountryDetailsController: UIViewController {
             countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
         }
         countryInfo.append(("Calling Code:", "\(country.phone)"))
+        updateContentData(country)
+    }
+    
+    func updateContentData(_ country: Country) {
+        contentView.flagImageView.image = UIImage(named: country.code.lowercased())
         contentView.countryInfo = self.countryInfo
     }
 
