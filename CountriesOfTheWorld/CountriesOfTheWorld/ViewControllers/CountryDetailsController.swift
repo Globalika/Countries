@@ -8,14 +8,13 @@
 import UIKit
 
 class CountryDetailsController: UIViewController {
-    typealias Country = CountryQuery.Data.Country
     private var countryInfo = [(String, String)]()
-    private var country: Country? {
+    private var country: CountryQuery.Data.Country? {
         didSet {
             configureAllViews()
         }
     }
-    var countryBasic: Country?
+    var countryBasic: CountriesQuery.Data.Country?
 
     let startHeader: CountriesHeaderView = {
         let header = CountriesHeaderView()
@@ -42,10 +41,7 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        startHeader.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        startHeader.imageView.heightAnchor.constraint(equalToConstant:
-                                                        Constants.imageHeight).isActive = true
-        startHeader.headerLabel.font = .systemFont(ofSize: Constants.headerLabelFontSize)
+        configureStartHeader()
     }
 
     override func viewDidLoad() {
@@ -67,6 +63,13 @@ class CountryDetailsController: UIViewController {
             guard let country = try? result.get().data?.country else { return }
             self.country = country
         }
+    }
+
+    func configureStartHeader() {
+        startHeader.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        startHeader.imageView.heightAnchor.constraint(equalToConstant:
+                                                        Constants.imageHeight).isActive = true
+        startHeader.headerLabel.font = .systemFont(ofSize: Constants.headerLabelFontSize)
     }
 
     private func configureAllViews() {
@@ -112,7 +115,8 @@ class CountryDetailsController: UIViewController {
                             "\(countryBasic.capital ?? Constants.notApplicableField)"))
         countryInfo.append(("\(Constants.countryContinentDescription)",
                             "\(String(describing: countryBasic.continent.name))"))
-        updateContentData(countryBasic)
+        contentView.flagImageView.image = UIImage(named: countryBasic.code.lowercased())
+        contentView.countryInfo = self.countryInfo
     }
 
     func fillDetailsViewWithCountryQuery() {
@@ -138,10 +142,6 @@ class CountryDetailsController: UIViewController {
             countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
         }
         countryInfo.append(("Calling Code:", "\(country.phone)"))
-        updateContentData(country)
-    }
-    
-    func updateContentData(_ country: Country) {
         contentView.flagImageView.image = UIImage(named: country.code.lowercased())
         contentView.countryInfo = self.countryInfo
     }
