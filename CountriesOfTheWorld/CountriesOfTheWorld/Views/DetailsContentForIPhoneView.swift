@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 
 class DetailsContentForIPhoneView: UIView {
-    private var countryInfo = [(String, String)]()
+    public var countryInfo = [(String, String)]() {
+        didSet {
+            configureDetailsView()
+        }
+    }
 
     var header: CountriesDetailsHeader = {
         var header = CountriesDetailsHeader()
@@ -41,9 +45,8 @@ class DetailsContentForIPhoneView: UIView {
         return stack
     }()
 
-    init(info: [(String, String)], frame: CGRect) {
+    init(frame: CGRect) {
         super.init(frame: frame)
-        self.countryInfo = info
         configureDetailsView()
     }
 

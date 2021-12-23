@@ -21,11 +21,11 @@ class CountryDetailsController: UIViewController {
         return header
     }()
 
-    var contentView: DetailsContentForIPhoneView {
-        let view = DetailsContentForIPhoneView(info: countryInfo, frame: view.bounds)
-        //view.translatesAutoresizingMaskIntoConstraints = false
+    lazy var contentView: DetailsContentForIPhoneView = {
+        let view = DetailsContentForIPhoneView(frame: view.bounds)
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }
+    }()
 
     lazy var refrechControl: UIRefreshControl = {
         let refrechControl = UIRefreshControl()
@@ -49,8 +49,8 @@ class CountryDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureRefreshControl()
         configureAllViews()
+        configureRefreshControl()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -99,22 +99,21 @@ class CountryDetailsController: UIViewController {
     func configureContentView() {
         navigationItem.title = "Country List"
         view.backgroundColor = .white
-        //let contentView = DetailsContentForIPhoneView(info: countryInfo,
-        //                                              frame: view.bounds)
         view.addSubview(contentView)
-        //setContentViewConstraints()
+        setContentViewConstraints()
     }
 
     func fillDetailsViewWithData() {
         guard let countryBasic = countryBasic else { return }
         contentView.flagImageView.image = UIImage(named: countryBasic.code.lowercased())
-            countryInfo.append(("\(Constants.countryNameDescription)",
-                                "\(String(describing: countryBasic.name))"))
-            countryInfo.append(("\(Constants.countryCapitalDescription)",
-                                "\(countryBasic.capital ?? Constants.notApplicableField)"))
-            countryInfo.append(("\(Constants.countryContinentDescription)",
-                                "\(String(describing: countryBasic.continent.name))"))
-        }
+        countryInfo.append(("\(Constants.countryNameDescription)",
+                            "\(String(describing: countryBasic.name))"))
+        countryInfo.append(("\(Constants.countryCapitalDescription)",
+                            "\(countryBasic.capital ?? Constants.notApplicableField)"))
+        countryInfo.append(("\(Constants.countryContinentDescription)",
+                            "\(String(describing: countryBasic.continent.name))"))
+        contentView.countryInfo = self.countryInfo
+    }
 
     func fillDetailsViewWithCountryQuery() {
         guard let country = self.country else { return }
@@ -140,21 +139,23 @@ class CountryDetailsController: UIViewController {
             countryInfo.append(("\(Constants.countryLanguagesDescription)", "\(languages)" ))
         }
         countryInfo.append(("Calling Code:", "\(country.phone)"))
+        contentView.countryInfo = self.countryInfo
     }
 
     func setContentViewConstraints() {
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
+                                             constant: Constants.contentTopInset),
+            contentView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
     private struct Constants {
         static let notApplicableField = "N-A"
         static let detailsDefaultHeader = "Details"
-        static let headerTopInset: CGFloat = 25
+        static let contentTopInset: CGFloat = 25
         static let imageHeight: CGFloat = 180
         static let countryNameDescription = "Country:"
         static let countryCapitalDescription = "Capital:"
