@@ -15,6 +15,8 @@ class DetailsContentForIPhoneView: UIView {
         }
     }
 
+    var refreshControl = UIRefreshControl()
+
     var header: CountriesDetailsHeader = {
         var header = CountriesDetailsHeader()
         header.contentMode = .scaleAspectFit
@@ -52,6 +54,10 @@ class DetailsContentForIPhoneView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configureRefreshControl() {
+        scrollView.refreshControl = refreshControl
     }
 
     func configureDetailsView() {

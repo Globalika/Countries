@@ -27,12 +27,6 @@ class CountryDetailsController: UIViewController {
         return view
     }()
 
-    lazy var refrechControl: UIRefreshControl = {
-        let refrechControl = UIRefreshControl()
-        refrechControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        return refrechControl
-    }()
-
     init() { super.init(nibName: nil, bundle: nil) }
 
     required init?(coder: NSCoder) {
@@ -89,7 +83,9 @@ class CountryDetailsController: UIViewController {
     }
 
     private func configureRefreshControl() {
-        contentView.scrollView.refreshControl = refrechControl
+        contentView.refreshControl.addTarget(self,
+                                             action: #selector(refresh(sender:)),
+                                             for: .valueChanged)
     }
 
     @objc private func refresh(sender: UIRefreshControl) {
