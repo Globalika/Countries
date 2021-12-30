@@ -8,6 +8,12 @@
 import Apollo
 import Foundation
 
+protocol ApolloClientProtocol {
+    func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void)
+    func getCountry(code: String,
+                    completion: @escaping (Result<CountryQuery.Data.Country, Error>) -> Void)
+}
+
 class Apollo {
 
     static let shared = Apollo()
