@@ -8,6 +8,8 @@
 import UIKit
 
 class CountryDetailsController: UIViewController {
+    var networkManager: NetworkManager
+
     private var countryInfo = [(String, String)]()
     private var country: CountryQuery.Data.Country? {
         didSet {
@@ -43,7 +45,10 @@ class CountryDetailsController: UIViewController {
         return refrechControl
     }()
 
-    init() { super.init(nibName: nil, bundle: nil) }
+    init(_ networkManager: NetworkManager) {
+        self.networkManager = networkManager
+        super.init(nibName: nil, bundle: nil)
+    }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")

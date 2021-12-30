@@ -8,6 +8,16 @@
 import UIKit
 
 class CountriesController: UITableViewController {
+    var networkManager: NetworkManager
+
+    init(_ networkManager: NetworkManager) {
+        self.networkManager = networkManager
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let searchController: UISearchController = {
         let searchController = UISearchController()
