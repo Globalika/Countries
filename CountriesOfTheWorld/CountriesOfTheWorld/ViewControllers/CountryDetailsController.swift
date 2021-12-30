@@ -89,10 +89,8 @@ class CountryDetailsController: UIViewController {
     }
 
     func loadData(code: String) {
-        let query = CountryQuery(code: code)
-
-        Apollo.shared.client?.fetch(query: query) { result in
-            guard let country = try? result.get().data?.country else { return }
+        networkManager.client.getCountry(code: code) { result in
+            guard let country = try? result.get() else { return }
             self.country = country
         }
     }

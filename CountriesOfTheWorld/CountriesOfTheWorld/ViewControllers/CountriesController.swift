@@ -66,10 +66,8 @@ class CountriesController: UITableViewController {
 extension CountriesController {
 
     func loadData() {
-        let query = CountriesQuery()
-
-        Apollo.shared.client?.fetch(query: query) { result in
-            guard let countries = try? result.get().data?.countries else { return }
+        networkManager.client.getCountries { result in
+            guard let countries = try? result.get() else { return }
             self.countries = countries
         }
     }
@@ -111,7 +109,7 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        let detailsController = CountryDetailsController()
+        let detailsController = CountryDetailsController(networkManager)
         detailsController.countryBasic = filteredCountries?[indexPath.row] ?? countries[indexPath.row]
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)
