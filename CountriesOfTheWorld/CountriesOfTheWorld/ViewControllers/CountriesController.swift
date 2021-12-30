@@ -8,6 +8,19 @@
 import UIKit
 
 class CountriesController: UITableViewController {
+    var networkManager: NetworkManager
+    var currentDevice: Device
+
+    init(_ currentDevice: Device,
+         _ networkManager: NetworkManager) {
+        self.networkManager = networkManager
+        self.currentDevice = currentDevice
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let searchController: UISearchController = {
         let searchController = UISearchController()
@@ -51,15 +64,10 @@ class CountriesController: UITableViewController {
             tableView.sectionHeaderTopPadding = Constants.tableViewPadding
         }
     }
-}
-
-extension CountriesController {
 
     func loadData() {
-        let query = CountriesQuery()
-
-        Apollo.shared.client?.fetch(query: query) { result in
-            guard let countries = try? result.get().data?.countries else { return }
+        networkManager.client.getCountries { result in
+            guard let countries = try? result.get() else { return }
             self.countries = countries
         }
     }
@@ -83,7 +91,7 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             viewForHeaderInSection section: Int) -> UIView? {
-        if UIDevice.current.userInterfaceIdiom == .phone {
+        if currentDevice == .iPhone {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CountriesHeaderView.identifier)
                     as? CountriesHeaderView else { return UITableViewHeaderFooterView() }
             header.imageView.heightAnchor.constraint(equalToConstant:
@@ -96,12 +104,12 @@ extension CountriesController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return (UIDevice.current.userInterfaceIdiom == .phone) ? Constants.headerHeight : 0
+        return (currentDevice == .iPhone) ? Constants.headerHeight : 0
     }
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        let detailsController = CountryDetailsController()
+        let detailsController = CountryDetailsController(currentDevice, networkManager)
         detailsController.countryBasic = filteredCountries?[indexPath.row] ?? countries[indexPath.row]
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)

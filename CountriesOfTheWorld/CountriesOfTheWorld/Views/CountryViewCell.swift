@@ -31,14 +31,12 @@ class CountryViewCell: UITableViewCell {
     }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
             if selected {
                 selectedCellBorderView.frame = indentView.bounds
                 indentView.addSubview(selectedCellBorderView)
             } else {
                 selectedCellBorderView.removeFromSuperview()
             }
-        }
     }
 
     var horizontalStackView: UIStackView = {
@@ -94,6 +92,12 @@ class CountryViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCellView()
     }
+    
+//    convenience init(_ currentDevice: Device) {
+//        self.init(style: style, reuseIdentifier: reuseIdentifier)
+//        self.currentDevice = currentDevice
+//        configureCellView()
+//    }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")

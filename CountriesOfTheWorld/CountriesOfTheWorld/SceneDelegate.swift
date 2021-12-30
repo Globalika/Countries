@@ -22,10 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
 
-        let mainController = CountriesController()
+        let mainController = CountriesController(
+            (UIDevice.current.userInterfaceIdiom == .phone) ? .iPad : .iPhone,
+            NetworkManager(client: Apollo()))
         let mainNC = UINavigationController(rootViewController: mainController)
 
-        let detailController = CountryDetailsController()
+        let detailController = CountryDetailsController(
+            (UIDevice.current.userInterfaceIdiom == .phone) ? .iPad : .iPhone,
+            NetworkManager(client: Apollo()))
         let detailNC = UINavigationController(rootViewController: detailController)
 
         let splitViewController =  UISplitViewController()
@@ -45,4 +49,9 @@ extension SceneDelegate: UISplitViewControllerDelegate {
                              onto primaryViewController: UIViewController) -> Bool {
         return true
     }
+}
+
+enum Device {
+    case iPad
+    case iPhone
 }

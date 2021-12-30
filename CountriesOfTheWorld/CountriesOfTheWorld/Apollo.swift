@@ -8,18 +8,50 @@
 import Apollo
 import Foundation
 
-class Apollo {
+protocol ApolloClientProtocol {
+    func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void)
+    func getCountry(code: String,
+                    completion: @escaping (Result<CountryQuery.Data.Country, Error>) -> Void)
+}
 
-    static let shared = Apollo()
+class Apollo: ApolloClientProtocol {
+    func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void) {
+        let query = CountriesQuery()
+        apollo?.fetch(query: query) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let data = graphQLResult.data {
+                    completion(Result.success(data.countries))
+                } else if let errors = graphQLResult.errors {
+                    print(errors)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
-    let client: ApolloClient?
+    func getCountry(code: String, completion: @escaping (Result<CountryQuery.Data.Country, Error>) -> Void) {
+        let query = CountryQuery(code: code)
+        apollo?.fetch(query: query) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let country = graphQLResult.data?.country {
+                    completion(Result.success(country))
+                } else if let errors = graphQLResult.errors {
+                    print(errors)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
-    private init() {
+    private(set) lazy var apollo: ApolloClient? = {
         guard let url = URL(string: "https://countries.trevorblades.com") else {
             print("error: invalid url")
-            client = nil
-            return
+            return nil
         }
-        client = ApolloClient(url: url)
-    }
+        return ApolloClient(url: url)
+    }()
 }

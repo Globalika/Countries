@@ -8,6 +8,9 @@
 import UIKit
 
 class CountryDetailsController: UIViewController {
+    var networkManager: NetworkManager
+    var currentDevice: Device
+
     private var countryInfo = [(String, String)]()
     private var country: CountryQuery.Data.Country? {
         didSet {
@@ -27,7 +30,12 @@ class CountryDetailsController: UIViewController {
         return view
     }()
 
-    init() { super.init(nibName: nil, bundle: nil) }
+    init(_ currentDevice: Device,
+         _ networkManager: NetworkManager) {
+        self.networkManager = networkManager
+        self.currentDevice = currentDevice
+        super.init(nibName: nil, bundle: nil)
+    }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
@@ -51,10 +59,8 @@ class CountryDetailsController: UIViewController {
     }
 
     func loadData(code: String) {
-        let query = CountryQuery(code: code)
-
-        Apollo.shared.client?.fetch(query: query) { result in
-            guard let country = try? result.get().data?.country else { return }
+        networkManager.client.getCountry(code: code) { result in
+            guard let country = try? result.get() else { return }
             self.country = country
         }
     }
@@ -68,7 +74,7 @@ class CountryDetailsController: UIViewController {
 
     private func configureAllViews() {
         country != nil ? fillDetailsViewWithCountryQuery() : fillDetailsViewWithData()
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if currentDevice == .iPad {
             if !countryInfo.isEmpty {
                 if startHeader.isDescendant(of: view) {
                     startHeader.removeFromSuperview()
@@ -168,7 +174,7 @@ class CountryDetailsController: UIViewController {
     }
 }
 
-enum Scenery: String {
+enum Scenery {
     case greenCircle, redCircle
     func cicleScenery() -> Scenery {
         switch self {
