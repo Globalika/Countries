@@ -6,15 +6,14 @@
 //
 
 import Foundation
-
 @testable import CountriesOfTheWorld
- 
+
 class ApolloMock: ApolloClientProtocol {
     func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void) {
         let countries: [CountryLite] = [countryLite, countryLite, countryLite, countryLite]
         completion(Result.success(countries))
     }
- 
+
     func getCountry(code: String, completion: @escaping (Result<CountryQuery.Data.Country, Error>) -> Void) {
         completion(Result.success(countryDetails))
     }
