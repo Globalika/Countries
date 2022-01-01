@@ -26,4 +26,12 @@ class CountriesDetailsHeaderForIPad: UIView {
     private struct Constants {
         static let flagsImage = UIImage(named: "flags")
     }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("\(#function) has not been implemented")
+    }
 }
