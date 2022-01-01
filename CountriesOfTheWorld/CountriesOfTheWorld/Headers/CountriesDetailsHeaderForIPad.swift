@@ -23,15 +23,40 @@ class CountriesDetailsHeaderForIPad: UIView {
         return imageView
     }()
 
-    private struct Constants {
-        static let flagsImage = UIImage(named: "flags")
-    }
-
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
+    }
+
+    func setworldImageConstraints() {
+        NSLayoutConstraint.activate([
+            countryImageView.topAnchor.constraint(equalTo: self.topAnchor,
+                                                  constant: Constants.countryImageTopInset),
+            countryImageView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            countryImageView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            countryImageView.heightAnchor.constraint(equalToConstant: Constants.countryImageHeight)
+        ])
+    }
+
+    func setFlagsImageConstraints() {
+        NSLayoutConstraint.activate([
+            flagsImageView.topAnchor.constraint(equalTo: countryImageView.bottomAnchor,
+                                                constant: Constants.flagImageTopInset),
+            flagsImageView.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
+            flagsImageView.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
+            flagsImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor,
+                                                   constant: Constants.flagImageBottomInset)
+        ])
+    }
+
+    private struct Constants {
+        static let flagsImage = UIImage(named: "flags")
+        static let countryImageTopInset: CGFloat = 10
+        static let countryImageHeight: CGFloat = 110
+        static let flagImageTopInset: CGFloat = -40
+        static let flagImageBottomInset: CGFloat = -10
     }
 }
