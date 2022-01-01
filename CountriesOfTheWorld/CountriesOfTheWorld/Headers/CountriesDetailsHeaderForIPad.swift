@@ -64,7 +64,7 @@ class CountriesDetailsHeaderForIPad: UIView {
     private struct Constants {
         static let flagsImage = UIImage(named: "flags")
         static let countryImageTopInset: CGFloat = 10
-        static let countryImageHeight: CGFloat = 110
+        static let countryImageHeight: CGFloat = 100
         static let flagImageTopInset: CGFloat = -40
         static let flagImageBottomInset: CGFloat = -10
     }
