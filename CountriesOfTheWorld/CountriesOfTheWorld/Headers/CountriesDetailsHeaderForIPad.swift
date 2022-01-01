@@ -25,10 +25,19 @@ class CountriesDetailsHeaderForIPad: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureTableHeader()
     }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
+    }
+
+    func configureTableHeader() {
+        backgroundColor = .white
+        addSubview(countryImageView)
+        setworldImageConstraints()
+        addSubview(flagsImageView)
+        setFlagsImageConstraints()
     }
 
     func setworldImageConstraints() {
