@@ -52,22 +52,37 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     func testCellForRowWhenWithApolloMock() {
-        sut.networkManager.client = ApolloMock()
         let indexPath = IndexPath(row: 3, section: 0)
         let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
         XCTAssertNotNil(cell)
     }
 
-    func testNumbersOfRowInSectionWithTwoElements() {
-        sut.countries.append(country)
-        sut.countries.append(country)
-        let expectedNumber = 2
-        let actualNumber = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
-        XCTAssertEqual(expectedNumber, actualNumber)
+    func testTableViewHeaderNotNil() {
+        let header = sut.tableView(sut.tableView, viewForHeaderInSection: 0)
+        XCTAssertNotNil(header)
+    }
+
+    func testTableViewHeaderType() {
+        let header = sut.tableView(sut.tableView, viewForHeaderInSection: 0)
+        let isCurrentType = header is CountriesHeaderView
+        XCTAssertTrue(isCurrentType)
+    }
+
+    func testTableViewCellNotNil() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
+        XCTAssertNotNil(cell)
+    }
+
+    func testTableViewCellType() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
+        let isCurrentType = cell is CountryViewCell
+        XCTAssertTrue(isCurrentType)
     }
 
     func testNumbersOfRowInSectionWithNoElements() {
-        let expectedNumber = 0
+        let expectedNumber = 4
         let actualNumber = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(expectedNumber, actualNumber)
     }
