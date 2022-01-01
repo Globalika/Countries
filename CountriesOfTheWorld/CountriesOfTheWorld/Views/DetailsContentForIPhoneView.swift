@@ -17,8 +17,8 @@ class DetailsContentForIPhoneView: UIView {
 
     var refreshControl = UIRefreshControl()
 
-    var header: CountriesDetailsHeader = {
-        var header = CountriesDetailsHeader()
+    var header: CountriesDetailsHeaderForIPhone = {
+        var header = CountriesDetailsHeaderForIPhone()
         header.contentMode = .scaleAspectFit
         header.translatesAutoresizingMaskIntoConstraints = false
         return header

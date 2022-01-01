@@ -1,5 +1,5 @@
 //
-//  CountriesDetailsHeader.swift
+//  CountriesDetailsHeaderForIPhone.swift
 //  CountriesOfTheWorld
 //
 //  Created by Volodymyr Seredovych on 09.12.2021.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CountriesDetailsHeader: UIView {
+class CountriesDetailsHeaderForIPhone: UIView {
     let worldImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
