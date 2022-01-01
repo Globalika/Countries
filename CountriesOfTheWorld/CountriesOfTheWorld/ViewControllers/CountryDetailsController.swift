@@ -112,6 +112,7 @@ class CountryDetailsController: UIViewController {
         countryInfo.append(("\(Constants.countryContinentDescription)",
                             "\(String(describing: countryBasic.continent.name))"))
         contentView.flagImageView.image = UIImage(named: countryBasic.code.lowercased())
+        (contentView.header as? CountriesDetailsHeaderForIPad)?.countryImageView.image = UIImage(named: countryBasic.code.lowercased())
         contentView.countryInfo = self.countryInfo
     }
 

@@ -17,8 +17,10 @@ class DetailsContentForIPhoneView: UIView {
 
     var refreshControl = UIRefreshControl()
 
-    var header: CountriesDetailsHeaderForIPhone = {
-        var header = CountriesDetailsHeaderForIPhone()
+    var header: UIView = {
+        var header = UIDevice.current.userInterfaceIdiom == .phone ?
+        CountriesDetailsHeaderForIPhone() : CountriesDetailsHeaderForIPad()
+        //(header as? CountriesDetailsHeaderForIPad)?.flagsImageView.image = UIImage(named: "")
         header.contentMode = .scaleAspectFit
         header.translatesAutoresizingMaskIntoConstraints = false
         return header
