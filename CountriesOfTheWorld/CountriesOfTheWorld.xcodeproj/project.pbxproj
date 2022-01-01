@@ -16,6 +16,7 @@
 		8940F733277DBCF1001B63F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F732277DBCF1001B63F6 /* NetworkManager.swift */; };
 		8940F737277DE8A5001B63F6 /* UnitTestsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F736277DE8A5001B63F6 /* UnitTestsMocks.swift */; };
 		8940F739277DF806001B63F6 /* CountriesControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F738277DF806001B63F6 /* CountriesControllerUnitTests.swift */; };
+		897DC51F27807D3B00F4136A /* CountryViewCellUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */; };
 		899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EFCA8274FA0B1006254C4 /* R.generated.swift */; };
 		899EFCAB274FA0CD006254C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899EFCAA274FA0CD006254C4 /* Assets.xcassets */; };
 		89B28F6C274E9E34000C4C91 /* CountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B28F6B274E9E34000C4C91 /* CountriesController.swift */; };
@@ -71,6 +72,7 @@
 		8940F732277DBCF1001B63F6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8940F736277DE8A5001B63F6 /* UnitTestsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestsMocks.swift; sourceTree = "<group>"; };
 		8940F738277DF806001B63F6 /* CountriesControllerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesControllerUnitTests.swift; sourceTree = "<group>"; };
+		897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCellUnitTests.swift; sourceTree = "<group>"; };
 		899EFCA8274FA0B1006254C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		899EFCAA274FA0CD006254C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B28F6B274E9E34000C4C91 /* CountriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				89E7269C274CE542002C063B /* CountriesExtensionsUnitTests.swift */,
 				8940F736277DE8A5001B63F6 /* UnitTestsMocks.swift */,
 				8940F738277DF806001B63F6 /* CountriesControllerUnitTests.swift */,
+				897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */,
 			);
 			path = CountriesOfTheWorldTests;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E7269D274CE542002C063B /* CountriesExtensionsUnitTests.swift in Sources */,
+				897DC51F27807D3B00F4136A /* CountryViewCellUnitTests.swift in Sources */,
 				8940F739277DF806001B63F6 /* CountriesControllerUnitTests.swift in Sources */,
 				8940F737277DE8A5001B63F6 /* UnitTestsMocks.swift in Sources */,
 			);
