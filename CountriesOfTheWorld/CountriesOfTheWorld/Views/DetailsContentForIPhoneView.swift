@@ -9,6 +9,14 @@ import Foundation
 import UIKit
 
 class DetailsContentForIPhoneView: UIView {
+    public var countryCode = String() {
+        didSet {
+            let image = UIImage(named: countryCode.lowercased())
+            flagImageView.image = image
+            (header as? CountriesDetailsHeaderForIPad)?.countryImageView.image = image
+        }
+    }
+
     public var countryInfo = [(String, String)]() {
         didSet {
             configureDetailsView()
@@ -20,7 +28,6 @@ class DetailsContentForIPhoneView: UIView {
     var header: UIView = {
         var header = UIDevice.current.userInterfaceIdiom == .phone ?
         CountriesDetailsHeaderForIPhone() : CountriesDetailsHeaderForIPad()
-        //(header as? CountriesDetailsHeaderForIPad)?.flagsImageView.image = UIImage(named: "")
         header.contentMode = .scaleAspectFit
         header.translatesAutoresizingMaskIntoConstraints = false
         return header
