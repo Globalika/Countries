@@ -14,6 +14,7 @@
 		89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */; };
 		8938933C274E589100049179 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8938933B274E589100049179 /* .swiftlint.yml */; };
 		893D99092770998200B1A28B /* DetailsContentForIPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D99082770998200B1A28B /* DetailsContentForIPhoneView.swift */; };
+		8961B4422781BAC30004B873 /* DetailsContentForIPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8961B4412781BAC30004B873 /* DetailsContentForIPadView.swift */; };
 		897DC5212780B08300F4136A /* CountriesDetailsHeaderForIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DC5202780B08300F4136A /* CountriesDetailsHeaderForIPad.swift */; };
 		899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EFCA8274FA0B1006254C4 /* R.generated.swift */; };
 		899EFCAB274FA0CD006254C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 899EFCAA274FA0CD006254C4 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		8938933B274E589100049179 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		893D99082770998200B1A28B /* DetailsContentForIPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContentForIPhoneView.swift; sourceTree = "<group>"; };
+		8961B4412781BAC30004B873 /* DetailsContentForIPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsContentForIPadView.swift; sourceTree = "<group>"; };
 		897DC5202780B08300F4136A /* CountriesDetailsHeaderForIPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDetailsHeaderForIPad.swift; sourceTree = "<group>"; };
 		899EFCA8274FA0B1006254C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		899EFCAA274FA0CD006254C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				89B28F77274EE7FE000C4C91 /* CountryViewCell.swift */,
 				89E349F3275A640B007F4459 /* CellDecoratorView.swift */,
 				893D99082770998200B1A28B /* DetailsContentForIPhoneView.swift */,
+				8961B4412781BAC30004B873 /* DetailsContentForIPadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				89E72685274CE540002C063B /* SceneDelegate.swift in Sources */,
 				89B28F73274EC812000C4C91 /* CountryDetailsController.swift in Sources */,
 				89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */,
+				8961B4422781BAC30004B873 /* DetailsContentForIPadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
