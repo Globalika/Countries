@@ -23,9 +23,7 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
 
     var countryInfo = [(String, String)]() {
         didSet {
-            for subview in subviews {
-                subview.removeFromSuperview()
-            }
+            removeAllSubviews()
             configureDetailsView()
         }
     }
