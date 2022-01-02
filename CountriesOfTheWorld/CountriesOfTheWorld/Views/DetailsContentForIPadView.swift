@@ -130,8 +130,10 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
                                width: Constants.sceneryFrameSideLenght,
                                height: Constants.sceneryFrameSideLenght)
             if index%2 == 0 {
+                var pointAngle = CGFloat(360 / sceneryPointsAmount * index)
                 view.image = Constants.curveLineImage
-                let rotate = CGAffineTransform(rotationAngle: 0)
+                let angleRadian = -(pointAngle * Double.pi / 180)
+                let rotate = CGAffineTransform(rotationAngle: angleRadian)
                 view.transform = Constants.sceneryScale.concatenating(rotate)
             } else {
                 view.image = UIImage(named: "\(scenery)")
