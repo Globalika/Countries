@@ -21,7 +21,7 @@ class CountryDetailsController: UIViewController {
         return header
     }()
 
-    lazy var contentView: DetailsContentForIPhoneView = {
+    lazy var contentView: DetailsContentProtocol = {
         let view = DetailsContentForIPhoneView(frame: view.bounds)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -83,7 +83,7 @@ class CountryDetailsController: UIViewController {
     }
 
     private func configureRefreshControl() {
-        contentView.refreshControl.addTarget(self,
+        (contentView as? DetailsContentForIPhoneView)?.refreshControl.addTarget(self,
                                              action: #selector(refresh(sender:)),
                                              for: .valueChanged)
     }
@@ -118,7 +118,6 @@ class CountryDetailsController: UIViewController {
     func fillDetailsViewWithCountryQuery() {
         guard let country = self.country else { return }
         countryInfo.removeAll()
-        contentView.stackView.removeAllSubviews()
         countryInfo.append(("\(Constants.countryNameDescription)",
                             "\(String(describing: country.name))"))
         countryInfo.append(("\(Constants.countryCapitalDescription)",

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsContentForIPhoneView: UIView {
+class DetailsContentForIPhoneView: UIView, DetailsContentProtocol {
     public var countryCode = String() {
         didSet {
             let image = UIImage(named: countryCode.lowercased())
@@ -91,6 +91,7 @@ class DetailsContentForIPhoneView: UIView {
 
     func addLabelsToStackView() {
         var scenery: Scenery = .greenCircle
+        stackView.removeAllSubviews()
         for text in countryInfo {
             let placeHolder = DetailsFieldPlaceHolderView()
             placeHolder.circleImageView.image = UIImage(named: "\(scenery)")

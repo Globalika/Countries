@@ -8,12 +8,18 @@
 import Foundation
 import UIKit
 
-class DetailsContentForIPadView: UIView {
-    let worldImageView: UIImageView = {
-        let view = UIImageView()
-        view.image = Constants.worldImage
-        return view
-    }()
+protocol DetailsContentProtocol: UIView {
+    var countryCode: String { get set }
+    var countryInfo: [(String, String)] { get set }
+}
+
+class DetailsContentForIPadView: UIView, DetailsContentProtocol {
+    public var countryCode = String() {
+        didSet {
+            let image = UIImage(named: countryCode.lowercased())
+            header.countryImageView.image = image
+        }
+    }
 
     var countryInfo = [(String, String)]() {
         didSet {
@@ -21,14 +27,25 @@ class DetailsContentForIPadView: UIView {
         }
     }
 
+    var header: CountriesDetailsHeaderForIPad = {
+        var header = CountriesDetailsHeaderForIPad()
+        header.contentMode = .scaleAspectFit
+        header.translatesAutoresizingMaskIntoConstraints = false
+        return header
+    }()
+
+    let worldImageView: UIImageView = {
+        let view = UIImageView()
+        view.image = Constants.worldImage
+        return view
+    }()
+
     var points: [CGPoint] = []
     let curveLinesRotationAngles: [CGFloat] = []
     var pointsAmountIncludeScenery: Int = 0
 
-    init(countryInfo: [(String, String)], frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        self.countryInfo = countryInfo
-        countPointsPositions()
     }
 
     required init?(coder: NSCoder) {
@@ -49,6 +66,7 @@ class DetailsContentForIPadView: UIView {
     }
 
     func configureDetailsView() {
+        countPointsPositions()
         var scenery: Scenery = .greenCircle
         for (index, point) in points.enumerated() {
             let view = UIImageView()
