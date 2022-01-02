@@ -36,14 +36,14 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         return view
     }()
 
-    var points: [CGPoint] = []
+    var sceneryPoints: [CGPoint] = []
     let curveLinesRotationAngles: [CGFloat] = []
-    var pointsAmountIncludeScenery: Int = 0
+    var sceneryPointsAmount: Int = 0
     var worldCenterCoords = CGPoint()
 
     override var frame: CGRect {
         didSet {
-            worldCenterCoords = CGPoint(x: center.x - 180,
+            worldCenterCoords = CGPoint(x: center.x - Constants.worldImageXInset,
                                         y: center.y)
         }
     }
@@ -57,6 +57,16 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         fatalError("\(#function) has not been implemented")
     }
 
+    func configureDetailsView() {
+        configureHeader()
+        configureWorldImage()
+        if !countryInfo.isEmpty {
+            countSceneryPointsPositions()
+            addLabels()
+            addSceneryImages()
+        }
+    }
+
     func configureHeader() {
         addSubview(header)
         setHeaderConstraints()
@@ -64,56 +74,30 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
 
     func configureWorldImage() {
         addSubview(worldImageView)
-        worldImageView.frame = CGRect(x: worldCenterCoords.x-90,
-                                      y: worldCenterCoords.y-90,
-                                      width: 220,
-                                      height: 220)
+        worldImageView.frame = CGRect(x: worldCenterCoords.x + Constants.worldImageTopLeftInset.top,
+                                      y: worldCenterCoords.y + Constants.worldImageTopLeftInset.left,
+                                      width: Constants.worldImageSideLength,
+                                      height: Constants.worldImageSideLength)
     }
 
-    func countPointsPositions() {
-        points.removeAll()
-        pointsAmountIncludeScenery = countryInfo.count * 2
-        if pointsAmountIncludeScenery != 0 {
-            let angle: CGFloat = CGFloat(360 / pointsAmountIncludeScenery)
-            var point = CGPoint()
-            var pointAngle: CGFloat = 0
-            for _ in 0..<pointsAmountIncludeScenery {
-                point.x = worldCenterCoords.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
-                point.y = worldCenterCoords.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
-                points.append(point)
-                pointAngle += angle
-            }
+    func countSceneryPointsPositions() {
+        sceneryPoints.removeAll()
+        sceneryPointsAmount = countryInfo.count * 2
+        let angle: CGFloat = CGFloat(360 / sceneryPointsAmount)
+        var point = CGPoint()
+        var pointAngle: CGFloat = 0
+        for _ in 0..<sceneryPointsAmount {
+            point.x = worldCenterCoords.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
+            point.y = worldCenterCoords.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
+            sceneryPoints.append(point)
+            pointAngle += angle
         }
     }
 
-    func configureDetailsView() {
-        configureHeader()
-        configureWorldImage()
-        countPointsPositions()
-        if pointsAmountIncludeScenery != 0 {
-            addLbels()
-            var scenery: Scenery = .greenCircle
-            for (index, point) in points.enumerated() {
-                let view = UIImageView()
-                view.frame = .init(x: point.x, y: point.y, width: 50, height: 50)
-                if index%2 == 0 {
-                    view.image = UIImage(named: "curveLine")
-                    let scale = CGAffineTransform(scaleX: 2.7, y: 2.7)
-                    let rotate = CGAffineTransform(rotationAngle: 0)
-                    view.transform = scale.concatenating(rotate)
-                } else {
-                    view.image = UIImage(named: "\(scenery)")
-                    scenery = scenery.cicleScenery()
-                }
-                addSubview(view)
-            }
-        }
-    }
-
-    func addLbels() {
+    func addLabels() {
         if !countryInfo.isEmpty {
-            for (index, point) in points.enumerated() where index % 2 != 0 {
-                let pointAngle = Double(360 / pointsAmountIncludeScenery * (index))
+            for (index, point) in sceneryPoints.enumerated() where index % 2 != 0 {
+                let pointAngle = Double(360 / sceneryPointsAmount * (index))
                 let label = UILabel()
                 label.lineBreakMode = .byTruncatingTail
                 label.numberOfLines = 3
@@ -136,6 +120,24 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         }
     }
 
+    func addSceneryImages() {
+        var scenery: Scenery = .greenCircle
+        for (index, point) in sceneryPoints.enumerated() {
+            let view = UIImageView()
+            view.frame = .init(x: point.x, y: point.y, width: 50, height: 50)
+            if index%2 == 0 {
+                view.image = UIImage(named: "curveLine")
+                let scale = CGAffineTransform(scaleX: 2.7, y: 2.7)
+                let rotate = CGAffineTransform(rotationAngle: 0)
+                view.transform = scale.concatenating(rotate)
+            } else {
+                view.image = UIImage(named: "\(scenery)")
+                scenery = scenery.cicleScenery()
+            }
+            addSubview(view)
+        }
+    }
+
     func setHeaderConstraints() {
         NSLayoutConstraint.activate([
             header.topAnchor.constraint(equalTo: self.topAnchor),
@@ -153,5 +155,8 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         static let labelDataFontSize: CGFloat = 20
         static let labelDataFontWeight: UIFont.Weight = .bold
         static let headerHeight: CGFloat = 160
+        static let worldImageXInset: CGFloat = 180
+        static let worldImageSideLength: CGFloat = 220
+        static let worldImageTopLeftInset = UIEdgeInsets(top: -90, left: -90, bottom: 0, right: 0)
     }
 }
