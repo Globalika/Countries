@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsContentForIPhoneView: UIView, DetailsContentProtocol {
+class DetailsContentForIPhoneView: DetailsContentProtocol {
     public var countryCode = String() {
         didSet {
             let image = UIImage(named: countryCode.lowercased())

@@ -13,7 +13,7 @@ protocol DetailsContentProtocol: UIView {
     var countryInfo: [(String, String)] { get set }
 }
 
-class DetailsContentForIPadView: UIView, DetailsContentProtocol {
+class DetailsContentForIPadView: DetailsContentProtocol {
     public var countryCode = String() {
         didSet {
             let image = UIImage(named: countryCode.lowercased())
