@@ -22,7 +22,9 @@ class CountryDetailsController: UIViewController {
     }()
 
     lazy var contentView: DetailsContentProtocol = {
-        let view = DetailsContentForIPhoneView(frame: view.bounds)
+        let view = ((UIDevice.current.userInterfaceIdiom == .phone) ?
+                    DetailsContentForIPhoneView(frame: view.bounds) :
+                        DetailsContentForIPadView(frame: view.bounds)) as DetailsContentProtocol
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

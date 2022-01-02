@@ -44,8 +44,17 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
     let curveLinesRotationAngles: [CGFloat] = []
     var pointsAmountIncludeScenery: Int = 0
 
+    override var frame: CGRect {
+        didSet {
+            center = CGPoint(x: frame.size.width/2 - 90, y: frame.size.height/2 + 20)
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureDetailsView()
+        addSubview(worldImageView)
+        worldImageView.frame = CGRect(x: center.x-100, y: center.y-100, width: 240, height: 240)
     }
 
     required init?(coder: NSCoder) {
@@ -54,33 +63,38 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
 
     func countPointsPositions() {
         pointsAmountIncludeScenery = countryInfo.count * 2
-        let angle: CGFloat = CGFloat(360 / pointsAmountIncludeScenery)
-        var point = CGPoint()
-        var pointAngle: CGFloat = 0
-        for _ in 0..<pointsAmountIncludeScenery {
-            point.x = center.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
-            point.y = center.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
-            points.append(point)
-            pointAngle += angle
+        if pointsAmountIncludeScenery != 0 {
+            let angle: CGFloat = CGFloat(360 / pointsAmountIncludeScenery)
+            var point = CGPoint()
+            var pointAngle: CGFloat = 0
+            for _ in 0..<pointsAmountIncludeScenery {
+                point.x = center.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
+                point.y = center.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
+                points.append(point)
+                pointAngle += angle
+            }
         }
     }
 
     func configureDetailsView() {
         countPointsPositions()
-        var scenery: Scenery = .greenCircle
-        for (index, point) in points.enumerated() {
-            let view = UIImageView()
-            view.frame = .init(x: point.x, y: point.y, width: 50, height: 50)
-            if index%2 == 0 {
-                view.image = UIImage(named: "curveLine")
-                let scale = CGAffineTransform(scaleX: 2.7, y: 2.7)
-                let rotate = CGAffineTransform(rotationAngle: 0)
-                view.transform = scale.concatenating(rotate)
-            } else {
-                view.image = UIImage(named: "\(scenery)")
-                scenery = scenery.cicleScenery()
+        if pointsAmountIncludeScenery != 0 {
+            addLbels()
+            var scenery: Scenery = .greenCircle
+            for (index, point) in points.enumerated() {
+                let view = UIImageView()
+                view.frame = .init(x: point.x, y: point.y, width: 50, height: 50)
+                if index%2 == 0 {
+                    view.image = UIImage(named: "curveLine")
+                    let scale = CGAffineTransform(scaleX: 2.7, y: 2.7)
+                    let rotate = CGAffineTransform(rotationAngle: 0)
+                    view.transform = scale.concatenating(rotate)
+                } else {
+                    view.image = UIImage(named: "\(scenery)")
+                    scenery = scenery.cicleScenery()
+                }
+                addSubview(view)
             }
-            addSubview(view)
         }
     }
 
