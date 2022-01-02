@@ -27,6 +27,19 @@ class DetailsContentForIPadView: UIView {
         fatalError("\(#function) has not been implemented")
     }
 
+    func countPointsPositions() {
+        let pointsAmountIncludeScenery = countryInfo.count * 2
+        let angle: CGFloat = CGFloat(360 / pointsAmountIncludeScenery)
+        var point = CGPoint()
+        var pointAngle: CGFloat = 0
+        for _ in 0..<pointsAmountIncludeScenery {
+            point.x = center.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
+            point.y = center.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
+            points.append(point)
+            pointAngle += angle
+        }
+    }
+
     private struct Constants {
         static let worldImage = UIImage(named: "world")
         static let radius: CGFloat = 150
