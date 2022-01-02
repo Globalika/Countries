@@ -64,6 +64,11 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         fatalError("\(#function) has not been implemented")
     }
 
+    func configureHeader() {
+        addSubview(header)
+        setHeaderConstraints()
+    }
+
     func configureWorldImage() {
         addSubview(worldImageView)
         //    .frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
@@ -90,6 +95,7 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
     }
 
     func configureDetailsView() {
+        configureHeader()
         configureWorldImage()
         countPointsPositions()
         if pointsAmountIncludeScenery != 0 {
@@ -138,6 +144,15 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         }
     }
 
+    func setHeaderConstraints() {
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: self.topAnchor),
+            header.leftAnchor.constraint(equalTo: self.leftAnchor),
+            header.rightAnchor.constraint(equalTo: self.rightAnchor),
+            header.heightAnchor.constraint(equalToConstant: Constants.headerHeight)
+        ])
+    }
+
     private struct Constants {
         static let worldImage = UIImage(named: "world")
         static let radius: CGFloat = 150
@@ -145,5 +160,6 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
         static let labelDescriptionFontWeight: UIFont.Weight = .thin
         static let labelDataFontSize: CGFloat = 20
         static let labelDataFontWeight: UIFont.Weight = .bold
+        static let headerHeight: CGFloat = 160
     }
 }
