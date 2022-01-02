@@ -23,6 +23,9 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
 
     var countryInfo = [(String, String)]() {
         didSet {
+            for subview in subviews {
+                subview.removeFromSuperview()
+            }
             configureDetailsView()
         }
     }
@@ -43,33 +46,43 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
     var points: [CGPoint] = []
     let curveLinesRotationAngles: [CGFloat] = []
     var pointsAmountIncludeScenery: Int = 0
+    var worldCenterCoords = CGPoint()
 
     override var frame: CGRect {
         didSet {
-            center = CGPoint(x: frame.size.width/2 - 90, y: frame.size.height/2 + 20)
+            worldCenterCoords = CGPoint(x: center.x - 90,
+                                        y: center.y + 20)
         }
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureDetailsView()
-        addSubview(worldImageView)
-        worldImageView.frame = CGRect(x: center.x-100, y: center.y-100, width: 240, height: 240)
     }
 
     required init?(coder: NSCoder) {
         fatalError("\(#function) has not been implemented")
     }
 
+    func configureWorldImage() {
+        addSubview(worldImageView)
+        //    .frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        worldImageView.frame = CGRect(x: worldCenterCoords.x-100,
+                                      y: worldCenterCoords.y-100,
+                                      width: 240,
+                                      height: 240)
+    }
+
     func countPointsPositions() {
+        points.removeAll()
         pointsAmountIncludeScenery = countryInfo.count * 2
         if pointsAmountIncludeScenery != 0 {
             let angle: CGFloat = CGFloat(360 / pointsAmountIncludeScenery)
             var point = CGPoint()
             var pointAngle: CGFloat = 0
             for _ in 0..<pointsAmountIncludeScenery {
-                point.x = center.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
-                point.y = center.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
+                point.x = worldCenterCoords.x + round(cos(Double(pointAngle/180)*Double.pi) * Constants.radius)
+                point.y = worldCenterCoords.y - round(sin(Double(pointAngle/180)*Double.pi) * Constants.radius)
                 points.append(point)
                 pointAngle += angle
             }
@@ -77,6 +90,7 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
     }
 
     func configureDetailsView() {
+        configureWorldImage()
         countPointsPositions()
         if pointsAmountIncludeScenery != 0 {
             addLbels()
