@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol DetailsContentProtocol: UIView {
+    var countryCode: String { get set }
+    var countryInfo: [(String, String)] { get set }
+}
+
 class CountryDetailsController: UIViewController {
     private var countryInfo = [(String, String)]()
     private var country: CountryQuery.Data.Country? {

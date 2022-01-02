@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-protocol DetailsContentProtocol: UIView {
-    var countryCode: String { get set }
-    var countryInfo: [(String, String)] { get set }
-}
-
 class DetailsContentForIPadView: UIView, DetailsContentProtocol {
     public var countryCode = String() {
         didSet {
@@ -48,8 +43,8 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
 
     override var frame: CGRect {
         didSet {
-            worldCenterCoords = CGPoint(x: center.x - 90,
-                                        y: center.y + 20)
+            worldCenterCoords = CGPoint(x: center.x - 180,
+                                        y: center.y)
         }
     }
 
@@ -69,11 +64,10 @@ class DetailsContentForIPadView: UIView, DetailsContentProtocol {
 
     func configureWorldImage() {
         addSubview(worldImageView)
-        //    .frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        worldImageView.frame = CGRect(x: worldCenterCoords.x-100,
-                                      y: worldCenterCoords.y-100,
-                                      width: 240,
-                                      height: 240)
+        worldImageView.frame = CGRect(x: worldCenterCoords.x-90,
+                                      y: worldCenterCoords.y-90,
+                                      width: 220,
+                                      height: 220)
     }
 
     func countPointsPositions() {
