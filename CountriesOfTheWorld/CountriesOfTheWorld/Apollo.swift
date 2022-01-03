@@ -90,7 +90,7 @@ class CountryLite {
 
 class Continent {
     public let name: String
-    
+
     init(name: String) {
         self.name = name
     }

@@ -10,13 +10,9 @@ import XCTest
 
 class CountriesControllerUnitTests: XCTestCase {
 
-    typealias Country = CountriesQuery.Data.Country
     var sut: CountriesController!
     var window: UIWindow!
-    let country = Country(code: "UA",
-                          name: "Ukraine",
-                          capital: "Kyiv",
-                          continent: Country.Continent(name: "Europe"))
+
     override func setUp() {
         window = UIWindow()
         sut = CountriesController(NetworkManager(client: ApolloMock()))
@@ -82,8 +78,18 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     func testNumbersOfRowInSectionWithNoElements() {
-        let expectedNumber = 4
-        let actualNumber = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
-        XCTAssertEqual(expectedNumber, actualNumber)
+        let expectednumberOfRows = 4
+        let actualnumberOfRows = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(expectednumberOfRows, actualnumberOfRows)
+    }
+
+    func testNavigatorBarTitle() {
+        sut.configureTableView()
+        XCTAssertEqual(sut.navigationItem.title, "Country List")
+    }
+
+    func testSearchBarController() {
+        sut.viewDidLoad()
+        XCTAssertEqual(sut.navigationItem.searchController, sut.searchController)
     }
 }
