@@ -10,12 +10,15 @@ import XCTest
 
 class CountriesDetailsControllerUnitTests: XCTestCase {
 
+    typealias Continent = CountriesQuery.Data.Country.Continent
     var sut: CountryDetailsController!
+    let mockClient = ApolloMock()
     var window: UIWindow!
 
     override func setUp() {
         window = UIWindow()
-        sut = CountryDetailsController(NetworkManager(client: ApolloMock()))
+        
+        sut = CountryDetailsController(NetworkManager(client: mockClient))
         window.rootViewController = sut
         super.setUp()
     }
@@ -47,10 +50,19 @@ class CountriesDetailsControllerUnitTests: XCTestCase {
     func testAddLabelsToStack() {
         sut.countryBasic = CountriesQuery.Data.Country(code: "UA",
                                                        name: "Ukraine",
-                                                       capital: "Kyiv", continent: CountriesQuery.Data.Country.Continent(name: "Europe"))
+                                                       capital: "Kyiv",
+                                                       continent: Continent(name: "Europe"))
         sut.fillDetailsViewWithData()
         sut.addLabelsToStackView()
         XCTAssertTrue(sut.stackView.subviews.allSatisfy({ $0 is DetailsFieldPlaceHolderView }))
         XCTAssertTrue(sut.stackView.subviews.count == 3)
+    }
+
+    func testLoadMockData() {
+        sut.loadData(code: "UA")
+        sut.fillDetailsViewWithCountryQuery()
+        sut.addLabelsToStackView()
+        XCTAssertTrue(sut.stackView.subviews.allSatisfy({ $0 is DetailsFieldPlaceHolderView }))
+        XCTAssertTrue(sut.stackView.subviews.count == 6)
     }
 }

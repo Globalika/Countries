@@ -12,10 +12,11 @@ class CountriesControllerUnitTests: XCTestCase {
 
     var sut: CountriesController!
     var window: UIWindow!
+    var mockClient = ApolloMock()
 
     override func setUp() {
         window = UIWindow()
-        sut = CountriesController(NetworkManager(client: ApolloMock()))
+        sut = CountriesController(NetworkManager(client: mockClient))
         window.rootViewController = sut
         super.setUp()
     }
@@ -50,6 +51,7 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     func testCellForRowWhenWithApolloMock() {
+        sut.loadData()
         let indexPath = IndexPath(row: 3, section: 0)
         let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
         XCTAssertNotNil(cell)
@@ -67,12 +69,14 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     func testTableViewCellNotNil() {
+        sut.loadData()
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
         XCTAssertNotNil(cell)
     }
 
     func testTableViewCellType() {
+        sut.loadData()
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
         let isCurrentType = cell is CountryViewCell
@@ -80,6 +84,7 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     func testNumbersOfRowInSectionWithNoElements() {
+        sut.loadData()
         let expectednumberOfRows = 4
         let actualnumberOfRows = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
         XCTAssertEqual(expectednumberOfRows, actualnumberOfRows)
@@ -93,5 +98,10 @@ class CountriesControllerUnitTests: XCTestCase {
     func testSearchBarController() {
         sut.viewDidLoad()
         XCTAssertEqual(sut.navigationItem.searchController, sut.searchController)
+    }
+
+    func testLoadMockData() {
+        sut.loadData()
+        XCTAssertTrue(sut.countries.count == 4)
     }
 }
