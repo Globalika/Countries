@@ -17,7 +17,6 @@ class CountriesDetailsControllerUnitTests: XCTestCase {
 
     override func setUp() {
         window = UIWindow()
-        
         sut = CountryDetailsController(NetworkManager(client: mockClient))
         window.rootViewController = sut
         super.setUp()
@@ -34,7 +33,7 @@ class CountriesDetailsControllerUnitTests: XCTestCase {
         XCTAssertEqual(sut.navigationItem.title, "Country List")
     }
 
-    func testCellSubviewsOrder() {
+    func testControllerSubviewsOrder() {
         sut.configureDetailsView()
         XCTAssertTrue(sut.view.subviews[0] is CountriesDetailsHeader)
         XCTAssertTrue(sut.view.subviews[1] is UIScrollView)
