@@ -36,4 +36,16 @@ class SubviewsOrderUnitTests: XCTestCase {
         XCTAssertTrue(cell.subviews[0].subviews[2].subviews[1].subviews[1] is UILabel)
         XCTAssertTrue(cell.subviews[0].subviews[2].subviews[1].subviews[2] is UILabel)
     }
+
+    func testCountriesHeaderSubviewsOrder() {
+        let header = CountriesHeaderView()
+        XCTAssertTrue(header.contentView.subviews[0] is UIImageView)
+        XCTAssertTrue(header.contentView.subviews[1] is UILabel)
+    }
+
+    func testCountryDetailsHeaderSubviewsOrder() {
+        let header = CountriesDetailsHeader()
+        XCTAssertTrue(header.subviews[0] is UIImageView)
+        XCTAssertTrue(header.subviews[1] is UIImageView)
+    }
 }
