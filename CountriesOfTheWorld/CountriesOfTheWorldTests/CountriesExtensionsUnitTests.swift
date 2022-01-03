@@ -53,4 +53,13 @@ class CountriesExtensionsUnitTests: XCTestCase {
                                 dataTextFont: dataTextFont)
         XCTAssertEqual(label.attributedText?.string, expectedLabelText)
     }
+
+    func testStackViewRemoveAllSubviewExtension() {
+        let stack = UIStackView()
+        stack.addArrangedSubview(UIView())
+        stack.addArrangedSubview(UIView())
+        XCTAssertFalse(stack.subviews.isEmpty)
+        stack.removeAllSubviews()
+        XCTAssertTrue(stack.subviews.isEmpty)
+    }
 }

@@ -11,12 +11,6 @@ import GradientView
 
 class CountryViewCellUnitTests: XCTestCase {
 
-    override func setUp() {
-    }
-
-    override func tearDown() {
-    }
-
     func testCellSubviewsOrder() {
         let cell = CountryViewCell()
         XCTAssertTrue(cell.subviews[0] is CellDecoratorView)
@@ -27,5 +21,17 @@ class CountryViewCellUnitTests: XCTestCase {
         XCTAssertTrue(cell.subviews[0].subviews[2].subviews[1].subviews[0] is UILabel)
         XCTAssertTrue(cell.subviews[0].subviews[2].subviews[1].subviews[1] is UILabel)
         XCTAssertTrue(cell.subviews[0].subviews[2].subviews[1].subviews[2] is UILabel)
+    }
+
+    func testSetSelectedTrue() {
+        let cell = CountryViewCell()
+        cell.setSelected(true, animated: false)
+        XCTAssertTrue(cell.selectedCellBorderView.isDescendant(of: cell.indentView))
+    }
+
+    func testSetSelectedFalse() {
+        let cell = CountryViewCell()
+        cell.setSelected(false, animated: false)
+        XCTAssertFalse(cell.selectedCellBorderView.isDescendant(of: cell.indentView))
     }
 }

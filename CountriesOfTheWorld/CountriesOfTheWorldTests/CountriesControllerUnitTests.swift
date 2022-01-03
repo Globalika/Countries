@@ -21,6 +21,8 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     override func tearDown() {
+        window = nil
+        sut = nil
         super.tearDown()
     }
 
