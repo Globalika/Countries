@@ -104,4 +104,19 @@ class CountriesControllerUnitTests: XCTestCase {
         sut.loadData()
         XCTAssertTrue(sut.countries.count == 4)
     }
+
+    func testSearchBarWithText() {
+        sut.loadData()
+        sut.searchBar(sut.searchController.searchBar,
+                      textDidChange: "Ukraine")
+        XCTAssertTrue(sut.filteredCountries?.count == 4)
+    }
+
+    func testSearchBarWithoutText() throws {
+        sut.loadData()
+        sut.searchBar(sut.searchController.searchBar,
+                      textDidChange: "")
+        let isFilterCountriesEmpty = try XCTUnwrap(sut.filteredCountries?.isEmpty)
+        XCTAssertTrue(isFilterCountriesEmpty)
+    }
 }
