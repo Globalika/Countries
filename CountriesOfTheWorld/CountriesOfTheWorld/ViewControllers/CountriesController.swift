@@ -26,13 +26,13 @@ class CountriesController: UITableViewController {
     }()
 
     var images: [UIImage] = []
-    var countries = [CountriesQuery.Data.Country]() {
+    var countries = [CountryLite]() {
         didSet {
             tableView.reloadData()
         }
     }
 
-    var filteredCountries: [CountriesQuery.Data.Country]?
+    var filteredCountries: [CountryLite]?
 
     override func viewDidLoad() {
         super.viewDidLoad()

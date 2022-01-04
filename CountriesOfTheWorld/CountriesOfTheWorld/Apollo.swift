@@ -8,9 +8,6 @@
 import Apollo
 import Foundation
 
-typealias CountryLite = CountriesQuery.Data.Country
-typealias CountryDetailed = CountryQuery.Data.Country
-
 protocol ApolloClientProtocol {
     func getCountries(completion: @escaping (Result<[CountryLite], Error>) -> Void)
     func getCountry(code: String, completion: @escaping (Result<CountryDetailed, Error>) -> Void)
@@ -25,7 +22,7 @@ class Apollo: ApolloClientProtocol {
             switch result {
             case .success(let graphQLResult):
                 if let data = graphQLResult.data {
-                    completion(Result.success(data.countries))
+                    completion(Result.success(data.countries.compactMap({ CountryLite(country: $0) })))
                 } else if let errors = graphQLResult.errors {
                     print(errors)
                 }
@@ -40,7 +37,7 @@ class Apollo: ApolloClientProtocol {
         apollo?.fetch(query: query) { result in
             switch result {
             case .success(let graphQLResult):
-                if let country = graphQLResult.data?.country {
+                if let country = CountryDetailed(country: graphQLResult.data?.country) {
                     completion(Result.success(country))
                 } else if let errors = graphQLResult.errors {
                     print(errors)
