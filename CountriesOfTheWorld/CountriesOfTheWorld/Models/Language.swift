@@ -13,7 +13,7 @@ class Language {
     init(name: String) {
         self.name = name
     }
-    convenience init?(language: CountryQuery.Data.Country.Language?) {
+    convenience init?(language: CountryDetailedGraphQL.Language?) {
         guard let name = language?.name
         else {
             return nil

@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias CountryDetailedGraphQL = CountryQuery.Data.Country
+
 class CountryDetailed {
     public let code: String
     public let name: String
@@ -32,7 +34,7 @@ class CountryDetailed {
         self.languages = languages
     }
 
-    convenience init?(country: CountryQuery.Data.Country?) {
+    convenience init?(country: CountryDetailedGraphQL?) {
         guard
             let code = country?.code,
             let name = country?.name,

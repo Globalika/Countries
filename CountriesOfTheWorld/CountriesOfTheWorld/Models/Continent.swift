@@ -13,14 +13,14 @@ class Continent {
     init(name: String) {
         self.name = name
     }
-    convenience init?(continent: CountryQuery.Data.Country.Continent?) {
+    convenience init?(continent: CountryLiteGraphQL.Continent?) {
         guard let name = continent?.name
         else {
             return nil
         }
         self.init(name: name)
     }
-    convenience init?(continent: CountriesQuery.Data.Country.Continent?) {
+    convenience init?(continent: CountryDetailedGraphQL.Continent?) {
         guard let name = continent?.name
         else {
             return nil

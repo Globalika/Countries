@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias CountryLiteGraphQL = CountriesQuery.Data.Country
+
 class CountryLite {
     public let code: String
     public let name: String
@@ -23,7 +25,7 @@ class CountryLite {
         self.continent = continent
     }
 
-    convenience init?(country: CountriesQuery.Data.Country?) {
+    convenience init?(country: CountryLiteGraphQL?) {
         guard
             let code = country?.code,
             let name = country?.name,
