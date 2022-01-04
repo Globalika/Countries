@@ -10,6 +10,7 @@ import UIKit
 
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
+    var currentDevice: Device?
 
     var indentView: CellDecoratorView = {
         var view = CellDecoratorView()
@@ -31,11 +32,13 @@ class CountryViewCell: UITableViewCell {
     }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if selected {
-            selectedCellBorderView.frame = indentView.bounds
-            indentView.addSubview(selectedCellBorderView)
-        } else {
-            selectedCellBorderView.removeFromSuperview()
+        if currentDevice == .iPad {
+            if selected {
+                selectedCellBorderView.frame = indentView.bounds
+                indentView.addSubview(selectedCellBorderView)
+            } else {
+                selectedCellBorderView.removeFromSuperview()
+            }
         }
     }
 
@@ -97,7 +100,7 @@ class CountryViewCell: UITableViewCell {
         fatalError("\(#function) has not been implemented")
     }
 
-    func updateCell(country: CountriesQuery.Data.Country) {
+    func updateCell(country: CountryLite) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
         } else {

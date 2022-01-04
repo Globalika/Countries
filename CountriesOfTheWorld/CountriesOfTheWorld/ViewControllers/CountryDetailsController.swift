@@ -9,14 +9,15 @@ import UIKit
 
 class CountryDetailsController: UIViewController {
     var networkManager: NetworkManager
+    var currentDevice: Device
 
     private var countryInfo = [(String, String)]()
-    private var country: CountryQuery.Data.Country? {
+    private var country: CountryDetailed? {
         didSet {
             configureAllViews()
         }
     }
-    var countryBasic: CountriesQuery.Data.Country?
+    var countryBasic: CountryLite?
 
     var scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -45,8 +46,9 @@ class CountryDetailsController: UIViewController {
         return refrechControl
     }()
 
-    init(_ networkManager: NetworkManager) {
+    init(_ networkManager: NetworkManager, _ currentDevice: Device) {
         self.networkManager = networkManager
+        self.currentDevice = currentDevice
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -97,7 +99,7 @@ class CountryDetailsController: UIViewController {
 
     private func configureAllViews() {
         country != nil ? fillDetailsViewWithCountryQuery() : fillDetailsViewWithData()
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if currentDevice == .iPad {
             if !countryInfo.isEmpty {
                 if startHeader.isDescendant(of: view) {
                     startHeader.removeFromSuperview()
