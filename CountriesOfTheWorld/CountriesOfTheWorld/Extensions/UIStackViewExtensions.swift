@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIStackView {
+extension UIView {
 
     func removeAllSubviews() {
         self.subviews.forEach {$0.removeFromSuperview()}

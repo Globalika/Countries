@@ -55,11 +55,11 @@ class CountriesExtensionsUnitTests: XCTestCase {
     }
 
     func testStackViewRemoveAllSubviewExtension() {
-        let stack = UIStackView()
-        stack.addArrangedSubview(UIView())
-        stack.addArrangedSubview(UIView())
-        XCTAssertFalse(stack.subviews.isEmpty)
-        stack.removeAllSubviews()
-        XCTAssertTrue(stack.subviews.isEmpty)
+        let view = UIView()
+        view.addSubview(UIView())
+        view.addSubview(UIView())
+        XCTAssertFalse(view.subviews.isEmpty)
+        view.removeAllSubviews()
+        XCTAssertTrue(view.subviews.isEmpty)
     }
 }
