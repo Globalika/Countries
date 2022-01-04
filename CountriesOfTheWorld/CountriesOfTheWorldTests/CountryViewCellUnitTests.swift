@@ -13,6 +13,7 @@ class CountryViewCellUnitTests: XCTestCase {
 
     func testSetSelectedTrue() {
         let cell = CountryViewCell()
+        cell.currentDevice = .iPad
         cell.setSelected(true, animated: false)
         XCTAssertTrue(cell.selectedCellBorderView.isDescendant(of: cell.indentView))
     }

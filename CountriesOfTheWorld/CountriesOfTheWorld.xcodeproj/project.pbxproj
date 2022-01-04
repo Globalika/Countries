@@ -247,6 +247,7 @@
 				89B28F6E274EAA33000C4C91 /* API.swift */,
 				89E72682274CE540002C063B /* AppDelegate.swift */,
 				89E72684274CE540002C063B /* SceneDelegate.swift */,
+				8940F732277DBCF1001B63F6 /* NetworkManager.swift */,
 				89E72693274CE542002C063B /* Info.plist */,
 				89306627278445A700F33BD6 /* Models */,
 				89E91A8127618EA600C23801 /* Views */,
@@ -254,7 +255,6 @@
 				89101A6C2758C38600BC6846 /* Extensions */,
 				899EFCA7274FA039006254C4 /* Resources */,
 				89B28F6D274EA9F4000C4C91 /* ViewControllers */,
-				8940F732277DBCF1001B63F6 /* NetworkManager.swift */,
 			);
 			path = CountriesOfTheWorld;
 			sourceTree = "<group>";

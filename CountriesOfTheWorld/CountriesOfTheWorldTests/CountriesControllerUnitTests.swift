@@ -134,4 +134,10 @@ class CountriesControllerIPadUnitTests: XCTestCase {
         let actualHeight = sut.tableView(sut.tableView, heightForHeaderInSection: 0)
         XCTAssertEqual(expectedHeight, actualHeight)
     }
+
+    func testTableIPadViewHeaderType() {
+        let header = sut.tableView(sut.tableView, viewForHeaderInSection: 0)
+        let isCurrentType = header != nil
+        XCTAssertTrue(isCurrentType)
+    }
 }
