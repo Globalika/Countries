@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Continent {
+class ContinentModel {
     public let name: String
 
     init(name: String) {

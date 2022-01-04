@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Language {
+class LanguageModel {
     public let name: String?
 
     init(name: String?) {

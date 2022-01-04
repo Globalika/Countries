@@ -8,15 +8,15 @@
 import XCTest
 @testable import CountriesOfTheWorld
 
-class CountriesControllerUnitTests: XCTestCase {
+class CountriesControllerIPhoneUnitTests: XCTestCase {
 
     var sut: CountriesController!
     var window: UIWindow!
-    var mockClient = ApolloMock()
+    var networkManager = NetworkManager(client: ApolloMock())
 
     override func setUp() {
         window = UIWindow()
-        sut = CountriesController(NetworkManager(client: mockClient))
+        sut = CountriesController(networkManager, .iPhone)
         window.rootViewController = sut
         super.setUp()
     }
@@ -35,19 +35,9 @@ class CountriesControllerUnitTests: XCTestCase {
     }
 
     func testHeaghtForHeaderInSectionForIPhone() {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            let expectedHeight: CGFloat = 160
-            let actualHeight = sut.tableView(sut.tableView, heightForHeaderInSection: 0)
-            XCTAssertEqual(expectedHeight, actualHeight)
-        }
-    }
-
-    func testHeaghtForHeaderInSectionForIPad() {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            let expectedHeight: CGFloat = 0
-            let actualHeight = sut.tableView(sut.tableView, heightForHeaderInSection: 0)
-            XCTAssertEqual(expectedHeight, actualHeight)
-        }
+        let expectedHeight: CGFloat = 160
+        let actualHeight = sut.tableView(sut.tableView, heightForHeaderInSection: 0)
+        XCTAssertEqual(expectedHeight, actualHeight)
     }
 
     func testCellForRowWhenWithApolloMock() {
@@ -118,5 +108,30 @@ class CountriesControllerUnitTests: XCTestCase {
                       textDidChange: "")
         let isFilterCountriesEmpty = try XCTUnwrap(sut.filteredCountries?.isEmpty)
         XCTAssertTrue(isFilterCountriesEmpty)
+    }
+}
+
+class CountriesControllerIPadUnitTests: XCTestCase {
+    var sut: CountriesController!
+    var window: UIWindow!
+    var networkManager = NetworkManager(client: ApolloMock())
+
+    override func setUp() {
+        window = UIWindow()
+        sut = CountriesController(networkManager, .iPad)
+        window.rootViewController = sut
+        super.setUp()
+    }
+
+    override func tearDown() {
+        window = nil
+        sut = nil
+        super.tearDown()
+    }
+
+    func testHeaghtForHeaderInSectionForIPad() {
+        let expectedHeight: CGFloat = 0
+        let actualHeight = sut.tableView(sut.tableView, heightForHeaderInSection: 0)
+        XCTAssertEqual(expectedHeight, actualHeight)
     }
 }
