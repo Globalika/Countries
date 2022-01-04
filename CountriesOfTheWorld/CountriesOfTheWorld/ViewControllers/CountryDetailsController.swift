@@ -9,6 +9,7 @@ import UIKit
 
 class CountryDetailsController: UIViewController {
     var networkManager: NetworkManager
+    var currentDevice: Device
 
     private var countryInfo = [(String, String)]()
     private var country: CountryDetailed? {
@@ -45,8 +46,9 @@ class CountryDetailsController: UIViewController {
         return refrechControl
     }()
 
-    init(_ networkManager: NetworkManager) {
+    init(_ networkManager: NetworkManager, currentDevice: Device) {
         self.networkManager = networkManager
+        self.currentDevice = currentDevice
         super.init(nibName: nil, bundle: nil)
     }
 

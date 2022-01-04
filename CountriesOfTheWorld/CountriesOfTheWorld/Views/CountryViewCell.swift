@@ -10,6 +10,7 @@ import UIKit
 
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
+    var currentDevice: Device?
 
     var indentView: CellDecoratorView = {
         var view = CellDecoratorView()

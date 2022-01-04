@@ -9,10 +9,11 @@ import UIKit
 
 class CountriesController: UITableViewController {
     var networkManager: NetworkManager
-    
+    var currentDevice: Device
 
-    init(_ networkManager: NetworkManager) {
+    init(_ networkManager: NetworkManager, currentDevice: Device) {
         self.networkManager = networkManager
+        self.currentDevice = currentDevice
         super.init(nibName: nil, bundle: nil)
     }
 
