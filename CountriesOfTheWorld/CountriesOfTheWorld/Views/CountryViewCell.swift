@@ -32,7 +32,7 @@ class CountryViewCell: UITableViewCell {
     }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if currentDevice == .iPad {
             if selected {
                 selectedCellBorderView.frame = indentView.bounds
                 indentView.addSubview(selectedCellBorderView)

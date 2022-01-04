@@ -83,6 +83,7 @@ extension CountriesController {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
+        cell.currentDevice = currentDevice
         cell.updateCell(country: filteredCountries?[indexPath.row] ?? countries[indexPath.row])
         return cell
     }
@@ -93,7 +94,7 @@ extension CountriesController {
 
     override func tableView(_ tableView: UITableView,
                             viewForHeaderInSection section: Int) -> UIView? {
-        if UIDevice.current.userInterfaceIdiom == .phone {
+        if currentDevice == .iPhone {
             guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CountriesHeaderView.identifier)
                     as? CountriesHeaderView else { return UITableViewHeaderFooterView() }
             header.imageView.heightAnchor.constraint(equalToConstant:
@@ -106,12 +107,12 @@ extension CountriesController {
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return (UIDevice.current.userInterfaceIdiom == .phone) ? Constants.headerHeight : 0
+        return (currentDevice == .iPhone) ? Constants.headerHeight : 0
     }
 
     override func tableView(_ tableView: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        let detailsController = CountryDetailsController(networkManager)
+        let detailsController = CountryDetailsController(networkManager, currentDevice)
         detailsController.countryBasic = filteredCountries?[indexPath.row] ?? countries[indexPath.row]
         showDetailViewController(UINavigationController(rootViewController: detailsController),
                                  sender: nil)

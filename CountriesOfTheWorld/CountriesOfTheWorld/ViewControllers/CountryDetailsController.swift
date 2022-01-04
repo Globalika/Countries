@@ -99,7 +99,7 @@ class CountryDetailsController: UIViewController {
 
     private func configureAllViews() {
         country != nil ? fillDetailsViewWithCountryQuery() : fillDetailsViewWithData()
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if currentDevice == .iPad {
             if !countryInfo.isEmpty {
                 if startHeader.isDescendant(of: view) {
                     startHeader.removeFromSuperview()
