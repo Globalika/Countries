@@ -13,8 +13,7 @@ typealias CountryDetailed = CountryQuery.Data.Country
 
 protocol ApolloClientProtocol {
     func getCountries(completion: @escaping (Result<[CountryLite], Error>) -> Void)
-    func getCountry(code: String,
-                    completion: @escaping (Result<CountryDetailed, Error>) -> Void)
+    func getCountry(code: String, completion: @escaping (Result<CountryDetailed, Error>) -> Void)
 }
 
 class Apollo: ApolloClientProtocol {
