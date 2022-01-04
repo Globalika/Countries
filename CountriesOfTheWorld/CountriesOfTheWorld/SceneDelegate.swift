@@ -30,10 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let networkManager = NetworkManager(client: Apollo())
         let currentDevice: Device = (UIDevice.current.userInterfaceIdiom == .phone) ? .iPhone : .iPad
 
-        let mainController = CountriesController(networkManager)
+        let mainController = CountriesController(networkManager, currentDevice)
         let mainNC = UINavigationController(rootViewController: mainController)
 
-        let detailController = CountryDetailsController(networkManager)
+        let detailController = CountryDetailsController(networkManager, currentDevice)
         let detailNC = UINavigationController(rootViewController: detailController)
 
         let splitViewController =  UISplitViewController()

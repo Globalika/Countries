@@ -46,7 +46,7 @@ class CountryDetailsController: UIViewController {
         return refrechControl
     }()
 
-    init(_ networkManager: NetworkManager, currentDevice: Device) {
+    init(_ networkManager: NetworkManager, _ currentDevice: Device) {
         self.networkManager = networkManager
         self.currentDevice = currentDevice
         super.init(nibName: nil, bundle: nil)

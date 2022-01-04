@@ -11,7 +11,7 @@ class CountriesController: UITableViewController {
     var networkManager: NetworkManager
     var currentDevice: Device
 
-    init(_ networkManager: NetworkManager, currentDevice: Device) {
+    init(_ networkManager: NetworkManager, _ currentDevice: Device) {
         self.networkManager = networkManager
         self.currentDevice = currentDevice
         super.init(nibName: nil, bundle: nil)
