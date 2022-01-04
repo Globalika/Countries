@@ -15,6 +15,8 @@ protocol ApolloClientProtocol {
 }
 
 class Apollo: ApolloClientProtocol {
+    private let apiUrl = URL(string: "https://countries.trevorblades.com")
+
     func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void) {
         let query = CountriesQuery()
         apollo?.fetch(query: query) { result in
@@ -48,7 +50,7 @@ class Apollo: ApolloClientProtocol {
     }
 
     private(set) lazy var apollo: ApolloClient? = {
-        guard let url = URL(string: "https://countries.trevorblades.com") else {
+        guard let url = apiUrl else {
             print("error: invalid url")
             return nil
         }
