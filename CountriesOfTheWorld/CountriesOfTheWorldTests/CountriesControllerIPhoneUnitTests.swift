@@ -47,21 +47,15 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
         XCTAssertNotNil(cell)
     }
 
-    func testTableViewHeaderNotNil() {
-        let header = sut.tableView(sut.tableView, viewForHeaderInSection: 0)
+    func testTableViewHeaderNotNil() throws {
+        let header = try XCTUnwrap(sut.tableView(sut.tableView, viewForHeaderInSection: 0) as? CountriesHeaderView)
         XCTAssertNotNil(header)
     }
 
-    func testTableViewHeaderType() {
-        let header = sut.tableView(sut.tableView, viewForHeaderInSection: 0)
-        let isCurrentType = header is CountriesHeaderView
-        XCTAssertTrue(isCurrentType)
-    }
-
-    func testTableViewCellNotNil() {
+    func testTableViewCellNotNil() throws {
         sut.loadData()
         let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
+        let cell = try XCTUnwrap(sut.tableView(sut.tableView, cellForRowAt: indexPath) as? CountryViewCell)
         XCTAssertNotNil(cell)
     }
 
