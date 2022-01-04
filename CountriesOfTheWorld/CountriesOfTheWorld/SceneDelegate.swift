@@ -21,11 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
+        
+        let networkManager = NetworkManager(client: Apollo())
 
-        let mainController = CountriesController()
+        let mainController = CountriesController(networkManager)
         let mainNC = UINavigationController(rootViewController: mainController)
 
-        let detailController = CountryDetailsController()
+        let detailController = CountryDetailsController(networkManager)
         let detailNC = UINavigationController(rootViewController: detailController)
 
         let splitViewController =  UISplitViewController()
