@@ -1,5 +1,5 @@
 //
-//  CellDecoratorViewUnitTests.swift
+//  SubviewsOrderUnitTests.swift
 //  CountriesOfTheWorldTests
 //
 //  Created by Volodymyr Seredovych on 03.01.2022.
@@ -43,9 +43,9 @@ class SubviewsOrderUnitTests: XCTestCase {
         XCTAssertTrue(header.contentView.subviews[1] is UILabel)
     }
 
-    func testCountryDetailsHeaderSubviewsOrder() {
+    func testCountryDetailsHeaderSubviews() {
         let header = CountriesDetailsHeader()
-        XCTAssertTrue(header.subviews[0] is UIImageView)
-        XCTAssertTrue(header.subviews[1] is UIImageView)
+        XCTAssertTrue(header.subviews.count == 2)
+        XCTAssertTrue(header.subviews.allSatisfy({ $0 is UIImageView }))
     }
 }

@@ -13,7 +13,7 @@
 		3448D79B812FD5EB7F7E5DAC /* Pods_CountriesOfTheWorldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F886A67EC4C1E7BE8C3AC6A /* Pods_CountriesOfTheWorldTests.framework */; };
 		89101A6E2758C3E600BC6846 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */; };
 		89233D8C27834D2000AF129D /* CountryDetailsControllerIPhoneUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89233D8B27834D2000AF129D /* CountryDetailsControllerIPhoneUnitTests.swift */; };
-		89233D902783648E00AF129D /* CellDecoratorViewUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89233D8F2783648E00AF129D /* CellDecoratorViewUnitTests.swift */; };
+		89233D902783648E00AF129D /* SubviewsOrderUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89233D8F2783648E00AF129D /* SubviewsOrderUnitTests.swift */; };
 		89306629278445BC00F33BD6 /* CountryLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89306628278445BC00F33BD6 /* CountryLite.swift */; };
 		8930662B278445E400F33BD6 /* CountryDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930662A278445E400F33BD6 /* CountryDetailed.swift */; };
 		8930662D278445F500F33BD6 /* ContinentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8930662C278445F500F33BD6 /* ContinentModel.swift */; };
@@ -77,7 +77,7 @@
 		83E41B164AE13785989C8084 /* Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; path = "Target Support Files/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests/Pods-CountriesOfTheWorld-CountriesOfTheWorldUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		89101A6D2758C3E600BC6846 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		89233D8B27834D2000AF129D /* CountryDetailsControllerIPhoneUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsControllerIPhoneUnitTests.swift; sourceTree = "<group>"; };
-		89233D8F2783648E00AF129D /* CellDecoratorViewUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDecoratorViewUnitTests.swift; sourceTree = "<group>"; };
+		89233D8F2783648E00AF129D /* SubviewsOrderUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewsOrderUnitTests.swift; sourceTree = "<group>"; };
 		89306628278445BC00F33BD6 /* CountryLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLite.swift; sourceTree = "<group>"; };
 		8930662A278445E400F33BD6 /* CountryDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailed.swift; sourceTree = "<group>"; };
 		8930662C278445F500F33BD6 /* ContinentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentModel.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 				897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */,
 				89233D8B27834D2000AF129D /* CountryDetailsControllerIPhoneUnitTests.swift */,
 				893066322784822600F33BD6 /* CountryDetailsControllerIPadUnitTests.swift */,
-				89233D8F2783648E00AF129D /* CellDecoratorViewUnitTests.swift */,
+				89233D8F2783648E00AF129D /* SubviewsOrderUnitTests.swift */,
 			);
 			path = CountriesOfTheWorldTests;
 			sourceTree = "<group>";
@@ -622,7 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89233D902783648E00AF129D /* CellDecoratorViewUnitTests.swift in Sources */,
+				89233D902783648E00AF129D /* SubviewsOrderUnitTests.swift in Sources */,
 				89306631278481F500F33BD6 /* CountriesControllerIPadUnitTests.swift in Sources */,
 				89E7269D274CE542002C063B /* CountriesExtensionsUnitTests.swift in Sources */,
 				897DC51F27807D3B00F4136A /* CountryViewCellUnitTests.swift in Sources */,
