@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        
+
         let networkManager = NetworkManager(client: Apollo())
 
         let mainController = CountriesController(networkManager)

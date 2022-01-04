@@ -8,9 +8,9 @@
 import Foundation
 
 class Language {
-    public let name: String
+    public let name: String?
 
-    init(name: String) {
+    init(name: String?) {
         self.name = name
     }
     convenience init?(language: CountryDetailedGraphQL.Language?) {

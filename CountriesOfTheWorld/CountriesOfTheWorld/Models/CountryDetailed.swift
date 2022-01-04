@@ -15,7 +15,7 @@ class CountryDetailed {
     public let capital: String?
     public let continent: Continent
     public let phone: String
-    public let currency: String
+    public let currency: String?
     public let languages: [Language]
 
     init(code: String,
@@ -23,7 +23,7 @@ class CountryDetailed {
          capital: String?,
          continent: Continent,
          phone: String,
-         currency: String,
+         currency: String?,
          languages: [Language]) {
         self.code = code
         self.name = name
@@ -40,7 +40,6 @@ class CountryDetailed {
             let name = country?.name,
             let continentGraphQL = country?.continent,
             let phone = country?.phone,
-            let currency = country?.currency,
             let languagesGraphQL = country?.languages
         else {
             return nil
@@ -52,7 +51,7 @@ class CountryDetailed {
                   capital: country?.capital,
                   continent: continent,
                   phone: phone,
-                  currency: currency,
+                  currency: country?.currency,
                   languages: languages)
     }
 }

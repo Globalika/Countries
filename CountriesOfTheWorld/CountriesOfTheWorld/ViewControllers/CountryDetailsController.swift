@@ -11,12 +11,12 @@ class CountryDetailsController: UIViewController {
     var networkManager: NetworkManager
 
     private var countryInfo = [(String, String)]()
-    private var country: CountryQuery.Data.Country? {
+    private var country: CountryDetailed? {
         didSet {
             configureAllViews()
         }
     }
-    var countryBasic: CountriesQuery.Data.Country?
+    var countryBasic: CountryLite?
 
     var scrollView: UIScrollView = {
         let view = UIScrollView()

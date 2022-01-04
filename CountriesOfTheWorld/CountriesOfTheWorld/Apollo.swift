@@ -37,7 +37,7 @@ class Apollo: ApolloClientProtocol {
         apollo?.fetch(query: query) { result in
             switch result {
             case .success(let graphQLResult):
-                if let country = CountryDetailed(country:graphQLResult.data?.country) {
+                if let country = CountryDetailed(country: graphQLResult.data?.country) {
                     completion(Result.success(country))
                 } else if let errors = graphQLResult.errors {
                     print(errors)

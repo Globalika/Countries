@@ -99,7 +99,7 @@ class CountryViewCell: UITableViewCell {
         fatalError("\(#function) has not been implemented")
     }
 
-    func updateCell(country: CountriesQuery.Data.Country) {
+    func updateCell(country: CountryLite) {
         if let image = UIImage(named: "\(country.code.lowercased())") {
             self.flagImageView.image = image
         } else {
