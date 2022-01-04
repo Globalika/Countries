@@ -8,16 +8,19 @@
 import Apollo
 import Foundation
 
+typealias CountryLite = CountriesQuery.Data.Country
+typealias CountryDetailed = CountryQuery.Data.Country
+
 protocol ApolloClientProtocol {
-    func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void)
+    func getCountries(completion: @escaping (Result<[CountryLite], Error>) -> Void)
     func getCountry(code: String,
-                    completion: @escaping (Result<CountryQuery.Data.Country, Error>) -> Void)
+                    completion: @escaping (Result<CountryDetailed, Error>) -> Void)
 }
 
 class Apollo: ApolloClientProtocol {
     private let apiUrl = URL(string: "https://countries.trevorblades.com")
 
-    func getCountries(completion: @escaping (Result<[CountriesQuery.Data.Country], Error>) -> Void) {
+    func getCountries(completion: @escaping (Result<[CountryLite], Error>) -> Void) {
         let query = CountriesQuery()
         apollo?.fetch(query: query) { result in
             switch result {
@@ -33,7 +36,7 @@ class Apollo: ApolloClientProtocol {
         }
     }
 
-    func getCountry(code: String, completion: @escaping (Result<CountryQuery.Data.Country, Error>) -> Void) {
+    func getCountry(code: String, completion: @escaping (Result<CountryDetailed, Error>) -> Void) {
         let query = CountryQuery(code: code)
         apollo?.fetch(query: query) { result in
             switch result {
