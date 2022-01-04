@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+class Language {
+    public let name: String
+
+    init(name: String) {
+        self.name = name
+    }
+    convenience init?(language: CountryQuery.Data.Country.Language?) {
+        guard let name = language?.name
+        else {
+            return nil
+        }
+        self.init(name: name)
+    }
+}
