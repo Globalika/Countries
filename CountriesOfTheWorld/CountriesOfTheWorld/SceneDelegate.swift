@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum Device {
+    case iPhone
+    case iPad
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -23,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         let networkManager = NetworkManager(client: Apollo())
+        let currentDevice: Device = (UIDevice.current.userInterfaceIdiom == .phone) ? .iPhone : .iPad
 
         let mainController = CountriesController(networkManager)
         let mainNC = UINavigationController(rootViewController: mainController)

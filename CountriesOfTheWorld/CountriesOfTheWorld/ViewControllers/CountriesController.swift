@@ -9,6 +9,7 @@ import UIKit
 
 class CountriesController: UITableViewController {
     var networkManager: NetworkManager
+    
 
     init(_ networkManager: NetworkManager) {
         self.networkManager = networkManager
