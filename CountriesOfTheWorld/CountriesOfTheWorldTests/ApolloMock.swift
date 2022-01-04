@@ -1,5 +1,5 @@
 //
-//  UnitTestsMocks.swift
+//  ApolloMock.swift
 //  CountriesOfTheWorldTests
 //
 //  Created by Volodymyr Seredovych on 30.12.2021.

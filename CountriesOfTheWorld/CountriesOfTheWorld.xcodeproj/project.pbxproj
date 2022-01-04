@@ -22,7 +22,7 @@
 		893066332784822600F33BD6 /* CountryDetailsControllerIPadUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893066322784822600F33BD6 /* CountryDetailsControllerIPadUnitTests.swift */; };
 		8938933C274E589100049179 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8938933B274E589100049179 /* .swiftlint.yml */; };
 		8940F733277DBCF1001B63F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F732277DBCF1001B63F6 /* NetworkManager.swift */; };
-		8940F737277DE8A5001B63F6 /* UnitTestsMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F736277DE8A5001B63F6 /* UnitTestsMocks.swift */; };
+		8940F737277DE8A5001B63F6 /* ApolloMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F736277DE8A5001B63F6 /* ApolloMock.swift */; };
 		8940F739277DF806001B63F6 /* CountriesControllerIPhoneUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8940F738277DF806001B63F6 /* CountriesControllerIPhoneUnitTests.swift */; };
 		897DC51F27807D3B00F4136A /* CountryViewCellUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */; };
 		899EFCA9274FA0B1006254C4 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899EFCA8274FA0B1006254C4 /* R.generated.swift */; };
@@ -86,7 +86,7 @@
 		893066322784822600F33BD6 /* CountryDetailsControllerIPadUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsControllerIPadUnitTests.swift; sourceTree = "<group>"; };
 		8938933B274E589100049179 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8940F732277DBCF1001B63F6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		8940F736277DE8A5001B63F6 /* UnitTestsMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestsMocks.swift; sourceTree = "<group>"; };
+		8940F736277DE8A5001B63F6 /* ApolloMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloMock.swift; sourceTree = "<group>"; };
 		8940F738277DF806001B63F6 /* CountriesControllerIPhoneUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesControllerIPhoneUnitTests.swift; sourceTree = "<group>"; };
 		897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewCellUnitTests.swift; sourceTree = "<group>"; };
 		899EFCA8274FA0B1006254C4 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -267,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				89E7269C274CE542002C063B /* CountriesExtensionsUnitTests.swift */,
-				8940F736277DE8A5001B63F6 /* UnitTestsMocks.swift */,
+				8940F736277DE8A5001B63F6 /* ApolloMock.swift */,
 				8940F738277DF806001B63F6 /* CountriesControllerIPhoneUnitTests.swift */,
 				89306630278481F500F33BD6 /* CountriesControllerIPadUnitTests.swift */,
 				897DC51E27807D3B00F4136A /* CountryViewCellUnitTests.swift */,
@@ -628,7 +628,7 @@
 				897DC51F27807D3B00F4136A /* CountryViewCellUnitTests.swift in Sources */,
 				8940F739277DF806001B63F6 /* CountriesControllerIPhoneUnitTests.swift in Sources */,
 				893066332784822600F33BD6 /* CountryDetailsControllerIPadUnitTests.swift in Sources */,
-				8940F737277DE8A5001B63F6 /* UnitTestsMocks.swift in Sources */,
+				8940F737277DE8A5001B63F6 /* ApolloMock.swift in Sources */,
 				89233D8C27834D2000AF129D /* CountryDetailsControllerIPhoneUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
