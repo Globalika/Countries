@@ -10,6 +10,7 @@ import UIKit
 
 class CountryViewCell: UITableViewCell {
     static let identifier = "CountryViewCell"
+    var currentDevice: Device?
 
     var indentView: CellDecoratorView = {
         var view = CellDecoratorView()
@@ -31,7 +32,7 @@ class CountryViewCell: UITableViewCell {
     }()
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if currentDevice == .iPad {
             if selected {
                 selectedCellBorderView.frame = indentView.bounds
                 indentView.addSubview(selectedCellBorderView)
