@@ -7,7 +7,11 @@
 
 import Foundation
 
-class ContinentModel {
+class ContinentModel: Equatable {
+    static func == (lhs: ContinentModel, rhs: ContinentModel) -> Bool {
+        return lhs.name == rhs.name
+    }
+
     public let name: String
 
     init(name: String) {

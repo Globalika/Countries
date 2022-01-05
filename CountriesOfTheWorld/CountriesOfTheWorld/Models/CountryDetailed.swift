@@ -9,7 +9,13 @@ import Foundation
 
 typealias CountryDetailedGraphQL = CountryQuery.Data.Country
 
-class CountryDetailed {
+class CountryDetailed: Equatable {
+    static func == (lhs: CountryDetailed, rhs: CountryDetailed) -> Bool {
+        return lhs.code == rhs.code && lhs.name == rhs.name &&
+        lhs.capital == rhs.capital && lhs.continent == rhs.continent &&
+        lhs.phone == rhs.phone && lhs.currency == rhs.currency && lhs.languages == rhs.languages
+    }
+
     public let code: String
     public let name: String
     public let capital: String?

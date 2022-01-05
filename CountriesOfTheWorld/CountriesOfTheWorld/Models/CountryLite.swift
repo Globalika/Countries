@@ -9,7 +9,12 @@ import Foundation
 
 typealias CountryLiteGraphQL = CountriesQuery.Data.Country
 
-class CountryLite {
+class CountryLite: Equatable {
+    static func == (lhs: CountryLite, rhs: CountryLite) -> Bool {
+        return lhs.code == rhs.code && lhs.name == rhs.name &&
+        lhs.capital == rhs.capital && lhs.continent == rhs.continent
+    }
+
     public let code: String
     public let name: String
     public let capital: String?

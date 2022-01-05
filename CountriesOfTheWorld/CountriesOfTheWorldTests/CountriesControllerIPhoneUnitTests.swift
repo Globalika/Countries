@@ -93,7 +93,13 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
         sut.loadData()
         sut.searchBar(sut.searchController.searchBar,
                       textDidChange: "Ukraine")
-        XCTAssertTrue(sut.filteredCountries?.count == 4)
+
+        let result = sut.filteredCountries?[0] == CountryLite(code: "UA",
+                                                 name: "Ukraine",
+                                                 capital: "Kyiv",
+                                                 continent: ContinentModel(name: "Europe"))
+        XCTAssertTrue(result)
+        XCTAssertTrue(sut.filteredCountries?.count == 1)
     }
 
     func testSearchBarWithoutText() throws {
