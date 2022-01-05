@@ -10,17 +10,28 @@ import Foundation
 
 class ApolloMock: ApolloClientProtocol {
     func getCountries(completion: @escaping (Result<[CountryLite], Error>) -> Void) {
-        let countries: [CountryLite] = [countryLite, countryLite, countryLite, countryLite]
+        let countries: [CountryLite] = [countryCanadaLite,
+                                        countryIvoryCoastLite,
+                                        countryCanadaLite,
+                                        countryUkraineLite]
         completion(Result.success(countries))
     }
 
     func getCountry(code: String, completion: @escaping (Result<CountryDetailed, Error>) -> Void) {
         completion(Result.success(countryDetails))
     }
-    let countryLite = CountryLite(code: "UA",
+    let countryUkraineLite = CountryLite(code: "CI",
+                          name: "Ivory Coast",
+                          capital: "Yamoussoukro",
+                          continent: ContinentModel(name: "Africa"))
+    let countryIvoryCoastLite = CountryLite(code: "UA",
                           name: "Ukraine",
                           capital: "Kyiv",
                           continent: ContinentModel(name: "Europe"))
+    let countryCanadaLite = CountryLite(code: "CA",
+                          name: "Canada",
+                          capital: "Ottawa",
+                          continent: ContinentModel(name: "North America"))
     let countryDetails = CountryDetailed(code: "UA",
                                         name: "Ukraine",
                                         capital: "Kyiv",
