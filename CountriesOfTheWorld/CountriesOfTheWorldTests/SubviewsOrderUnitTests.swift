@@ -14,7 +14,7 @@ class SubviewsOrderUnitTests: XCTestCase {
     func testDecoratorSubviewsOrder() {
         let cellDecorator = CellDecoratorView()
         XCTAssertTrue(cellDecorator.subviews[1] is GradientView)
-        XCTAssertTrue(cellDecorator.subviews.count == 2)
+        XCTAssertEqual(cellDecorator.subviews.count, 2)
     }
 
     func testPlaceHolderSubviewsOrder() {
@@ -45,7 +45,7 @@ class SubviewsOrderUnitTests: XCTestCase {
 
     func testCountryDetailsHeaderSubviews() {
         let header = CountriesDetailsHeader()
-        XCTAssertTrue(header.subviews.count == 2)
+        XCTAssertEqual(header.subviews.count, 2)
         XCTAssertTrue(header.subviews.allSatisfy({ $0 is UIImageView }))
     }
 }

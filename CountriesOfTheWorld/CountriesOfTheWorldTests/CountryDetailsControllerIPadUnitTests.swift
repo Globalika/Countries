@@ -31,7 +31,7 @@ class CountriesDetailsControllerIPadUnitTests: XCTestCase {
     func testiPadControllerSubviewsOrderWithoutData() {
         sut.fillDetailsViewWithCountryQuery()
         sut.viewDidLoad()
-        XCTAssertTrue(sut.view.subviews.count == 1)
+        XCTAssertEqual(sut.view.subviews.count, 1)
     }
 
     func testIPadControllerSubviewsOrderWithData() {

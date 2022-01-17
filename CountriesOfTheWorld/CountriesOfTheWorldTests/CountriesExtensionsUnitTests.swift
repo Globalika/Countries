@@ -9,36 +9,7 @@ import XCTest
 @testable import CountriesOfTheWorld
 
 class CountriesExtensionsUnitTests: XCTestCase {
-
-    func testUIColorHexExtensionWhiteColor() {
-        let expectedColor = UIColor(red: 1.0,
-                                    green: 1.0,
-                                    blue: 1.0,
-                                    alpha: 1.0)
-        let actualColor = UIColor(rgb: 0xFFFFFF)
-        XCTAssertEqual(expectedColor, actualColor)
-    }
-
-    func testUIColorHexExtensionWithAlphaLessThenOne() {
-        let expectedColor = UIColor(red: 1.0,
-                                    green: 1.0,
-                                    blue: 1.0,
-                                    alpha: 0.0)
-        let actualColor = UIColor(rgb: 0xFFFFFF)
-        XCTAssertNotEqual(expectedColor, actualColor,
-                          "alpha equal 1.0 and cannot be changed")
-    }
-
-    func testUIColorRGBExtensionWhiteColor() {
-        let expectedColor = UIColor(red: 1.0,
-                                    green: 1.0,
-                                    blue: 1.0,
-                                    alpha: 1.0)
-        let actualColor = UIColor(red: 255, green: 255, blue: 255)
-        XCTAssertEqual(expectedColor, actualColor)
-    }
-
-    func testUILableExtensionAttributedText() {
+    func testUILableExtensionAttributedTextString() {
         let expectedLabelText = "description\ndata"
         let label = UILabel()
         let descriptionText = NSMutableAttributedString(string: "description")

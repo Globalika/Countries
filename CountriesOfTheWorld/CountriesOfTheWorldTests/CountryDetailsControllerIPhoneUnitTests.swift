@@ -54,7 +54,7 @@ class CountryDetailsControllerIPhoneUnitTests: XCTestCase {
         sut.fillDetailsViewWithData()
         sut.addLabelsToStackView()
         XCTAssertTrue(sut.stackView.subviews.allSatisfy({ $0 is DetailsFieldPlaceHolderView }))
-        XCTAssertTrue(sut.stackView.subviews.count == 3)
+        XCTAssertEqual(sut.stackView.subviews.count, 3)
     }
 
     func testLoadMockData() {
@@ -62,6 +62,6 @@ class CountryDetailsControllerIPhoneUnitTests: XCTestCase {
         sut.fillDetailsViewWithCountryQuery()
         sut.addLabelsToStackView()
         XCTAssertTrue(sut.stackView.subviews.allSatisfy({ $0 is DetailsFieldPlaceHolderView }))
-        XCTAssertTrue(sut.stackView.subviews.count == 6)
+        XCTAssertEqual(sut.stackView.subviews.count, 6)
     }
 }

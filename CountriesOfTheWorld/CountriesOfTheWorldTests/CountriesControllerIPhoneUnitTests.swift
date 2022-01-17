@@ -59,14 +59,6 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
         XCTAssertNotNil(cell)
     }
 
-    func testTableViewCellType() {
-        sut.loadData()
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView(sut.tableView, cellForRowAt: indexPath)
-        let isCurrentType = cell is CountryViewCell
-        XCTAssertTrue(isCurrentType)
-    }
-
     func testNumbersOfRowInSectionWithNoElements() {
         sut.loadData()
         let expectednumberOfRows = 4
@@ -98,7 +90,13 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
                                                  name: "Ukraine",
                                                  capital: "Kyiv",
                                                  continent: ContinentModel(name: "Europe"))
-        XCTAssertTrue(result)
+        // result true? // comparison func unit tests?
+        
+        let actualCountry = XCTUnwrap(sut.filteredCountries?[0])
+        XCTAssertEqual(actualCountry.code, "UA")
+        XCTAssertEqual(actualCountry.name, "Ukraine")
+        XCTAssertEqual(actualCountry.capital, "Kyiv")
+        XCTAssertEqual(actualCountry.continent, "Europe")
         XCTAssertTrue(sut.filteredCountries?.count == 1)
     }
 

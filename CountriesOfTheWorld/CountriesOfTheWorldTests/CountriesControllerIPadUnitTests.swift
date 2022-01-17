@@ -34,7 +34,6 @@ class CountriesControllerIPadUnitTests: XCTestCase {
 
     func testTableIPadViewHeaderType() {
         let header = sut.tableView(sut.tableView, viewForHeaderInSection: 0)
-        let isCurrentType = header != nil
-        XCTAssertTrue(isCurrentType)
+        XCTAssertNotNil(header)
     }
 }
