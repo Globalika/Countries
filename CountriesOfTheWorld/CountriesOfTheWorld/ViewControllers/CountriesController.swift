@@ -38,9 +38,12 @@ class CountriesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         configureTableView()
         setupSearchBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
     }
 
     private func setupSearchBar() {

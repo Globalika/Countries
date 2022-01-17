@@ -13,12 +13,12 @@ class CountryLite {
     public let code: String
     public let name: String
     public let capital: String?
-    public let continent: Continent
+    public let continent: ContinentModel
 
     init(code: String,
          name: String,
          capital: String?,
-         continent: Continent) {
+         continent: ContinentModel) {
         self.code = code
         self.name = name
         self.capital = capital
@@ -33,10 +33,19 @@ class CountryLite {
         else {
             return nil
         }
-        guard let continent = Continent(continent: continentGraphQL) else { return nil }
+        guard let continent = ContinentModel(continent: continentGraphQL) else { return nil }
         self.init(code: code,
                   name: name,
                   capital: country?.capital,
                   continent: continent)
+    }
+}
+
+extension CountryLite: Equatable {
+    static func == (lhs: CountryLite, rhs: CountryLite) -> Bool {
+        return lhs.code == rhs.code &&
+               lhs.name == rhs.name &&
+               lhs.capital == rhs.capital &&
+               lhs.continent == rhs.continent
     }
 }
