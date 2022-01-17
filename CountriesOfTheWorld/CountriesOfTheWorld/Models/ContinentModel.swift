@@ -7,11 +7,7 @@
 
 import Foundation
 
-class ContinentModel: Equatable {
-    static func == (lhs: ContinentModel, rhs: ContinentModel) -> Bool {
-        return lhs.name == rhs.name
-    }
-
+class ContinentModel {
     public let name: String
 
     init(name: String) {
@@ -30,5 +26,11 @@ class ContinentModel: Equatable {
             return nil
         }
         self.init(name: name)
+    }
+}
+
+extension ContinentModel: Equatable {
+    static func == (lhs: ContinentModel, rhs: ContinentModel) -> Bool {
+        return lhs.name == rhs.name
     }
 }
