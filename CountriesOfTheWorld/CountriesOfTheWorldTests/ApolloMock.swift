@@ -33,10 +33,10 @@ class ApolloMock: ApolloClientProtocol {
                                         capital: "Ottawa",
                                         continent: ContinentModel(name: "North America"))
     let countryDetails = CountryDetailed(code: "UA",
-                                        name: "Ukraine",
-                                        capital: "Kyiv",
-                                        continent: ContinentModel(name: "Europe"),
-                                        phone: "380",
-                                        currency: "UAH",
-                                        languages: [LanguageModel(name: "Ukrainian")])
+                                         name: "Ukraine",
+                                         capital: "Kyiv",
+                                         continent: ContinentModel(name: "Europe"),
+                                         phone: "380",
+                                         currency: "UAH",
+                                         languages: [LanguageModel(name: "Ukrainian")])
 }

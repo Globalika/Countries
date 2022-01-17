@@ -78,7 +78,7 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
 
     func testLoadMockData() {
         sut.loadData()
-        XCTAssertTrue(sut.countries.count == 4)
+        XCTAssertEqual(sut.countries.count, 4)
     }
 
     func testSearchBarWithText() throws {
@@ -91,7 +91,7 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
         XCTAssertEqual(actualCountry.name, "Ukraine")
         XCTAssertEqual(actualCountry.capital, "Kyiv")
         XCTAssertEqual(actualCountry.continent.name, "Europe")
-        XCTAssertTrue(sut.filteredCountries?.count == 1)
+        XCTAssertEqual(sut.filteredCountries?.count, 1)
     }
 
     func testSearchBarWithoutText() throws {
