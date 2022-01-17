@@ -81,22 +81,16 @@ class CountriesControllerIPhoneUnitTests: XCTestCase {
         XCTAssertTrue(sut.countries.count == 4)
     }
 
-    func testSearchBarWithText() {
+    func testSearchBarWithText() throws {
         sut.loadData()
         sut.searchBar(sut.searchController.searchBar,
                       textDidChange: "Ukraine")
 
-        let result = sut.filteredCountries?[0] == CountryLite(code: "UA",
-                                                 name: "Ukraine",
-                                                 capital: "Kyiv",
-                                                 continent: ContinentModel(name: "Europe"))
-        // result true? // comparison func unit tests?
-        
-        let actualCountry = XCTUnwrap(sut.filteredCountries?[0])
+        let actualCountry = try XCTUnwrap(sut.filteredCountries?[0])
         XCTAssertEqual(actualCountry.code, "UA")
         XCTAssertEqual(actualCountry.name, "Ukraine")
         XCTAssertEqual(actualCountry.capital, "Kyiv")
-        XCTAssertEqual(actualCountry.continent, "Europe")
+        XCTAssertEqual(actualCountry.continent.name, "Europe")
         XCTAssertTrue(sut.filteredCountries?.count == 1)
     }
 

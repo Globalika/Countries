@@ -60,7 +60,6 @@ class CountryDetailsControllerIPhoneUnitTests: XCTestCase {
     func testLoadMockData() {
         sut.loadData(code: "UA")
         sut.fillDetailsViewWithCountryQuery()
-        sut.addLabelsToStackView()
         XCTAssertTrue(sut.stackView.subviews.allSatisfy({ $0 is DetailsFieldPlaceHolderView }))
         XCTAssertEqual(sut.stackView.subviews.count, 6)
     }
