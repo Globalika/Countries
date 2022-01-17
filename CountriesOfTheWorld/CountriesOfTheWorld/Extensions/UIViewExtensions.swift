@@ -1,5 +1,5 @@
 //
-//  UIStackViewExtensions.swift
+//  UIViewExtensions.swift
 //  CountriesOfTheWorld
 //
 //  Created by Khrystyna Matasova on 14.12.2021.
