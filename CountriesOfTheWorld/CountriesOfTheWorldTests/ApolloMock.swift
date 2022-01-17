@@ -21,17 +21,17 @@ class ApolloMock: ApolloClientProtocol {
         completion(Result.success(countryDetails))
     }
     let countryUkraineLite = CountryLite(code: "CI",
-                          name: "Ivory Coast",
-                          capital: "Yamoussoukro",
-                          continent: ContinentModel(name: "Africa"))
+                                         name: "Ivory Coast",
+                                         capital: "Yamoussoukro",
+                                         continent: ContinentModel(name: "Africa"))
     let countryIvoryCoastLite = CountryLite(code: "UA",
-                          name: "Ukraine",
-                          capital: "Kyiv",
-                          continent: ContinentModel(name: "Europe"))
+                                            name: "Ukraine",
+                                            capital: "Kyiv",
+                                            continent: ContinentModel(name: "Europe"))
     let countryCanadaLite = CountryLite(code: "CA",
-                          name: "Canada",
-                          capital: "Ottawa",
-                          continent: ContinentModel(name: "North America"))
+                                        name: "Canada",
+                                        capital: "Ottawa",
+                                        continent: ContinentModel(name: "North America"))
     let countryDetails = CountryDetailed(code: "UA",
                                         name: "Ukraine",
                                         capital: "Kyiv",
