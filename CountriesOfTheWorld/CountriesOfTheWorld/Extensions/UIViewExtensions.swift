@@ -10,11 +10,11 @@ import UIKit
 
 extension UIView {
     func removeAllSubviews() {
-        self.subviews.forEach({
+        self.subviews.forEach {
             if !($0 is UILayoutSupport) {
                 $0.removeAllSubviews()
                 $0.removeFromSuperview()
             }
-        })
+        }
     }
 }
